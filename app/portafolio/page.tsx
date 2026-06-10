@@ -1,4 +1,5 @@
 import SectionContentFr from "@/components/SectionContentFr";
+import clsx from "clsx";
 import Image from "next/image";
 
 export default function Portfolio() {
@@ -37,8 +38,38 @@ export default function Portfolio() {
                 Explora proyectos, fotografías y producciones creadas para marcas y profesionales.
             </p>
         </section>
+        {/* Content section */}
         <SectionContentFr bgColor="bg-brandblack-100">
-            Aoa
+            {/* Filters */}
+            <div className="flex items-center gap-4">
+                <span className="text-lg text-brandwhite">
+                    Filtros:
+                </span>
+                <button className={clsx(
+                    "px-4 py-2",
+                    "border border-brandwhite",
+                    "rounded-lg",
+                    "text-md"
+                )}>
+                    Fotografía
+                </button>
+                <button className={clsx(
+                    "px-4 py-2",
+                    "border border-brandwhite",
+                    "rounded-lg",
+                    "text-md"
+                )}>
+                    Video
+                </button>
+                <button className={clsx(
+                    "px-4 py-2",
+                    "border border-brandwhite",
+                    "rounded-lg",
+                    "text-md"
+                )}>
+                    Proyectos
+                </button>
+            </div>
         </SectionContentFr>
         {/* Footer wrapper */}
         <div className="w-full h-footer-height bg-brandblack-100"></div>
