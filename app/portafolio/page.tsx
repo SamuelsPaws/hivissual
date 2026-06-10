@@ -1,8 +1,18 @@
 import SectionContentFr from "@/components/SectionContentFr";
 import clsx from "clsx";
 import Image from "next/image";
+import ContentContainer from "./components/ContentContainer";
 
-export default function Portfolio() {
+type Props = {
+    searchParams: Promise<{
+        page?: string;
+    }>;
+}
+
+export default async function Portfolio({ searchParams }: Props) {
+    const params = await searchParams
+    const page = Number(params.page ?? 1)
+
     return (
     <main>
         {/* Banner */}
@@ -40,36 +50,7 @@ export default function Portfolio() {
         </section>
         {/* Content section */}
         <SectionContentFr bgColor="bg-brandblack-100">
-            {/* Filters */}
-            <div className="flex items-center gap-4">
-                <span className="text-lg text-brandwhite">
-                    Filtros:
-                </span>
-                <button className={clsx(
-                    "px-4 py-2",
-                    "border border-brandwhite",
-                    "rounded-lg",
-                    "text-md"
-                )}>
-                    Fotografía
-                </button>
-                <button className={clsx(
-                    "px-4 py-2",
-                    "border border-brandwhite",
-                    "rounded-lg",
-                    "text-md"
-                )}>
-                    Video
-                </button>
-                <button className={clsx(
-                    "px-4 py-2",
-                    "border border-brandwhite",
-                    "rounded-lg",
-                    "text-md"
-                )}>
-                    Proyectos
-                </button>
-            </div>
+            <ContentContainer />
         </SectionContentFr>
         {/* Footer wrapper */}
         <div className="w-full h-footer-height bg-brandblack-100"></div>
