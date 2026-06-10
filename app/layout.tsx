@@ -25,6 +25,9 @@ export default function RootLayout({
       lang="es"
       className="h-full antialiased"
     >
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      </head>
       <body
         className={clsx(
           poppins.className,

@@ -8,9 +8,16 @@
 @theme inline {
   --spacing-header-height: 4.5rem;
   --spacing-header-height-mob: 3.5rem;
+  --spacing-footer-height: 440px;
+  --spacing-footer-wrap-height: 472px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brandwhite: #fafafa;
+  --color-brandblack: #0C0C0D;
+  --color-brandblack-100: #121214;
+  --color-brandblack-200: #1a1a1c;
+  --color-brandgray-100: #26262A;
+  --color-brandgray-200: #38383E;
   --color-brandgold-600: #C9B23F;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -44,6 +51,30 @@ body {
 
 button:hover {
   cursor: pointer;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    45deg,
+    #72540762,
+    #ababab14,
+    #d5d8db6d
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hover-animated-underline {
+  @apply after:content-[''] after:w-0 hover:after:w-[100%] after:duration-200 after:h-0.5 after:absolute after:-bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-brandwhite;
 }
 
 @layer {
