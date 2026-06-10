@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <span className="
           pt-8 pb-2
-          text-2xl text-black font-semibold tracking-wider"
+          text-3xl text-black font-semibold tracking-wider"
         >
           HIVISSUAL
         </span>
