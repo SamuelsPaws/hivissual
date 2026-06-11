@@ -1,13 +1,22 @@
+import SectionContentFr from "@/components/SectionContentFr";
 import Image from "next/image";
+import H2 from "./components/H2";
+import H3 from "./components/H3";
+import P from "./components/P";
+import ServiceTag from "./components/ServiceTag";
+import GridItem from "./components/GridItem";
+import SectionContentSt from "@/components/SectionContentSt";
+import RelatedProjectCard from "./components/RelatedProjectCard";
 
 export default async function ProjectSlug() {
     return (
     <main>
+        {/* Hero */}
         <section className="
             h-140 relative
             px-32 py-32
             flex
-            bg-brandblack-100"
+            bg-brandblack-100 overflow-hidden"
         >
             {/* Left part with info */}
             <div className="
@@ -29,7 +38,7 @@ export default async function ProjectSlug() {
             >
                 <div className="
                     h-full aspect-square relative
-                    rounded-4xl overflow-hidden shadow-md"
+                    rounded-4xl overflow-hidden shadow-lg"
                 >
                     <Image
                         src="/assets/stock.jpg"
@@ -46,10 +55,90 @@ export default async function ProjectSlug() {
                 absolute bottom-0 right-0 z-0
                 w-140 h-100 mt-4
                 bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                opacity-70 mix-blend-screen blur-[80px]
+                opacity-80 mix-blend-screen blur-[80px]
                 bg-contain"
             ></div>
         </section>
+        <SectionContentFr bgColor="bg-brandblack-200">
+            {/* Two columns container */}
+            <div className="w-full flex">
+                {/* Left part */}
+                <div className="w-[50%]">
+                    <H2 first={true}>
+                        El Cliente
+                    </H2>
+                    <p className="mb-8 text-xl text-brandgold-600 font-semibold">
+                        Restaurante ABC
+                    </p>
+                    <H3>Tipo de Empresa</H3>
+                    <P>Restaurante</P>
+                    <H3>¿Qué necesitaba el cliente?</H3>
+                    <P>Fortalecer su presencia digital. A pesar de ofrecer una experiencia de calidad y contar con un establecimiento bien posicionado, su presencia digital no lo reflejaba, limitando su capacidad para alcanzar potenciales comensales que buscaban opciones en línea.</P>
+                    <H2 first={false}>
+                        Objetivos
+                    </H2>
+                    <ul className="
+                        mb-8 flex flex-col gap-4
+                        text-lg text-gray-200"
+                    >
+                        <li>
+                            <i className="fa fa-circle scale-30 mr-2"></i>
+                            Reforzar la credibilidad de la marca mediante una imagen digital más profesional
+                        </li>
+                        <li>
+                            <i className="fa fa-circle scale-30 mr-2"></i>
+                            Facilitar que nuevos clientes descubrieran el restaurante en línea
+                        </li>
+                        <li>
+                            <i className="fa fa-circle scale-30 mr-2"></i>
+                            Crear una presencia visual coherente con la experiencia ofrecida en el local
+                        </li>
+                    </ul>
+                    <H2 first={false}>
+                        Servicios Ofrecidos
+                    </H2>
+                    <div className="flex flex-wrap gap-8">
+                        <ServiceTag text="Fotografía" />
+                        <ServiceTag text="Producción de Video" />
+                        <ServiceTag text="Estrategia de Contenido" />
+                    </div>
+                </div>
+            </div>
+            <H2 first={false}>
+                Galería
+            </H2>
+            {/* Gallery grid */}
+            <div className="
+                w-full md:w-fit mx-auto mt-16
+                grid
+                grid-cols-1 grid-rows-auto
+                md:grid-cols-2 md:grid-rows-4
+                xl:grid-cols-4 xl:grid-rows-2
+                gap-8"
+            >
+                <GridItem />
+                <GridItem />
+                <GridItem />
+                <GridItem />
+                <GridItem />
+                <GridItem />
+                <GridItem />
+                <GridItem />
+            </div>
+        </SectionContentFr>
+        <SectionContentSt
+            title="Otros Proyectos"
+            bgColor="bg-brandgray-100"
+        >
+            <div className="
+                w-full md:w-fit mx-auto
+                flex flex-wrap flex-col md:flex-row gap-8"
+            >
+                <RelatedProjectCard />
+                <RelatedProjectCard />
+                <RelatedProjectCard />
+            </div>
+        </SectionContentSt>
         {/* Footer wrapper */}
         <div className="w-full h-footer-height bg-brandblack-100"></div>
     </main>
