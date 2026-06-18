@@ -25,7 +25,7 @@ const Hero = () => {
             flex flex-col items-center gap-8
             text-center"
         >
-            <h1 className="text-5xl text-brandwhite font-semibold leading-16">
+            <h1 className="text-5xl text-brandwhite font-semibold leading-14 xl:leading-16">
                 Tu marca merece verse tan <span className="text-brandgold-600">profesional</span> como el trabajo que haces.
             </h1>
             <p className="text-lg text-brandwhite/90">

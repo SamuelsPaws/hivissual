@@ -75,7 +75,7 @@ button:hover {
 }
 
 .hover-animated-underline {
-  @apply after:content-[''] after:w-0 hover:after:w-[100%] after:duration-200 after:h-0.5 after:absolute after:-bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-brandwhite;
+  @apply after:content-[''] after:w-0 hover:after:w-[100%] after:duration-200 after:h-[1px] after:absolute after:-bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-brandwhite;
 }
 
 @layer {

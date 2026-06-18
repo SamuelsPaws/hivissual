@@ -7,6 +7,7 @@ import ServiceTag from "./components/ServiceTag";
 import GridItem from "./components/GridItem";
 import SectionContentSt from "@/components/SectionContentSt";
 import RelatedProjectCard from "./components/RelatedProjectCard";
+import Link from "next/link";
 
 export default async function ProjectSlug() {
     return (
@@ -16,7 +17,7 @@ export default async function ProjectSlug() {
             h-140 relative
             px-32 py-32
             flex
-            bg-brandblack-100 overflow-hidden"
+            bg-brandblack overflow-hidden"
         >
             {/* Left part with info */}
             <div className="
@@ -125,22 +126,57 @@ export default async function ProjectSlug() {
                 <GridItem />
                 <GridItem />
             </div>
+            {/* Pagination */}
+            <div className="
+                w-fit mx-auto
+                flex gap-2"
+            >
+                <button className="
+                    mt-16 w-8 h-8
+                    grid place-content-center
+                    text-lg text-black
+                    bg-gray-300 rounded-lg"
+                >
+                    1
+                </button>
+                <button className="
+                    mt-16 w-8 h-8
+                    grid place-content-center
+                    bg-transparent
+                    text-lg text-brandwhite
+                    border border-brandwhite rounded-lg"
+                >
+                    2
+                </button>
+            </div>
         </SectionContentFr>
         <SectionContentSt
             title="Otros Proyectos"
             bgColor="bg-brandgray-100"
         >
+            {/* Grid */}
             <div className="
-                w-full md:w-fit mx-auto
+                w-full md:w-fit mx-auto mb-16
                 flex flex-wrap flex-col md:flex-row gap-8"
             >
                 <RelatedProjectCard />
                 <RelatedProjectCard />
                 <RelatedProjectCard />
             </div>
+            <Link
+                href="/portafolio"
+                className="
+                    block w-fit
+                    mx-auto px-8 py-4
+                    bg-brandwhite
+                    text-black text-lg font-semibold
+                    rounded-full"
+            >
+                Ver Portafolio Completo
+            </Link>
         </SectionContentSt>
         {/* Footer wrapper */}
-        <div className="w-full h-footer-height bg-brandblack-100"></div>
+        <div className="w-full h-footer-height bg-brandgray-100"></div>
     </main>
     )
 }

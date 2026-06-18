@@ -1,10 +1,49 @@
 'use client'
 import { useState } from 'react'
 import FilterTag from './FilterTag'
-import GridItem from './GridItem'
+import GalleryGrid from './GalleryGrid'
+import Lightbox from '@/components/Lightbox'
+import { Media } from '@/lib/types'
 
-const ContentContainer = () => {
+interface Props {
+    mediaArr: Media[];
+}
+
+const Gallery = ({ mediaArr }: Props) => {
     const [categoryFilter, setCategoryFilter] = useState<string | null>(null)
+    const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(null)
+
+    const isLightboxOpen = selectedMediaIndex !== null
+
+    const previousMedia = () => {
+        setSelectedMediaIndex(prev => {
+            if (prev !== null) {
+                return prev > 0 ? prev - 1 : mediaArr.length - 1
+            }
+
+            return null
+        })
+    }
+
+    const nextMedia = () => {
+        setSelectedMediaIndex(prev => {
+            if (prev !== null) {
+                return (prev + 1) % mediaArr.length
+            }
+
+            return null
+        })
+    }
+
+    const getSelectedMedia = () => {
+        if (selectedMediaIndex !== null) {
+            return mediaArr[selectedMediaIndex]
+        }
+
+        return null
+    }
+
+    const selectedMedia = getSelectedMedia()
 
     return (
     <div className="w-full">
@@ -33,23 +72,17 @@ const ContentContainer = () => {
             />
         </div>
         {/* Grid */}
-        <div className="
-            w-full md:w-fit mx-auto
-            grid
-            grid-cols-1 grid-rows-auto
-            md:grid-cols-2 md:grid-rows-4
-            xl:grid-cols-4 xl:grid-rows-2
-            gap-8"
-        >
-            <GridItem />
-            <GridItem />
-            <GridItem />
-            <GridItem />
-            <GridItem />
-            <GridItem />
-            <GridItem />
-            <GridItem />
-        </div>
+        <GalleryGrid
+            mediaArr={mediaArr}
+            setSelectedMediaIndex={setSelectedMediaIndex}
+        />
+        <Lightbox
+            isOpen={isLightboxOpen}
+            onClose={() => setSelectedMediaIndex(null)}
+            media={selectedMedia}
+            previousMedia={previousMedia}
+            nextMedia={nextMedia}
+        />
         {/* Pagination */}
         <div className="
             w-fit mx-auto
@@ -77,4 +110,4 @@ const ContentContainer = () => {
     )
 }
 
-export default ContentContainer
+export default Gallery
