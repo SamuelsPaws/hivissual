@@ -2,15 +2,17 @@ import clsx from "clsx";
 import Image from "next/image"
 
 interface Props {
-    spansTwo: boolean;
+    spansTwoRows: boolean;
+    spansTwoCols: boolean;
 }
 
-const MasonryItem = ({ spansTwo }: Props) => {
+const MasonryItem = ({ spansTwoRows, spansTwoCols }: Props) => {
   return (
     <div className={clsx(
         "relative",
         "rounded-4xl overflow-hidden",
-        spansTwo ? "row-span-2" : "row-span-1"
+        spansTwoRows && "md:row-span-2",
+        spansTwoCols && "col-span-2 md:col-span-1"
     )}>
         <Image
             src="/assets/stock.jpg"

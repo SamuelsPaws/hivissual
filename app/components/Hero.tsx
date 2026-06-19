@@ -4,47 +4,62 @@ import Link from "next/link"
 const Hero = () => {
   return (
     <section className="
-        pt-32 pb-24 px-32 relative"
+        h-screen lg:h-auto relative
+        px-8
+        lg:pt-32 lg:pb-24 lg:px-32"
     >
-        {/* BG Image*/}
+        {/* BG Image */}
         <div className="absolute inset-0 z-0">
             <Image
                 src="/assets/hero.webp"
                 fill
                 sizes="100%"
-                className="object-cover"
+                className="w-full h-full object-cover object-right"
                 priority
                 alt="Hero image"
             />
         </div>
         {/* Dark Overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/20 to-transparent"></div>
+        <div className="
+            absolute inset-0 z-10
+            bg-gradient-to-b from-black/50 to-black/90
+            lg:bg-gradient-to-r lg:from-black/20 lg:to-transparent"
+        ></div>
         {/* Left content div */}
         <div className="
-            w-[50%] relative z-20
-            flex flex-col items-center gap-8
+            w-full h-full
+            lg:w-[50%] lg:h-auto
+            relative z-20
+            flex flex-col justify-center items-center gap-6 lg:gap-8
             text-center"
         >
-            <h1 className="text-5xl text-brandwhite font-semibold leading-14 xl:leading-16">
+            <h1 className="
+                text-brandwhite font-semibold
+                text-3xl leading-10
+                lg:text-5xl lg:leading-14 xl:leading-16"
+            >
                 Tu marca merece verse tan <span className="text-brandgold-600">profesional</span> como el trabajo que haces.
             </h1>
-            <p className="text-lg text-brandwhite/90">
+            <p className="text-sm lg:text-lg text-gray-200">
                 Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
             </p>
             <Link
                 href='/portafolio'
                 className="
-                    px-8 py-4
+                    block mt-2 lg:mt-0
+                    px-6 py-3
+                    lg:px-8 lg:py-4
                     bg-brandwhite
-                    text-2xl font-semibold text-black
+                    text-lg lg:text-2xl font-semibold text-black
                     rounded-full"
             >
                 Explorar Portafolio
             </Link>
             <div className="
-                w-140 h-12 mt-4
+                w-screen h-8 mt-4
+                lg:w-140 lg:h-12
                 bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                opacity-70 mix-blend-screen blur-[20px]
+                opacity-90 lg:opacity-70 mix-blend-screen blur-[20px]
                 bg-contain"
             ></div>
         </div>

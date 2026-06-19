@@ -19,8 +19,8 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
     <button
         onClick={handleClick}
         className='
-            w-full h-60 aspect-auto
-            md:w-60 md:aspect-square relative
+            w-full h-60 aspect-auto relative
+            md:w-60 md:h-auto md:aspect-square
             flex flex-col justify-end
             md:hover:scale-105 duration-300 group
             rounded-4xl overflow-hidden'

@@ -13,9 +13,9 @@ const GalleryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
         w-full md:w-fit mx-auto
         grid
         grid-cols-1 grid-rows-auto
-        md:grid-cols-2 md:grid-rows-4
-        xl:grid-cols-4 xl:grid-rows-2
-        gap-8"
+        md:grid-cols-2
+        xl:grid-cols-4
+        gap-4 md:gap-8"
     >
       {mediaArr.map((el, index) =>
         <GridItem

@@ -11,7 +11,7 @@ const LightboxInfo = () => {
     <div className={clsx(
         isOpen ? 'w-100 h-50' : 'w-24 h-12',
         "absolute bottom-4 left-4 z-[9970]",
-        "bg-brandblack/70",
+        "bg-brandblack/70 backdrop-blur-md",
         !isOpen && "lg:hover:bg-brandblack/80",
         "rounded-lg overflow-hidden",
         "duration-300"
@@ -33,11 +33,12 @@ const LightboxInfo = () => {
         {/* Open info */}
         {isOpen &&
             <div className="
-                w-full relative
+                w-full h-full relative
                 p-4
                 flex flex-col
                 text-brandwhite"
             >
+                {/* Close button */}
                 <button
                     onClick={toggleIsOpen}
                     className="
@@ -50,12 +51,18 @@ const LightboxInfo = () => {
                 <p className="mb-4 text-xl font-semibold">
                     Fotografía
                 </p>
-                <p className="mb-2 text-md">
-                    <span className="font-semibold">Cliente: </span>Restaurante ABC
-                </p>
-                <p className="mb-2 text-md">
-                    <span className="font-semibold">Año: </span>2026
-                </p>
+                {/* Wrapper for client, year, etc */}
+                <div className="
+                    flex-1
+                    flex flex-col justify-between"
+                >
+                    <p className="mb-2 text-md">
+                        <span className="font-semibold">Cliente: </span>Restaurante ABC
+                    </p>
+                    <p className="text-md">
+                        <span className="font-semibold">Año: </span>2026
+                    </p>
+                </div>
             </div>
         }
     </div>

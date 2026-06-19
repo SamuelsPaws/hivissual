@@ -6,6 +6,7 @@ import Link from "next/link";
 import ServiceCard from "./components/ServiceCard";
 import ServiceCardLi from "./components/ServiceCardLi";
 import SectionContentCen from "@/components/SectionContentCen";
+import SectionCTA from "@/components/SectionCTA";
 
 export default function Home() {
   return (
@@ -17,23 +18,27 @@ export default function Home() {
       >
         {/* Masonry Grid */}
         <div className="
-          w-fit mx-auto mb-24
-          grid grid-cols-[220px_220px_220px_220px] grid-rows-[180px_180px] gap-8"
+          w-full mb-8
+          md:w-fit md:mx-auto md:mb-24
+          grid
+          grid-cols-2 grid-rows-[repeat(4,200px)] gap-4
+          md:grid-cols-[repeat(4,220px)] md:grid-rows-[repeat(2,160px)] md:gap-8"
         >
-          <MasonryItem spansTwo={false} />
-          <MasonryItem spansTwo={true} />
-          <MasonryItem spansTwo={false} />
-          <MasonryItem spansTwo={true} />
-          <MasonryItem spansTwo={false} />
-          <MasonryItem spansTwo={false} />
+          <MasonryItem spansTwoRows={false} spansTwoCols={true} />
+          <MasonryItem spansTwoRows={true} spansTwoCols={false} />
+          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
+          <MasonryItem spansTwoRows={true} spansTwoCols={true} />
+          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
+          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
         </div>
         <Link
           href="/portafolio"
           className="
-            block w-fit
-            mx-auto px-8 py-4
+            block w-fit mx-auto
+            px-6 py-3
+            lg:px-8 lg:py-4
             bg-brandwhite
-            text-black text-xl font-semibold
+            text-black text-md lg:text-xl font-semibold
             rounded-full"
         >
           Ver Portafolio Completo
@@ -43,11 +48,14 @@ export default function Home() {
         title="Conoce mis servicios"
         bgColor="bg-brandblack-100"
       >
-        <div className="w-fit mx-auto flex gap-8">
+        <div className="
+          w-full lg:w-fit lg:mx-auto
+          flex flex-col lg:flex-row gap-8"
+        >
           <ServiceCard title="Fotografía">
             <ul className="
               flex flex-col gap-4
-              text-lg"
+              text-md lg:text-lg"
             >
               <ServiceCardLi>
                 Sesiones fotográficas profesionales para empresas, marcas y negocios
@@ -60,7 +68,7 @@ export default function Home() {
           <ServiceCard title="Producción de Video">
             <ul className="
               flex flex-col gap-4
-              text-lg"
+              text-md lg:text-lg"
             >
               <ServiceCardLi>
                 Sesiones fotográficas profesionales para empresas, marcas y negocios
@@ -77,28 +85,36 @@ export default function Home() {
         bgColor="bg-brandblack-200"
       >
         {/* Layout container */}
-        <div className="w-fit mx-auto flex gap-8">
+        <div className="
+          w-full
+          lg:w-fit lg:mx-auto
+          flex flex-col lg:flex-row gap-8"
+        >
           {/* Left part */}
-          <div className="w-100 flex flex-col gap-8">
+          <div className="w-full lg:w-100 flex flex-col gap-8">
             <div className="
               w-full p-8 relative
               gradient-border rounded-2xl"
             >
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
+              <p className="text-gray-200 text-md lg:text-lg">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes
+              </p>
             </div>
             <div className="
               w-full p-8
               bg-linear-to-b from-brandwhite to-[#d2d2d2]
-              text-black text-lg font-semibold
               rounded-2xl"
             >
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes</p>
+              <p className="text-black text-md lg:text-lg font-semibold">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes
+              </p>
             </div>
           </div>
           {/* Right part */}
-          <div className="w-100 flex flex-col gap-8">
+          <div className="w-full lg:w-100 flex flex-col gap-8">
             <div className="
-              flex-1 relative
+              w-full h-60 relative
+              lg:w-auto lg:h-auto lg:flex-1
               rounded-4xl overflow-hidden"
             >
               <Image
@@ -112,10 +128,11 @@ export default function Home() {
             <Link
               href="/quien-soy"
               className="
-              px-4 py-2
+              w-full py-2
+              flex items-center justify-center
               bg-transparent
-              text-brandwhite text-lg text-center
-              border border-brandwhite rounded-full"
+              text-gray-200 text-md lg:text-lg text-center
+              border border-gray-200 rounded-full"
             >
               Todo Sobre Mí y mi Equipo
               <i className="fa fa-arrow-right ml-2 scale-90" aria-hidden="true"></i>
@@ -123,8 +140,9 @@ export default function Home() {
           </div>
         </div>
       </SectionContentCen>
+      <SectionCTA bgColor="bg-brandgray-100" />
       {/* Footer wrapper */}
-      <div className="w-full h-footer-height bg-brandblack-200"></div>
+      <div className="w-full h-footer-height-mob lg:h-footer-height bg-brandgray-100"></div>
     </main> 
   )
 }

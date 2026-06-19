@@ -48,8 +48,8 @@ const Gallery = ({ mediaArr }: Props) => {
     return (
     <div className="w-full">
         {/* Filters */}
-        <div className="mb-16 flex items-center gap-4">
-            <span className="text-lg text-brandwhite">
+        <div className="mb-8 lg:mb-16 flex items-center gap-4 flex-wrap">
+            <span className="text-md lg:text-lg text-brandwhite">
                 Filtros:
             </span>
             <FilterTag
@@ -86,10 +86,11 @@ const Gallery = ({ mediaArr }: Props) => {
         {/* Pagination */}
         <div className="
             w-fit mx-auto
+            mt-8 lg:mt-16
             flex gap-2"
         >
             <button className="
-                mt-16 w-8 h-8
+                w-8 h-8
                 grid place-content-center
                 text-lg text-black
                 bg-gray-300 rounded-lg"
@@ -97,7 +98,7 @@ const Gallery = ({ mediaArr }: Props) => {
                 1
             </button>
             <button className="
-                mt-16 w-8 h-8
+                w-8 h-8
                 grid place-content-center
                 bg-transparent
                 text-lg text-brandwhite

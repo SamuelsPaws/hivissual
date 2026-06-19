@@ -9,7 +9,7 @@
   --spacing-header-height: 4.5rem;
   --spacing-header-height-mob: 3.5rem;
   --spacing-footer-height: 440px;
-  --spacing-footer-wrap-height: 472px;
+  --spacing-footer-height-mob: 760px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brandwhite: #fafafa;
@@ -20,6 +20,9 @@
   --color-brandgray-200: #38383E;
   --color-brandgold-100: #4F4519;
   --color-brandgold-600: #C9B23F;
+  --color-whatsapp-600: #25d366;
+  --color-whatsapp-500: #21B85A;
+  --color-whatsapp-400: #16AB4E;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

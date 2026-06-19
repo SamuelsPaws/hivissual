@@ -4,10 +4,75 @@ import H2 from "./components/H2";
 import H3 from "./components/H3";
 import P from "./components/P";
 import ServiceTag from "./components/ServiceTag";
-import GridItem from "./components/GridItem";
 import SectionContentSt from "@/components/SectionContentSt";
 import RelatedProjectCard from "./components/RelatedProjectCard";
 import Link from "next/link";
+import SectionCTA from "@/components/SectionCTA";
+import { Media } from "@/lib/types";
+import Gallery from "@/components/Gallery";
+
+const exampleMediaArr: Media[] = [
+    {
+        type: 'image',
+        src: '/assets/stock.jpg',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/stock.jpg',
+        client: 'Mama Cuchara',
+        projectSlug: null
+    },
+    {
+        type: 'image',
+        src: '/assets/stock.jpg',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/stock.jpg',
+        client: 'Mama Cuchara',
+        projectSlug: null
+    },
+    {
+        type: 'image',
+        src: '/assets/stock.jpg',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/stock.jpg',
+        client: 'Mama Cuchara',
+        projectSlug: null
+    },
+    {
+        type: 'image',
+        src: '/assets/stock.jpg',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/stock.jpg',
+        client: 'Mama Cuchara',
+        projectSlug: null
+    },
+    {
+        type: 'project',
+        src: '/assets/stock.jpg',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/stock.jpg',
+        client: 'Restaurante ABC',
+        projectSlug: 'hola'
+    },
+    {
+        type: 'video',
+        src: 'https://player.vimeo.com/video/1202614198?autoplay=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
+        alt: 'Stock photo',
+        title: 'Stock Photo',
+        caption: 'A Stock Photo',
+        thumbnail: '/assets/hero.webp',
+        client: 'No one',
+        projectSlug: null
+    },
+]
 
 export default async function ProjectSlug() {
     return (
@@ -80,7 +145,7 @@ export default async function ProjectSlug() {
                     </H2>
                     <ul className="
                         mb-8 flex flex-col gap-4
-                        text-lg text-gray-200"
+                        text-lg text-gray-300"
                     >
                         <li>
                             <i className="fa fa-circle scale-30 mr-2"></i>
@@ -109,46 +174,7 @@ export default async function ProjectSlug() {
                 Galería
             </H2>
             {/* Gallery grid */}
-            <div className="
-                w-full md:w-fit mx-auto mt-16
-                grid
-                grid-cols-1 grid-rows-auto
-                md:grid-cols-2 md:grid-rows-4
-                xl:grid-cols-4 xl:grid-rows-2
-                gap-8"
-            >
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-                <GridItem />
-            </div>
-            {/* Pagination */}
-            <div className="
-                w-fit mx-auto
-                flex gap-2"
-            >
-                <button className="
-                    mt-16 w-8 h-8
-                    grid place-content-center
-                    text-lg text-black
-                    bg-gray-300 rounded-lg"
-                >
-                    1
-                </button>
-                <button className="
-                    mt-16 w-8 h-8
-                    grid place-content-center
-                    bg-transparent
-                    text-lg text-brandwhite
-                    border border-brandwhite rounded-lg"
-                >
-                    2
-                </button>
-            </div>
+            <Gallery mediaArr={exampleMediaArr} />
         </SectionContentFr>
         <SectionContentSt
             title="Otros Proyectos"
@@ -175,8 +201,9 @@ export default async function ProjectSlug() {
                 Ver Portafolio Completo
             </Link>
         </SectionContentSt>
+        <SectionCTA bgColor="bg-brandgray-200" />
         {/* Footer wrapper */}
-        <div className="w-full h-footer-height bg-brandgray-100"></div>
+        <div className="w-full h-footer-height bg-brandgray-200"></div>
     </main>
     )
 }

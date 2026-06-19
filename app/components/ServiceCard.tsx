@@ -6,14 +6,14 @@ interface Props {
 const ServiceCard = ({ title, children }: Props) => {
   return (
     <div className="
-        w-110 relative
-        p-12
-        rounded-4xl
+        w-full lg:w-110 relative
+        p-8 lg:p-12
+        rounded-2xl lg:rounded-4xl
         gradient-border"
     >
         <h3 className="
-        mb-12
-        text-brandwhite text-3xl font-semibold"
+        mb-8 lg:mb-12
+        text-brandwhite text-xl lg:text-3xl font-semibold"
         >
             {title}
         </h3>

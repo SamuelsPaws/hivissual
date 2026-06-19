@@ -22,7 +22,7 @@ const FilterTag = ({ text, thisCategory, selectedCategory, setCategoryFilter }: 
         onClick={handleClick}
         className={clsx(
             "px-4 py-2",
-            "text-md",
+            "text-sm lg:text-md",
             "outline rounded-lg",
             "duration-0",
             selectedCategory === thisCategory

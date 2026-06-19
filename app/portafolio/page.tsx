@@ -1,9 +1,9 @@
 import SectionContentFr from "@/components/SectionContentFr";
-import clsx from "clsx";
-import Image from "next/image";
 import Banner from "@/components/Banner";
-import Gallery from "./components/Gallery";
+import Gallery from "@/components/Gallery";
 import { Media } from "@/lib/types";
+import SectionCTA from "@/components/SectionCTA";
+import FooterWrapper from "@/components/FooterWrapper";
 
 type Props = {
     searchParams: Promise<{
@@ -34,7 +34,7 @@ const exampleMediaArr: Media[] = [
     },
     {
         type: 'video',
-        src: '/assets/hero.webp',
+        src: 'https://player.vimeo.com/video/1202614198?autoplay=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
         alt: 'Stock photo',
         title: 'Stock Photo',
         caption: 'A Stock Photo',
@@ -58,8 +58,8 @@ export default async function Portfolio({ searchParams }: Props) {
         <SectionContentFr bgColor="bg-brandblack-100">
             <Gallery mediaArr={exampleMediaArr} />
         </SectionContentFr>
-        {/* Footer wrapper */}
-        <div className="w-full h-footer-height bg-brandblack-100"></div>
+        <SectionCTA bgColor="bg-brandgray-100" />
+        <FooterWrapper bgColor="bg-brandgray-100" />
     </main>
     )
 }

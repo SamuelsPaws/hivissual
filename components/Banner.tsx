@@ -8,9 +8,9 @@ interface Props {
 const Banner = ({ title, description }: Props) => {
   return (
     <section className="
-        h-95 relative
-        p-16
-        flex flex-col justify-end items-start gap-8"
+        h-70 lg:h-95 relative
+        p-8 lg:p-16
+        flex flex-col justify-end items-start gap-4 lg:gap-8"
     >
         {/* Image BG */}
         <div className="absolute inset-0 z-0">
@@ -28,14 +28,14 @@ const Banner = ({ title, description }: Props) => {
         {/* Actual content */}
         <h1 className="
             z-20 relative
-            text-6xl text-brandwhite font-semibold"
+            text-4xl lg:text-6xl text-brandwhite font-semibold"
         >
             {title}
         </h1>
         {description &&
             <p className="
                 z-20 relative
-                text-lg text-brandwhite"
+                text-sm lg:text-lg text-brandwhite"
             >
                 {description}
             </p>
