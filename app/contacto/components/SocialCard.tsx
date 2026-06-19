@@ -14,7 +14,7 @@ const SocialCard = ({ iconClass, text, href }: Props) => {
         className="
             w-fit p-8 relative
             flex items-center gap-4
-            text-2xl text-gray-300
+            text-xl lg:text-2xl text-gray-300
             gradient-border rounded-2xl
             outline outline-transparent lg:hover:outline-gray-300 duration-200"
     >

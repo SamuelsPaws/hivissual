@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import FooterWrapper from "@/components/FooterWrapper";
 import SectionContentFr from "@/components/SectionContentFr";
 import SectionCTA from "@/components/SectionCTA";
 
@@ -17,8 +18,7 @@ export default function About() {
             </p>
         </SectionContentFr>
         <SectionCTA bgColor="bg-brandgray-100" />
-        {/* Footer wrapper */}
-        <div className="w-full h-footer-height bg-brandgray-100"></div>
+        <FooterWrapper bgColor="bg-brandgray-100" />
     </main>
     )
 }
