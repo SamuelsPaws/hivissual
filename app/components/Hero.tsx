@@ -14,7 +14,7 @@ const Hero = () => {
                 src="/assets/hero.webp"
                 fill
                 sizes="100%"
-                className="w-full h-full object-cover object-top-right"
+                className="w-full h-full object-cover object-[80%_100%]"
                 priority
                 alt="Hero image"
             />
