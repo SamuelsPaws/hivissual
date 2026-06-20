@@ -55,7 +55,6 @@ const Header = () => {
         {/* Right compartment */}
         <div className={clsx(
             "h-8 w-8 py-1 lg:py-2",
-            "flex justify-center items-center",
             "rounded-md lg:rounded-xl border",
             "duration-300",
             isAtTop ?
