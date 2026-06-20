@@ -25,7 +25,7 @@ const Banner = ({ title, description, bgSrc }: Props) => {
             />
         </div>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/70 z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/60 z-10"></div>
         {/* Actual content */}
         <h1 className="
             z-20 relative
