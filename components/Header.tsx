@@ -54,14 +54,22 @@ const Header = () => {
         </div>
         {/* Right compartment */}
         <div className={clsx(
-            "h-fit py-1 lg:py-2",
-            "rounded-md lg:rounded-xl",
+            "h-fit py-1 lg:py-2 relative",
+            "rounded-md lg:rounded-xl overflow-hidden",
             "duration-300",
             isAtTop ?
-                "bg-transparent pl-0 pr-0"
+                "pl-0 pr-0"
                 :
-                "bg-gray-700/70 backdrop-blur-md pl-2 lg:pl-8 pr-2 lg:pr-2"
+                "pl-2 lg:pl-8 pr-2 lg:pr-2"
         )}>
+            {/* Bg */}
+            <div className={clsx(
+                "absolute inset-0",
+                isAtTop ?
+                "bg-transparent"
+                :
+                "bg-gray-700/70 backdrop-blur-md"
+            )}></div>
             {/* Nav */}
             <nav className="hidden lg:block">
                 <ul className="flex items-center gap-12">

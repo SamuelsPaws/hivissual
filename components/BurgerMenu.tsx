@@ -24,7 +24,7 @@ const BurgerMenu = () => {
 
     return (
         <div className="
-            h-6 aspect-square lg:hidden static
+            h-6 aspect-square lg:hidden
             text-white-1"
         >
             {/* Burger icon */}
@@ -52,10 +52,10 @@ const BurgerMenu = () => {
             </button>
             {/* Actual menu */}
             <div className={clsx(
-                "w-full h-[60vh]",
-                "pt-header-height-mob px-8",
                 isOpen ? 'fixed' : 'hidden',
                 "top-0 left-0",
+                "w-screen h-[60vh] rb",
+                "pt-header-height-mob px-8",
                 "bg-brandgray-200 shadow-md"
             )}>
                 <ul className="
