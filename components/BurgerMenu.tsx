@@ -23,13 +23,13 @@ const BurgerMenu = () => {
 
     return (
         <div className="
-            h-7 aspect-square lg:hidden rb relative
+            h-7 aspect-square lg:hidden relative
             text-white-1"
         >
             {/* Burger icon */}
             <button
                 onClick={toggleMenu}
-                className="w-full h-full z-110 absolute inset-0 gb"
+                className="z-110 absolute inset-0"
             >
                 <div className={`
                     h-0.5 w-full bg-brandwhite
