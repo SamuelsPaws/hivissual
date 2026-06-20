@@ -7,7 +7,7 @@
 
 @theme inline {
   --spacing-header-height: 4.5rem;
-  --spacing-header-height-mob: 3.5rem;
+  --spacing-header-height-mob: 4rem;
   --spacing-footer-height: 440px;
   --spacing-footer-height-mob: 760px;
   --color-background: var(--background);
