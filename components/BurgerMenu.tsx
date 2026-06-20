@@ -54,7 +54,7 @@ const BurgerMenu = () => {
             <div className={clsx(
                 isOpen ? 'fixed' : 'hidden',
                 "top-0 left-0",
-                "w-screen h-[60vh] rb",
+                "w-screen h-[60vh]",
                 "pt-header-height-mob px-8",
                 "bg-brandgray-200 shadow-md"
             )}>
