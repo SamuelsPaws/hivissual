@@ -54,14 +54,14 @@ const Header = () => {
         </div>
         {/* Right compartment */}
         <div className={clsx(
-            "h-fit py-1 bb lg:py-2",
+            "h-fit bb lg:py-2",
             "flex justify-center items-center",
             "rounded-md lg:rounded-xl border",
             "duration-300",
             isAtTop ?
                 "bg-transparent pl-0 pr-0 border-transparent"
                 :
-                "bg-brandgray-200 pl-2 lg:pl-8 pr-2 lg:pr-2 border-black/30"
+                "bg-brandgray-200 pl-2 lg:pl-8 pr-2 lg:pr-2 border-black/20"
         )}>
             {/* Nav */}
             <nav className="hidden lg:block">
