@@ -64,7 +64,7 @@ const Header = () => {
         )}>
             {/* Bg */}
             <div className={clsx(
-                "absolute inset-0 duration-300",
+                "absolute inset-0 duration-300 z-[999]",
                 isAtTop ?
                 "bg-transparent"
                 :
