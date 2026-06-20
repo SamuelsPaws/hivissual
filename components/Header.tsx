@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className={clsx(
-        "w-full h-header-height-mob lg:h-header-height z-[980]",
+        "w-full h-header-height-mob lg:h-header-height z-[999]",
         "fixed top-0 left-0",
         "px-8",
         "flex justify-between items-center",
@@ -64,14 +64,14 @@ const Header = () => {
         )}>
             {/* Bg */}
             <div className={clsx(
-                "absolute inset-0 duration-300 z-[980]",
+                "absolute inset-0 duration-300",
                 isAtTop ?
-                "bg-transparent"
+                "bg-transparent backgrop-blur-none"
                 :
                 "bg-gray-600/70 backdrop-blur-md"
             )}></div>
             {/* Nav */}
-            <nav className="hidden lg:block z-[999]">
+            <nav className="hidden lg:block">
                 <ul className="flex items-center gap-12">
                     <li>
                         <Link
@@ -97,7 +97,7 @@ const Header = () => {
                         <Link
                             href='/contacto'
                             className="
-                                block px-4 py-1
+                                block px-4 py-1 relative
                                 bg-brandwhite
                                 text-black text-md font-semibold
                                 rounded-full"
