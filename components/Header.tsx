@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className={clsx(
-        "w-full h-header-height-mob lg:h-header-height z-[999]",
+        "w-full bb h-header-height-mob lg:h-header-height z-[999]",
         "fixed top-0 left-0",
         "px-8",
         "flex justify-between items-center",
@@ -54,7 +54,7 @@ const Header = () => {
         </div>
         {/* Right compartment */}
         <div className={clsx(
-            "h-8 py-1 lg:py-2",
+            "h-8 w-8 py-1 lg:py-2",
             "flex justify-center items-center",
             "rounded-md lg:rounded-xl border",
             "duration-300",
