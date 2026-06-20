@@ -1,4 +1,5 @@
 'use client'
+import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react"
 
@@ -23,7 +24,7 @@ const BurgerMenu = () => {
 
     return (
         <div className="
-            h-6 aspect-square lg:hidden
+            h-6 aspect-square lg:hidden static
             text-white-1"
         >
             {/* Burger icon */}
@@ -50,13 +51,13 @@ const BurgerMenu = () => {
                 ></div>
             </button>
             {/* Actual menu */}
-            <div className={`
-                w-full h-[60vh]
-                pt-header-height-mob px-8
-                ${isOpen ? 'fixed' : 'hidden'}
-                top-0 left-0
-                bg-brandgray-200 shadow-md`}
-            >
+            <div className={clsx(
+                "w-full h-[60vh]",
+                "pt-header-height-mob px-8",
+                isOpen ? 'fixed' : 'hidden',
+                "top-0 left-0",
+                "bg-brandgray-200 shadow-md"
+            )}>
                 <ul className="
                     w-full h-full
                     flex flex-col justify-center items-end gap-6
