@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className={clsx(
-        "w-full h-header-height-mob lg:h-header-height z-[999]",
+        "w-full h-header-height-mob lg:h-header-height z-[980]",
         "fixed top-0 left-0",
         "px-8",
         "flex justify-between items-center",
@@ -64,14 +64,14 @@ const Header = () => {
         )}>
             {/* Bg */}
             <div className={clsx(
-                "absolute inset-0 duration-300 z-[999]",
+                "absolute inset-0 duration-300 z-[980]",
                 isAtTop ?
                 "bg-transparent"
                 :
                 "bg-gray-600/70 backdrop-blur-md"
             )}></div>
             {/* Nav */}
-            <nav className="hidden lg:block z-[1000]">
+            <nav className="hidden lg:block z-[999]">
                 <ul className="flex items-center gap-12">
                     <li>
                         <Link
