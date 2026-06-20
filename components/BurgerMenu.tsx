@@ -29,7 +29,7 @@ const BurgerMenu = () => {
             {/* Burger icon */}
             <button
                 onClick={toggleMenu}
-                className="w-full h-full z-110 relative"
+                className="w-full h-full z-110 relative rb"
             >
                 <div className={`
                     h-0.5 w-full bg-brandwhite
