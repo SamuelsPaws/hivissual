@@ -35,11 +35,11 @@ export default function Contact() {
                     rounded-full overflow-hidden shadow-lg"
                 >
                     <Image
-                        src="/assets/stock.jpg"
+                        src="/assets/about-2.webp"
                         fill
                         sizes="100%"
                         priority
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover scale-200"
                         alt="Stock"
                     />
                 </div>
@@ -143,7 +143,7 @@ export default function Contact() {
             ></div> */}
             <img
                 src="/assets/glow.svg"
-                className="absolute top-[20%] left-1/3 w-180 opacity-80"
+                className="absolute top-[25%] left-[25%] w-240 opacity-60"
             />
         </section>
         <SectionContentSt
