@@ -3,9 +3,10 @@ import Image from 'next/image'
 interface Props {
     title: string;
     description: string | null;
+    bgSrc: string;
 }
 
-const Banner = ({ title, description }: Props) => {
+const Banner = ({ title, description, bgSrc }: Props) => {
   return (
     <section className="
         h-70 lg:h-95 relative
@@ -15,16 +16,16 @@ const Banner = ({ title, description }: Props) => {
         {/* Image BG */}
         <div className="absolute inset-0 z-0">
             <Image
-                src="/assets/stock.jpg"
+                src={bgSrc}
                 fill
                 sizes="100%"
-                className="w-full object-cover object-top"
+                className="w-full object-cover object-center"
                 priority
                 alt="Stock"
             />
         </div>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/80 z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/70 z-10"></div>
         {/* Actual content */}
         <h1 className="
             z-20 relative

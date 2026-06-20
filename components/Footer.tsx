@@ -14,7 +14,7 @@ const Footer = () => {
       w-full h-full z-10
       p-8
       flex flex-col lg:flex-row gap-8 lg:gap-0
-      bg-linear-to-b from-gray-300 to-gray-400
+      bg-linear-to-b from-gray-100 to-gray-300
       rounded-2xl"
     >
       {/* Left part with logo and text */}
@@ -97,13 +97,13 @@ const Footer = () => {
           </li>
         </ul>
         {/* Whatsapp and e-mail */}
-        <div className="flex flex-col items-end gap-2 lg:gap-4">
+        <div className="flex flex-col items-end gap-1 lg:gap-4">
           <span className="text-lg lg:text-xl text-black font-semibold">
             WhatsApp
           </span>
           <a
             href="/"
-            className="text-sm lg:text-md text-brandblack underline"
+            className="text-md lg:text-md text-brandblack underline"
           >
             +593999999
           </a>
@@ -112,26 +112,26 @@ const Footer = () => {
           </span>
           <a
             href="/"
-            className="text-sm lg:text-md text-brandblack underline"
+            className="text-md lg:text-md text-brandblack underline"
           >
             hivissual@example.com
           </a>
         </div>
         {/* Socials */}
-        <div className="flex flex-col items-end gap-2 lg:gap-4">
+        <div className="flex flex-col items-end gap-1 lg:gap-4">
           <span className="text-lg lg:text-xl text-black font-semibold">
             Redes Sociales
           </span>
           <a
             href="/"
-            className="text-sm lg:text-md text-brandblack underline"
+            className="text-md lg:text-md text-brandblack underline"
           >
             <i className="fa fa-instagram mr-2" aria-hidden="true"></i>
             hivissual
           </a>
           <a
             href="/"
-            className="text-sm lg:text-md text-brandblack underline"
+            className="text-md lg:text-md text-brandblack underline"
           >
             <i className="fa fa-facebook-square mr-2" aria-hidden="true"></i>
             Hivissual

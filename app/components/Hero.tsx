@@ -14,7 +14,7 @@ const Hero = () => {
                 src="/assets/hero.webp"
                 fill
                 sizes="100%"
-                className="w-full h-full object-cover object-right"
+                className="w-full h-full object-cover object-top-right"
                 priority
                 alt="Hero image"
             />
@@ -22,7 +22,7 @@ const Hero = () => {
         {/* Dark Overlay */}
         <div className="
             absolute inset-0 z-10
-            bg-gradient-to-b from-black/50 to-black/90
+            bg-gradient-to-b from-black/40 via-black/70 to-black/90
             lg:bg-gradient-to-r lg:from-black/20 lg:to-transparent"
         ></div>
         {/* Left content div */}
@@ -41,7 +41,7 @@ const Hero = () => {
                 Tu marca merece verse tan <span className="text-brandgold-600">profesional</span> como el trabajo que haces.
             </h1>
             <p className="text-sm lg:text-lg text-gray-200">
-                Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
+                Hivissual - Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
             </p>
             <Link
                 href='/portafolio'
@@ -59,7 +59,7 @@ const Hero = () => {
                 w-screen h-8 mt-4
                 lg:w-140 lg:h-12
                 bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                opacity-90 lg:opacity-70 mix-blend-screen blur-[20px]
+                opacity-100 lg:opacity-70 mix-blend-screen blur-[20px]
                 bg-contain"
             ></div>
         </div>

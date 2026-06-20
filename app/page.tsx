@@ -88,10 +88,10 @@ export default function Home() {
         <div className="
           w-full
           lg:w-fit lg:mx-auto
-          flex flex-col lg:flex-row gap-8"
+          flex flex-col lg:flex-row gap-4 lg:gap-8"
         >
           {/* Left part */}
-          <div className="w-full lg:w-100 flex flex-col gap-8">
+          <div className="w-full lg:w-100 flex flex-col gap-4 lg:gap-8">
             <div className="
               w-full p-8 relative
               gradient-border rounded-2xl"
@@ -111,17 +111,17 @@ export default function Home() {
             </div>
           </div>
           {/* Right part */}
-          <div className="w-full lg:w-100 flex flex-col gap-8">
+          <div className="w-full lg:w-100 flex flex-col gap-4 lg:gap-8">
             <div className="
               w-full h-60 relative
               lg:w-auto lg:h-auto lg:flex-1
               rounded-4xl overflow-hidden"
             >
               <Image
-                src="/assets/stock.jpg"
+                src="/assets/about-1.webp"
                 fill
                 sizes="100%"
-                className="w-full object-cover"
+                className="w-full object-cover object-right"
                 alt="Stock"
               />
             </div>
@@ -134,7 +134,7 @@ export default function Home() {
               text-gray-200 text-md lg:text-lg text-center
               border border-gray-200 rounded-full"
             >
-              Todo Sobre Mí y mi Equipo
+              Todo sobre mí y mi Equipo
               <i className="fa fa-arrow-right ml-2 scale-90" aria-hidden="true"></i>
             </Link>
           </div>

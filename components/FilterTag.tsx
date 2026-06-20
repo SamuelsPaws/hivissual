@@ -26,9 +26,9 @@ const FilterTag = ({ text, thisCategory, selectedCategory, setCategoryFilter }: 
             "outline rounded-lg",
             "duration-0",
             selectedCategory === thisCategory
-                ? "outline-brandgold-600 bg-brandgold-600 text-black font-semibold"
+                ? "outline-brandwhite bg-brandwhite text-black font-semibold"
                 : "outline-brandwhite bg-transparent font-normal",
-            selectedCategory !== thisCategory && "hover:bg-brandgold-100"
+            selectedCategory !== thisCategory && "hover:bg-brandwhite/10"
         )}
     >
         {selectedCategory === thisCategory &&

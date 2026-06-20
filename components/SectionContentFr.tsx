@@ -8,7 +8,7 @@ interface Props {
 const SectionContentFr = ({ bgColor, children }: Props) => {
   return (
     <section className={clsx(
-        "px-4 py-8",
+        "px-4 py-16",
         "lg:px-16 lg:py-24",
         bgColor
     )}>

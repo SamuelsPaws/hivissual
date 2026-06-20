@@ -9,13 +9,13 @@ interface Props {
 const SectionContentSt = ({ title, bgColor, children }: Props) => {
   return (
     <section className={clsx(
-        "px-4 py-8",
+        "px-4 py-16",
         "lg:px-16 lg:py-24",
         bgColor
     )}>
         <h2 className="
             mb-8 lg:mb-24
-            text-left text-2xl lg:text-5xl text-brandwhite font-semibold"
+            text-center lg:text-left text-2xl lg:text-5xl text-brandwhite font-semibold"
         >
             {title}
         </h2>
