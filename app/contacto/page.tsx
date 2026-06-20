@@ -132,7 +132,7 @@ export default function Contact() {
                 </a>
             </div>
             {/* Glow */}
-            <div className="
+            {/* <div className="
                 absolute z-0
                 bottom-1/2 left-0
                 lg:bottom-8 lg:left-0
@@ -140,7 +140,11 @@ export default function Contact() {
                 bg-radial-[at_center] from-brandwhite via-transparent to-transparent
                 opacity-70 lg:opacity-80 mix-blend-screen blur-[80px]
                 bg-contain"
-            ></div>
+            ></div> */}
+            <img
+                src="/assets/glow.svg"
+                className="absolute top-[20%] left-1/3 w-180 opacity-80"
+            />
         </section>
         <SectionContentSt
             title="Encuéntrame en Redes Sociales"
