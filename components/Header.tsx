@@ -54,7 +54,7 @@ const Header = () => {
         </div>
         {/* Right compartment */}
         <div className={clsx(
-            "h-fit bb lg:py-2",
+            "bb lg:py-2",
             "flex justify-center items-center",
             "rounded-md lg:rounded-xl border",
             "duration-300",
