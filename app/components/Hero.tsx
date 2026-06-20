@@ -22,7 +22,7 @@ const Hero = () => {
         {/* Dark Overlay */}
         <div className="
             absolute inset-0 z-10
-            bg-gradient-to-b from-black/40 via-black/70 to-black/90
+            bg-gradient-to-b from-black/40 via-black/80 to-black/95
             lg:bg-gradient-to-r lg:from-black/20 lg:to-transparent"
         ></div>
         {/* Left content div */}
