@@ -71,7 +71,7 @@ const Header = () => {
                 "bg-gray-600/70 backdrop-blur-md"
             )}></div>
             {/* Nav */}
-            <nav className="hidden lg:block">
+            <nav className="hidden lg:block z-[1000]">
                 <ul className="flex items-center gap-12">
                     <li>
                         <Link
