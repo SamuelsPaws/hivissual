@@ -68,7 +68,7 @@ const Header = () => {
                 isAtTop ?
                 "bg-transparent"
                 :
-                "bg-gray-700/70 backdrop-blur-md"
+                "bg-gray-600/70 backdrop-blur-md"
             )}></div>
             {/* Nav */}
             <nav className="hidden lg:block">
