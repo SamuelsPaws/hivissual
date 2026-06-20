@@ -14,7 +14,7 @@ const Hero = () => {
                 src="/assets/hero.webp"
                 fill
                 sizes="100%"
-                className="w-full h-full object-cover object-[80%_100%]"
+                className="w-full h-full object-cover object-[80%_100%] lg:object-top-right"
                 priority
                 alt="Hero image"
             />
@@ -36,7 +36,7 @@ const Hero = () => {
             <h1 className="
                 text-brandwhite font-semibold
                 text-3xl leading-10
-                lg:text-5xl lg:leading-14 xl:leading-16"
+                lg:text-[2.5rem] lg:leading-14 xl:leading-16"
             >
                 Tu marca merece verse tan <span className="text-brandgold-600">profesional</span> como el trabajo que haces.
             </h1>
