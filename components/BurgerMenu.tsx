@@ -23,7 +23,7 @@ const BurgerMenu = () => {
 
     return (
         <div className="
-            h-7 aspect-square lg:hidden relative
+            h-6 aspect-square lg:hidden relative
             text-white-1"
         >
             {/* Burger icon */}
