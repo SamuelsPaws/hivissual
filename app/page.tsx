@@ -49,35 +49,57 @@ export default function Home() {
         bgColor="bg-brandblack-100"
       >
         <div className="
-          w-full lg:w-fit lg:mx-auto
-          flex flex-col lg:flex-row gap-8"
+            w-fit mx-auto
+            flex justify-center gap-8 flex-wrap"
         >
-          <ServiceCard title="Fotografía">
-            <ul className="
-              flex flex-col gap-4
-              text-md lg:text-lg"
-            >
-              <ServiceCardLi>
-                Sesiones fotográficas profesionales para empresas, marcas y negocios
-              </ServiceCardLi>
-              <ServiceCardLi>
-                Imágenes pensadas para transmitir confianza en tus publicidades
-              </ServiceCardLi>
-            </ul>
-          </ServiceCard>
-          <ServiceCard title="Producción de Video">
-            <ul className="
-              flex flex-col gap-4
-              text-md lg:text-lg"
-            >
-              <ServiceCardLi>
-                Sesiones fotográficas profesionales para empresas, marcas y negocios
-              </ServiceCardLi>
-              <ServiceCardLi>
-                Imágenes pensadas para transmitir confianza en tus publicidades
-              </ServiceCardLi>
-            </ul>
-          </ServiceCard>
+            <ServiceCard title="Fotografía">
+                <ul className="
+                    flex flex-col gap-4
+                    text-md lg:text-md"
+                >
+                    <ServiceCardLi>
+                        Fotografía comercial
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Fotografía de producto
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Fotografía para redes sociales
+                    </ServiceCardLi>
+                </ul>
+            </ServiceCard>
+            <ServiceCard title="Producción de Video">
+                <ul className="
+                    flex flex-col gap-4
+                    text-md lg:text-md"
+                >
+                    <ServiceCardLi>
+                        Videos promocionales
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Reels y contenido corto
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Producción audiovisual para marcas
+                    </ServiceCardLi>
+                </ul>
+            </ServiceCard>
+            <ServiceCard title="Estrategia de Contenido">
+                <ul className="
+                    flex flex-col gap-4
+                    text-md lg:text-md"
+                >
+                    <ServiceCardLi>
+                        Planificación de contenido
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Dirección creativa
+                    </ServiceCardLi>
+                    <ServiceCardLi>
+                        Contenido orientado al crecimiento digital
+                    </ServiceCardLi>
+                </ul>
+            </ServiceCard>
         </div>
       </SectionContentSt>
       <SectionContentCen

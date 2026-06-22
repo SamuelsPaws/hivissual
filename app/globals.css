@@ -18,6 +18,8 @@
   --color-brandblack-200: #1a1a1c;
   --color-brandgray-100: #26262A;
   --color-brandgray-200: #38383E;
+  --color-brandgray-300: #45454F;
+  --color-brandgray-400: #51515C;
   --color-brandgold-100: #4F4519;
   --color-brandgold-600: #C9B23F;
   --color-whatsapp-600: #25d366;
@@ -65,8 +67,8 @@ button:hover {
   border-radius: inherit;
   background: linear-gradient(
     45deg,
-    #72540762,
-    #ababab14,
+    #7e6c4069,
+    #ababab11,
     #d5d8db6d
   );
   -webkit-mask:

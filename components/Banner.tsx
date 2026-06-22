@@ -9,7 +9,7 @@ interface Props {
 const Banner = ({ title, description, bgSrc }: Props) => {
   return (
     <section className="
-        h-70 lg:h-95 relative
+        h-70 lg:h-90 relative
         p-8 lg:p-16
         flex flex-col justify-end items-start gap-4 lg:gap-8"
     >
@@ -19,7 +19,7 @@ const Banner = ({ title, description, bgSrc }: Props) => {
                 src={bgSrc}
                 fill
                 sizes="100%"
-                className="w-full object-cover object-center"
+                className="w-full object-cover object-[0%_35%]"
                 priority
                 alt="Stock"
             />

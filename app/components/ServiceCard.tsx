@@ -12,8 +12,8 @@ const ServiceCard = ({ title, children }: Props) => {
         gradient-border"
     >
         <h3 className="
-        mb-8 lg:mb-12
-        text-brandwhite text-xl lg:text-3xl font-semibold"
+            mb-8 lg:mb-8
+            text-brandwhite text-xl lg:text-2xl font-semibold"
         >
             {title}
         </h3>

@@ -36,7 +36,7 @@ const Header = () => {
             "flex items-center",
             "rounded-md lg:rounded-xl",
             "duration-300",
-            isAtTop ? "bg-transparent px-0" : "bg-gray-700/70 px-4 backdrop-blur-md"
+            isAtTop ? "bg-transparent px-0" : "bg-gray-700/70 px-4 backdrop-blur-sm"
         )}>
             {/* Logo/Home */}
             <Link
@@ -68,7 +68,7 @@ const Header = () => {
                 isAtTop ?
                 "bg-transparent backgrop-blur-none"
                 :
-                "bg-gray-600/70 backdrop-blur-md"
+                "bg-gray-600/70 backdrop-blur-sm"
             )}></div>
             {/* Nav */}
             <nav className="hidden lg:block">

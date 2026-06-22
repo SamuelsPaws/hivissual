@@ -53,7 +53,7 @@ export default async function Portfolio({ searchParams }: Props) {
         <Banner
             title="Mi Trabajo"
             description="Explora proyectos, fotografías y producciones creadas para marcas y profesionales."
-            bgSrc="/assets/about-5.webp"
+            bgSrc="/assets/banner.webp"
         />
         {/* Content section */}
         <SectionContentFr bgColor="bg-brandblack-100">
