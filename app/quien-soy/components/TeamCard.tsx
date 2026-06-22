@@ -8,9 +8,9 @@ interface Props {
 
 const TeamCard = ({ name, role, imgSrc }: Props) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="w-[80%] lg:w-auto flex flex-col gap-4 lg:gap-8">
         <div className="
-            w-75 aspect-square relative
+            w-full lg:w-75 aspect-square relative
             rounded-4xl overflow-hidden"
         >
             <Image
@@ -22,10 +22,10 @@ const TeamCard = ({ name, role, imgSrc }: Props) => {
             />
         </div>
         <div className="self-stretch flex flex-col items-center gap-2">
-            <span className="text-3xl text-brandwhite font-semibold">
+            <span className="text-2xl lg:text-3xl text-brandwhite font-semibold">
                 {name}
             </span>
-            <span className="text-lg text-gray-200">
+            <span className="text-md lg:text-lg text-gray-200">
                 {role}
             </span>
         </div>

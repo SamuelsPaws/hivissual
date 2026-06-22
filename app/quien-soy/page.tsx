@@ -24,30 +24,32 @@ export default function About() {
             {/* Div with two columns */}
             <div className="
                 w-full
-                flex items-start gap-8"
+                flex flex-col lg:flex-row items-start gap-4 lg:gap-8"
             >
                 <div className="
-                    flex-1
+                    w-full flex-auto
+                    lg:w-auto lg:flex-1
                     flex flex-col"
                 >
                     <p className="
-                        mb-8 p-8 relative
-                        text-lg text-black
+                        mb-4 lg:mb-8 p-8 relative
+                        text-sm lg:text-lg text-black
                         bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
                     >
                         Hivissual es un estudio creativo especializado en la creación de contenido visual y gestión de redes sociales, enfocado en ayudar a emprendedores y marcas personales a destacar en el entorno digital.
                     </p>
                     <p className="
-                        mb-16 p-8 relative
-                        text-lg text-gray-200
+                        p-8 relative
+                        text-sm lg:text-lg text-gray-200
                         gradient-border rounded-2xl"
                     >
-                        Mi trabajo se basa en una idea simple: cada marca tiene una historia que merece ser contada de la mejor manera posible. Disfruto acompañar a mis clientes desde la idea inicial hasta el resultado final, construyendo una relación cercana que me permite comprender a fondo sus objetivos y necesidades. Esta forma de trabajar me ayuda a crear contenido visual auténtico, estratégico y alineado con el crecimiento de cada marca. Cuando colaboro con personas y empresas comprometidas con su presencia digital, es donde mi combinación de creatividad, dirección visual y marketing logra generar el mayor impacto.
+                        Mi trabajo se basa en una idea simple: cada marca tiene una historia que merece ser contada de la mejor manera posible. Disfruto acompañar a mis clientes desde la idea inicial hasta el resultado final, construyendo una relación cercana que me permite comprender a fondo sus objetivos y necesidades. Esta forma de trabajar me ayuda a crear contenido visual auténtico, estratégico y alineado con el crecimiento de cada marca.
                     </p>
                 </div>
                 {/* Images grid */}
                 <div className="
-                    w-120 h-160
+                    w-full h-100
+                    lg:w-120 lg:h-160
                     grid grid-cols-[1fr_1fr]"
                 >
                     <div className="
@@ -85,37 +87,40 @@ export default function About() {
             bgColor="bg-brandblack-200"
         >
             <div className="
-                w-fit mx-auto
-                flex items-center gap-8"
+                w-full lg:w-fit mx-auto
+                flex flex-col lg:flex-row items-center gap-4 lg:gap-8"
             >
-                <div className="flex flex-col gap-8">
+                <div className="
+                    flex flex-col gap-4 lg:gap-8
+                    text-sm lg:text-lg"
+                >
                     <div className="
-                        w-140 p-8 relative
+                        w-full lg:w-140 p-8 relative
                         bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
                     >
-                        <p className="pb-2 text-md text-black text-left">
+                        <p className="text-black text-left">
                             Mi pasión por la fotografía y el video comenzó desde muy joven, pero mi camino profesional tomó forma a los 21 años, cuando tuve la oportunidad de incorporarme al equipo de Meraki Beauty Center.
                         </p>
                     </div>
                     <div className="
-                        w-140 p-8 relative
+                        w-full lg:w-140 p-8 relative
                         bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
                     >
-                        <p className="text-md text-black text-left">
+                        <p className="text-black text-left">
                             En ese momento también me encontraba estudiando Artes Visuales, una experiencia que me permitió combinar la creatividad con el marketing digital.
                         </p>
                     </div>
                     <div className="
-                        w-140 p-8 relative
+                        w-full lg:w-140 p-8 relative
                         bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
                     >
-                        <p className="text-md text-black text-left">
+                        <p className="text-black text-left">
                             Desde entonces, he desarrollado un enfoque que une la estética y la estrategia, creando contenido visual que no solo capta la atención, sino que también ayuda a las marcas a conectar con su audiencia y alcanzar sus objetivos comerciales.
                         </p>
                     </div>
                 </div>
                 <div className="
-                    w-100 aspect-square relative
+                    w-full lg:w-100 aspect-square relative
                     rounded-4xl overflow-hidden"
                 >
                     <Image
@@ -132,7 +137,7 @@ export default function About() {
             bgColor="bg-brandgray-100"
             title="Mi Experiencia"
         >
-            <p className="mb-16 text-lg text-center text-gray-200">
+            <p className="mb-8 lg:mb-16 text-md lg:text-lg text-center text-gray-200">
                 Más de <span className="font-semibold">5 años</span> ayudando a marcas y negocios a fortalecer su presencia digital mediante contenido visual estratégico.
             </p>
             <div className="
@@ -195,7 +200,7 @@ export default function About() {
         >
             <div className="
                 w-fit mx-auto
-                flex justify-center gap-x-8 gap-y-16 flex-wrap"
+                flex justify-center gap-x-8 gap-y-8 lg:gap-y-16 flex-wrap"
             >
                 <TeamCard
                     name="Milena Ayala"
@@ -218,7 +223,11 @@ export default function About() {
                     imgSrc="/assets/about-2.webp"
                 />
             </div>
-            <div className="w-fit mt-16 mx-auto">
+            <div className="
+                w-full lg:w-fit
+                mt-8 lg:mt-16
+                mx-auto flex justify-center"
+            >
                 <TeamCard
                     name="Martín Espín"
                     role="Filmmaker y Fundador"
@@ -231,14 +240,14 @@ export default function About() {
             bgColor="bg-brandgray-300"
         >
             <p className="
-                w-[80%] mx-auto mb-16
-                text-lg text-brandwhite text-center"
+                w-full lg:w-[80%] mx-auto mb-8 lg:mb-16
+                text-md lg:text-lg text-brandwhite text-center"
             >
                 Cada proyecto es diferente, pero mi enfoque siempre parte de la misma idea: entender la visión de cada cliente y transformarla en contenido que genere impacto.
             </p>
             <div className="
                 w-fit mx-auto
-                flex gap-8 flex-wrap"
+                flex gap-4 lg:gap-8 flex-wrap"
             >
                 <TrustCard
                     title="Cercanía y trato directo"

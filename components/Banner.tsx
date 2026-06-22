@@ -9,7 +9,7 @@ interface Props {
 const Banner = ({ title, description, bgSrc }: Props) => {
   return (
     <section className="
-        h-70 lg:h-90 relative
+        h-60 lg:h-90 relative
         p-8 lg:p-16
         flex flex-col justify-end items-start gap-4 lg:gap-8"
     >
