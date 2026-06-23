@@ -1,4 +1,4 @@
-import { Media, Project } from '@/lib/types';
+import { Media } from '@/lib/types';
 import itemTypeMapper from '@/lib/utils/itemTypeMapper';
 import clsx from 'clsx';
 import Image from 'next/image'

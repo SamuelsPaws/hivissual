@@ -8,71 +8,7 @@ import SectionContentSt from "@/components/SectionContentSt";
 import RelatedProjectCard from "./components/RelatedProjectCard";
 import Link from "next/link";
 import SectionCTA from "@/components/SectionCTA";
-import { Media } from "@/lib/types";
 import Gallery from "@/components/Gallery";
-
-const exampleMediaArr: Media[] = [
-    {
-        type: 'image',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Mama Cuchara',
-        projectSlug: null
-    },
-    {
-        type: 'image',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Mama Cuchara',
-        projectSlug: null
-    },
-    {
-        type: 'image',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Mama Cuchara',
-        projectSlug: null
-    },
-    {
-        type: 'image',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Mama Cuchara',
-        projectSlug: null
-    },
-    {
-        type: 'project',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Restaurante ABC',
-        projectSlug: 'hola'
-    },
-    {
-        type: 'video',
-        src: 'https://player.vimeo.com/video/1202614198?autoplay=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/hero.webp',
-        client: 'No one',
-        projectSlug: null
-    },
-]
 
 export default async function ProjectSlug() {
     return (
@@ -174,7 +110,7 @@ export default async function ProjectSlug() {
                 Galería
             </H2>
             {/* Gallery grid */}
-            <Gallery mediaArr={exampleMediaArr} />
+            {/* <Gallery mediaArr={exampleMediaArr} /> */}
         </SectionContentFr>
         <SectionContentSt
             title="Otros Proyectos"

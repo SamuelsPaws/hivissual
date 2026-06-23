@@ -1,5 +1,5 @@
 'use client'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import FilterTag from './FilterTag'
 import GalleryGrid from './GalleryGrid'
 import Lightbox from '@/components/Lightbox'

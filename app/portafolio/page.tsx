@@ -1,7 +1,6 @@
 import SectionContentFr from "@/components/SectionContentFr";
 import Banner from "@/components/Banner";
 import Gallery from "@/components/Gallery";
-import { Media } from "@/lib/types";
 import SectionCTA from "@/components/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
 import { getMedia } from "@/lib/contentful-queries";
