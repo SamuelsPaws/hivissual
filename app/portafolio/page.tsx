@@ -4,6 +4,7 @@ import Gallery from "@/components/Gallery";
 import { Media } from "@/lib/types";
 import SectionCTA from "@/components/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
+import { getMedia } from "@/lib/contentful-queries";
 
 type Props = {
     searchParams: Promise<{
@@ -11,42 +12,10 @@ type Props = {
     }>;
 }
 
-const exampleMediaArr: Media[] = [
-    {
-        type: 'image',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Mama Cuchara',
-        projectSlug: null
-    },
-    {
-        type: 'project',
-        src: '/assets/stock.jpg',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/stock.jpg',
-        client: 'Restaurante ABC',
-        projectSlug: 'hola'
-    },
-    {
-        type: 'video',
-        src: 'https://player.vimeo.com/video/1202614198?autoplay=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
-        alt: 'Stock photo',
-        title: 'Stock Photo',
-        caption: 'A Stock Photo',
-        thumbnail: '/assets/hero.webp',
-        client: 'No one',
-        projectSlug: null
-    },
-]
-
 export default async function Portfolio({ searchParams }: Props) {
     const params = await searchParams
     const page = Number(params.page ?? 1)
+    const entries = await getMedia()
 
     return (
     <main>
@@ -57,7 +26,7 @@ export default async function Portfolio({ searchParams }: Props) {
         />
         {/* Content section */}
         <SectionContentFr bgColor="bg-brandblack-100">
-            <Gallery mediaArr={exampleMediaArr} />
+            <Gallery mediaArr={entries} />
         </SectionContentFr>
         <SectionCTA bgColor="bg-brandgray-100" />
         <FooterWrapper bgColor="bg-brandgray-100" />

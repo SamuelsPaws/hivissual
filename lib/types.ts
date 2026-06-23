@@ -1,11 +1,10 @@
 export type Media = {
-    type: 'image' | 'video' | 'project',
-    src: string,
-    alt: string,
-    title: string,
-    caption: string,
-    thumbnail: string,
     client: string,
+    type: string,
+    imageUrl: string,
+    alt: string,
+    videoUrl: string | null,
+    year: string | null,
     projectSlug: string | null
 }
 

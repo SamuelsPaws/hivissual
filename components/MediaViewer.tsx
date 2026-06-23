@@ -11,7 +11,7 @@ const MediaViewer = ({ media }: Props) => {
     if (media.type === 'image' || media.type === 'project') {
         return (
             <Image
-                src={media.src}
+                src={media.imageUrl}
                 fill
                 sizes="100%"
                 className="w-full h-full object-contain z-[9960]"
@@ -20,10 +20,10 @@ const MediaViewer = ({ media }: Props) => {
         )
     }
 
-    if (media.type === 'video') {
+    if (media.type === 'video' && media.videoUrl) {
         return (
             <iframe
-                src={media.src}
+                src={media.videoUrl}
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 title="Set up your first video"
                 className="w-[70vw] aspect-video z-[9960]"

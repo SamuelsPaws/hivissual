@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import FilterTag from './FilterTag'
 import GalleryGrid from './GalleryGrid'
 import Lightbox from '@/components/Lightbox'
@@ -83,30 +83,6 @@ const Gallery = ({ mediaArr }: Props) => {
             previousMedia={previousMedia}
             nextMedia={nextMedia}
         />
-        {/* Pagination */}
-        <div className="
-            w-fit mx-auto
-            mt-8 lg:mt-16
-            flex gap-2"
-        >
-            <button className="
-                w-8 h-8
-                grid place-content-center
-                text-lg text-black
-                bg-gray-300 rounded-lg"
-            >
-                1
-            </button>
-            <button className="
-                w-8 h-8
-                grid place-content-center
-                bg-transparent
-                text-lg text-brandwhite
-                border border-brandwhite rounded-lg"
-            >
-                2
-            </button>
-        </div>
     </div>
     )
 }

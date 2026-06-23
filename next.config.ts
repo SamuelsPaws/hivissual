@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  allowedDevOrigins: [
+    'localhost',
+    '192.168.1.4'
+  ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '/4lgan033pgh0/**'
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig

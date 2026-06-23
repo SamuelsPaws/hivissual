@@ -1,7 +1,7 @@
 type ItemTypeIdentifier = 'image' | 'video' | 'project'
 type ItemTypeText = 'Fotografía' | 'Video' | 'Proyecto'
 
-export default function itemTypeMapper(itemType: ItemTypeIdentifier | ItemTypeText): ItemTypeIdentifier | ItemTypeText {
+export default function itemTypeMapper(itemType: string): ItemTypeIdentifier | ItemTypeText {
     if (itemType === 'image') return 'Fotografía'
     if (itemType === 'video') return 'Video'
     if (itemType === 'project') return 'Proyecto'
