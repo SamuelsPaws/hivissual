@@ -14,7 +14,7 @@ const LightboxInfo = ({ isOpen, toggleIsOpen, type, client, year }: Props) => {
 
     return (
     <div className={clsx(
-        isOpen ? 'w-[96%] lg:w-100 h-40 lg:h-50' : 'w-24 h-12',
+        isOpen ? 'w-[96%] lg:w-100 h-30 lg:h-50' : 'w-24 h-12',
         "absolute bottom-[2%] left-[2%] z-[9970]",
         "bg-brandblack/70 backdrop-blur-md",
         !isOpen && "lg:hover:bg-brandblack/80",
@@ -50,7 +50,7 @@ const LightboxInfo = ({ isOpen, toggleIsOpen, type, client, year }: Props) => {
                 >
                     <i className="fa fa-chevron-down"></i>
                 </div>
-                <p className="mb-4 text-xl font-semibold">
+                <p className="mb-4 text-lg lg:text-xl font-semibold">
                     {itemTypeMapper(type)}
                 </p>
                 {/* Wrapper for client, year, etc */}
@@ -58,11 +58,11 @@ const LightboxInfo = ({ isOpen, toggleIsOpen, type, client, year }: Props) => {
                     flex-1
                     flex flex-col justify-between"
                 >
-                    <p className="mb-2 text-md">
+                    <p className="mb-2 text-sm lg:text-md">
                         <span className="font-semibold">Cliente: </span>{client}
                     </p>
                     {year !== null &&
-                        <p className="text-md">
+                        <p className="text-sm lg:text-md">
                             <span className="font-semibold">Año: </span>{year}
                         </p>
                     }
