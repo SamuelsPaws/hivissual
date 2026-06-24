@@ -1,6 +1,6 @@
 'use client'
 import { Media } from "@/lib/types";
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import MediaViewer from "./MediaViewer";
 import Link from "next/link";
 import clsx from "clsx";
@@ -15,6 +15,33 @@ interface Props {
 }
 
 const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) => {
+    const [isInfoOpen, setIsInfoOpen] = useState<boolean>(false)
+    const touchStartX = useRef<number | null>(null)
+
+    const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+        const touchEndX = e.changedTouches[0].clientX
+
+        const deltaX = touchStartX.current !== null ? touchStartX.current - touchEndX : 0
+
+        if (deltaX > 75) {
+            nextMedia()
+            setIsInfoOpen(false)
+        }
+
+        if (deltaX < -75) {
+            previousMedia()
+            setIsInfoOpen(false)
+        }
+    }
+
+    const toggleIsInfoOpen = () => {
+        setIsInfoOpen(!isInfoOpen)
+    }
+
     useEffect(() => {
         if (!isOpen) return
 
@@ -55,13 +82,17 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                 w-screen h-screen
                 bg-black/60"
         >
+            {/* X button */}
             <button
                 onClick={onClose}
-                className="absolute left-8 top-8 z-[9910]"
+                className="
+                    absolute z-[9910]
+                    left-4 top-4
+                    lg:left-8 lg:top-8"
             >
                 <img
                     src="/assets/x.svg"
-                    className="w-8 h-8 opacity-90"
+                    className="w-6 h-6 opacity-90"
                 />
             </button>
         </div>
@@ -71,6 +102,7 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             className="
                 fixed left-0 top-1/2 -translate-y-1/2 z-[9910]
                 h-60 px-8
+                hidden lg:block
                 bg-brandwhite/40 lg:hover:bg-brandwhite/70 duration-200
                 rounded-r-full"
         >
@@ -86,6 +118,7 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             className="
                 fixed right-0 top-1/2 -translate-y-1/2 z-[9910]
                 h-60 px-8
+                hidden lg:block
                 bg-brandwhite/40 lg:hover:bg-brandwhite/70 duration-200
                 rounded-l-full"
         >
@@ -97,12 +130,17 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             />
         </button>
         {/* Media viewer wrapper */}
-        <div className={clsx(
-            "fixed top-1/2 left-1/2 -translate-1/2 z-[9950]",
-            media?.type === 'video' ? "w-fit" : "w-[80vw] h-[80vh]",
-            "flex flex-col",
-            "bg-brandgray-200 rounded-2xl overflow-hidden"
-        )}>
+        <div
+            onClick={toggleIsInfoOpen}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            className={clsx(
+                "fixed top-1/2 left-1/2 -translate-1/2 z-[9950]",
+                media?.type === 'video' ? "w-fit" : "w-[80vw] aspect-[9/16] lg:w-[80vw] lg:aspect-auto lg:h-[80vh]",
+                "flex flex-col",
+                "bg-gray-100 rounded-2xl overflow-hidden"
+            )}
+        >
             <MediaViewer
                 media={media}
             />
@@ -158,7 +196,13 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                 </div>
             }
             {media !== null && media.type === 'image' &&
-                <LightboxInfo />
+                <LightboxInfo
+                    isOpen={isInfoOpen}
+                    toggleIsOpen={toggleIsInfoOpen}
+                    type={media.type}
+                    client={media.client}
+                    year={media.year}
+                />
             }
         </div>
     </div>

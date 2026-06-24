@@ -1,16 +1,21 @@
+import itemTypeMapper from "@/lib/utils/itemTypeMapper";
 import clsx from "clsx"
-import { useState } from "react"
+import { SetStateAction } from "react";
 
-const LightboxInfo = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
-    const toggleIsOpen = () => {
-        setIsOpen(!isOpen)
-    }
+interface Props {
+    isOpen: boolean;
+    toggleIsOpen: () => void;
+    type: string;
+    client: string;
+    year: string | null;
+}
+
+const LightboxInfo = ({ isOpen, toggleIsOpen, type, client, year }: Props) => {
 
     return (
     <div className={clsx(
-        isOpen ? 'w-100 h-50' : 'w-24 h-12',
-        "absolute bottom-4 left-4 z-[9970]",
+        isOpen ? 'w-[96%] lg:w-100 h-40 lg:h-50' : 'w-24 h-12',
+        "absolute bottom-[2%] left-[2%] z-[9970]",
         "bg-brandblack/70 backdrop-blur-md",
         !isOpen && "lg:hover:bg-brandblack/80",
         "rounded-lg overflow-hidden",
@@ -18,17 +23,16 @@ const LightboxInfo = () => {
     )}>
         {/* Button to open info */}
         {!isOpen &&
-            <button
-                onClick={toggleIsOpen}
-                className="
-                    w-full h-full
-                    text-lg text-brandwhite
-                    flex justify-center items-center
-                    rounded-lg"
+            <div className="
+                w-full h-full
+                text-lg text-brandwhite
+                flex justify-center items-center
+                rounded-lg
+                cursor-pointer"
             >
                 <i className="fa fa-info-circle scale-90 mr-2"></i>
                 Info
-            </button>
+            </div>
         }
         {/* Open info */}
         {isOpen &&
@@ -39,17 +43,15 @@ const LightboxInfo = () => {
                 text-brandwhite"
             >
                 {/* Close button */}
-                <button
-                    onClick={toggleIsOpen}
-                    className="
-                        absolute right-2 top-2
-                        px-3 py-1
-                        text-lg"
+                <div className="
+                    absolute right-2 top-2
+                    px-3 py-1
+                    text-lg"
                 >
                     <i className="fa fa-chevron-down"></i>
-                </button>
+                </div>
                 <p className="mb-4 text-xl font-semibold">
-                    Fotografía
+                    {itemTypeMapper(type)}
                 </p>
                 {/* Wrapper for client, year, etc */}
                 <div className="
@@ -57,11 +59,13 @@ const LightboxInfo = () => {
                     flex flex-col justify-between"
                 >
                     <p className="mb-2 text-md">
-                        <span className="font-semibold">Cliente: </span>Restaurante ABC
+                        <span className="font-semibold">Cliente: </span>{client}
                     </p>
-                    <p className="text-md">
-                        <span className="font-semibold">Año: </span>2026
-                    </p>
+                    {year !== null &&
+                        <p className="text-md">
+                            <span className="font-semibold">Año: </span>{year}
+                        </p>
+                    }
                 </div>
             </div>
         }
