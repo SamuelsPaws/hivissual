@@ -174,8 +174,8 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             }
             {media !== null && media.type === 'video' &&
                 <div className="
-                    w-full h-[15%]
-                    px-2 lg:px-8 py-2 lg:py-0
+                    w-full h-[20%] lg:h-[15%]
+                    px-4 lg:px-8 py-4 lg:py-0
                     flex
                     flex-col items-start justify-between
                     lg:flex-row lg:items-center lg:justify-between lg:gap-0

@@ -27,7 +27,7 @@ const MediaViewer = ({ media }: Props) => {
                 autoPlay
                 loop
                 playsInline
-                className="w-full h-[85%] object-contain z-[9960]"
+                className="w-full h-[80%] lg:h-[85%] object-contain z-[9960]"
             ></video>
         )
     }
