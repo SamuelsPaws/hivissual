@@ -80,7 +80,7 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             className="
                 fixed top-0 left-0 z-[9900]
                 w-screen h-screen
-                bg-black/60"
+                bg-black/80"
         >
             {/* X button */}
             <button
