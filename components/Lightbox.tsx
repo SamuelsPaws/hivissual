@@ -190,7 +190,7 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                     <a
                         href="/"
                         className="
-                            block px-4 lg:px-6 py-1 lg:py-2
+                            block px-4 lg:px-6 py-2 lg:py-2
                             bg-linear-30 from-fuchsia-700 to-amber-600
                             text-sm lg:text-lg text-brandwhite font-semibold
                             rounded-full"
