@@ -26,6 +26,7 @@ const MediaViewer = ({ media }: Props) => {
                 src={media.videoUrl}
                 autoPlay
                 loop
+                playsInline
                 className="w-full h-[85%] object-contain z-[9960]"
             ></video>
         )
