@@ -4,6 +4,7 @@ export type Media = {
     imageUrl: string,
     alt: string,
     videoUrl: string | null,
+    instaUrl: string | null,
     year: string | null,
     projectSlug: string | null
 }

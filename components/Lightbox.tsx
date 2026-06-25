@@ -175,28 +175,30 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             {media !== null && media.type === 'video' &&
                 <div className="
                     w-full h-[15%]
-                    px-4 lg:px-8 py-2 lg:py-0
+                    px-2 lg:px-8 py-2 lg:py-0
                     flex
                     flex-col items-start justify-end gap-2
                     lg:flex-row lg:items-center lg:justify-between lg:gap-0
                     bg-brandblack-200"
                 >
-                    <span className="text-sm lg:text-lg text-brandwhite">
+                    <span className="ml-2 text-sm lg:text-lg text-brandwhite">
                         <span className="mr-2 font-semibold">
                             Cliente:
                         </span>
                         {media.client}
                     </span>
-                    <a
-                        href="/"
-                        className="
-                            block px-4 lg:px-6 py-2 lg:py-2
-                            bg-linear-30 from-fuchsia-700 to-amber-600
-                            text-sm lg:text-lg text-brandwhite font-semibold
-                            rounded-full"
-                    >
-                        Mira este post en Instagram
-                    </a>
+                    {media.instaUrl !== null &&
+                        <a
+                            href={media.instaUrl}
+                            className="
+                                block px-4 lg:px-6 py-2 lg:py-2
+                                bg-linear-30 from-fuchsia-700 to-amber-600
+                                text-sm lg:text-lg text-brandwhite font-semibold
+                                rounded-full"
+                        >
+                            Mira este post en Instagram
+                        </a>
+                    }
                 </div>
             }
             {media !== null && media.type === 'image' &&

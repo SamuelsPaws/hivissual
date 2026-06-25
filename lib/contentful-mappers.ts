@@ -30,6 +30,7 @@ export function mapMedia(
     imageUrl: isAsset(entry.fields.image) && hasFileUrl(entry.fields.image) ? `https:${entry.fields.image.fields.file.url}` : '',
     alt: entry.fields.description,
     videoUrl: entry.fields.videoUrl,
+    instaUrl: entry.fields.instaUrl,
     year: entry.fields.year,
     projectSlug: entry.fields.slug
   };

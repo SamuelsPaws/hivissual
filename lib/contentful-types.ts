@@ -6,6 +6,7 @@ export interface MediaFields {
   image: EntryFieldTypes.AssetLink;
   description: EntryFieldTypes.Text;
   videoUrl: EntryFieldTypes.Text;
+  instaUrl: EntryFieldTypes.Text;
   year: EntryFieldTypes.Text;
   slug: EntryFieldTypes.Text;
 }
