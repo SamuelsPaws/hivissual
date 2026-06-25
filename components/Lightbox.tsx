@@ -136,9 +136,9 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             onTouchEnd={handleTouchEnd}
             className={clsx(
                 "fixed top-1/2 left-1/2 -translate-1/2 z-[9950]",
-                media?.type === 'video' ? "w-fit" : "w-[80vw] aspect-[9/16] lg:w-[80vw] lg:aspect-auto lg:h-[80vh]",
+                "w-[80vw] aspect-[9/16] lg:w-[80vw] lg:aspect-auto lg:h-[80vh]",
                 "flex flex-col",
-                "bg-gray-100 rounded-2xl overflow-hidden"
+                "bg-brandgray-200 rounded-2xl overflow-hidden"
             )}
         >
             <MediaViewer
@@ -174,10 +174,14 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             }
             {media !== null && media.type === 'video' &&
                 <div className="
-                    w-full pl-8 pr-4 py-4
-                    flex items-center justify-between"
+                    w-full h-[15%]
+                    px-2 lg:px-8 py-2 lg:py-0
+                    flex
+                    flex-col items-start justify-between
+                    lg:flex-row lg:items-center lg:justify-between lg:gap-0
+                    bg-brandblack-200"
                 >
-                    <span className="text-lg text-brandwhite">
+                    <span className="text-sm lg:text-lg text-brandwhite">
                         <span className="mr-2 font-semibold">
                             Cliente:
                         </span>
@@ -186,9 +190,9 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                     <a
                         href="/"
                         className="
-                            block px-6 py-2
+                            block px-4 lg:px-6 py-1 lg:py-2
                             bg-linear-30 from-fuchsia-700 to-amber-600
-                            text-lg text-brandwhite font-semibold
+                            text-sm lg:text-lg text-brandwhite font-semibold
                             rounded-full"
                     >
                         Mira este post en Instagram
@@ -198,7 +202,6 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
             {media !== null && media.type === 'image' &&
                 <LightboxInfo
                     isOpen={isInfoOpen}
-                    toggleIsOpen={toggleIsInfoOpen}
                     type={media.type}
                     client={media.client}
                     year={media.year}

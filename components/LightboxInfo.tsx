@@ -1,16 +1,14 @@
 import itemTypeMapper from "@/lib/utils/itemTypeMapper";
 import clsx from "clsx"
-import { SetStateAction } from "react";
 
 interface Props {
     isOpen: boolean;
-    toggleIsOpen: () => void;
     type: string;
     client: string;
     year: string | null;
 }
 
-const LightboxInfo = ({ isOpen, toggleIsOpen, type, client, year }: Props) => {
+const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
 
     return (
     <div className={clsx(

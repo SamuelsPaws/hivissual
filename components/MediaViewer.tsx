@@ -22,12 +22,12 @@ const MediaViewer = ({ media }: Props) => {
 
     if (media.type === 'video' && media.videoUrl) {
         return (
-            <iframe
+            <video
                 src={media.videoUrl}
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                title="Set up your first video"
-                className="w-[70vw] aspect-video z-[9960]"
-            ></iframe>
+                autoPlay
+                loop
+                className="w-full h-[85%] object-contain z-[9960]"
+            ></video>
         )
     }
 
