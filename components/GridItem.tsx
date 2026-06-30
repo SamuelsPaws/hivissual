@@ -28,7 +28,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
         {/* Dark overlay */}
         <div className="
             absolute inset-0 z-10
-            bg-linear-to-b from-transparent via-brandblack/60 to-brandblack/90
+            bg-linear-to-b from-transparent via-brandblack/70 to-brandblack/90
             opacity-0 md:group-hover:opacity-100 duration-300"
         ></div>
         {/* Image (thumbnail) */}

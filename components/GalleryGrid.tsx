@@ -8,6 +8,7 @@ interface Props {
 }
 
 const GalleryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
+
   return (
     <div className="
         w-full md:w-fit mx-auto
@@ -22,7 +23,7 @@ const GalleryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
           key={index}
           setSelectedMediaIndex={setSelectedMediaIndex}
           thisMediaIndex={index}
-          thisMedia={mediaArr[index]}
+          thisMedia={el}
         />
       )}
     </div>

@@ -3,22 +3,37 @@ import { useState } from 'react'
 import FilterTag from './FilterTag'
 import GalleryGrid from './GalleryGrid'
 import Lightbox from '@/components/Lightbox'
-import { Media } from '@/lib/types'
+import { Media, PaginatedResponse } from '@/lib/types'
+import MoreBtn from '@/app/portafolio/components/MoreBtn'
+import { loadMedia } from '@/lib/actions'
 
 interface Props {
-    mediaArr: Media[];
+    initialEntries: PaginatedResponse<Media>;
 }
 
-const Gallery = ({ mediaArr }: Props) => {
+const Gallery = ({ initialEntries }: Props) => {
+    const [items, setItems] = useState<Media[]>(initialEntries.items)
+    const [hasMore, setHasMore] = useState<boolean>(initialEntries.hasMore)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
     const [categoryFilter, setCategoryFilter] = useState<string | null>(null)
     const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(null)
 
     const isLightboxOpen = selectedMediaIndex !== null
 
+    const loadMore = async () => {
+        setIsLoading(true)
+
+        const newEntries = await loadMedia(8, 8)
+
+        setItems(prev => [...prev, ...newEntries.items])
+        setHasMore(newEntries.hasMore)
+        setIsLoading(false)
+    }
+
     const previousMedia = () => {
         setSelectedMediaIndex(prev => {
             if (prev !== null) {
-                return prev > 0 ? prev - 1 : mediaArr.length - 1
+                return prev > 0 ? prev - 1 : items.length - 1
             }
 
             return null
@@ -28,7 +43,7 @@ const Gallery = ({ mediaArr }: Props) => {
     const nextMedia = () => {
         setSelectedMediaIndex(prev => {
             if (prev !== null) {
-                return (prev + 1) % mediaArr.length
+                return (prev + 1) % items.length
             }
 
             return null
@@ -37,7 +52,7 @@ const Gallery = ({ mediaArr }: Props) => {
 
     const getSelectedMedia = () => {
         if (selectedMediaIndex !== null) {
-            return mediaArr[selectedMediaIndex]
+            return items[selectedMediaIndex]
         }
 
         return null
@@ -73,9 +88,12 @@ const Gallery = ({ mediaArr }: Props) => {
         </div>
         {/* Grid */}
         <GalleryGrid
-            mediaArr={mediaArr}
+            mediaArr={items}
             setSelectedMediaIndex={setSelectedMediaIndex}
         />
+        {hasMore &&
+            <MoreBtn onClick={loadMore} isLoading={isLoading} />
+        }
         <Lightbox
             isOpen={isLightboxOpen}
             onClose={() => setSelectedMediaIndex(null)}

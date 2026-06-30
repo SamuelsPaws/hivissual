@@ -4,6 +4,7 @@ import Gallery from "@/components/Gallery";
 import SectionCTA from "@/components/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
 import { getMedia } from "@/lib/contentful-queries";
+import MoreBtn from "./components/MoreBtn";
 
 type Props = {
     searchParams: Promise<{
@@ -12,9 +13,7 @@ type Props = {
 }
 
 export default async function Portfolio({ searchParams }: Props) {
-    const params = await searchParams
-    const page = Number(params.page ?? 1)
-    const entries = await getMedia()
+    const entries = await getMedia(8, 0)
 
     return (
     <main>
@@ -25,7 +24,7 @@ export default async function Portfolio({ searchParams }: Props) {
         />
         {/* Content section */}
         <SectionContentFr bgColor="bg-brandblack-100">
-            <Gallery mediaArr={entries} />
+            <Gallery initialEntries={entries} />
         </SectionContentFr>
         <SectionCTA bgColor="bg-brandgray-100" />
         <FooterWrapper bgColor="bg-brandgray-100" />

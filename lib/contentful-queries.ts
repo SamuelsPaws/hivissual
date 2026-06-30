@@ -1,10 +1,25 @@
 import { contentful } from './contentful';
 import { mapMedia } from './contentful-mappers';
 import { MediaSkeleton } from './contentful-types';
+import { Media, PaginatedResponse } from './types';
 
-export async function getMedia() {
+export async function getMedia(
+  limit = 8,
+  offset = 0
+): Promise<PaginatedResponse<Media>> {
   const entries = await contentful.getEntries<MediaSkeleton>({
-    content_type: 'media'
-  });
-  return entries.items.map(mapMedia);
+    content_type: 'media',
+    limit,
+    skip: offset,
+    order: ['-sys.createdAt']
+  })
+
+  const items = entries.items.map(mapMedia)
+
+  return {
+    items,
+    total: entries.total,
+    hasMore: offset + items.length < entries.total,
+    nextOffset: offset + items.length
+  }
 }

@@ -9,6 +9,13 @@ export type Media = {
     projectSlug: string | null
 }
 
+export type PaginatedResponse<T> = {
+    items: T[],
+    total: number,
+    hasMore: boolean,
+    nextOffset: number
+}
+
 export type Project = {
     slug: string
     thumbnail: string,
