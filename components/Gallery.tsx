@@ -7,6 +7,7 @@ import { Media, PaginatedResponse } from '@/lib/types'
 import MoreBtn from '@/app/portafolio/components/MoreBtn'
 import { loadMedia } from '@/lib/actions'
 
+// bump
 interface Props {
     initialEntries: PaginatedResponse<Media>;
 }
