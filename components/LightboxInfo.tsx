@@ -44,7 +44,7 @@ const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
                 <div className="
                     absolute right-2 top-2
                     px-3 py-1
-                    text-lg"
+                    text-lg cursor-pointer"
                 >
                     <i className="fa fa-chevron-down"></i>
                 </div>

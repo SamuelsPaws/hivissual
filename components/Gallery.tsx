@@ -14,6 +14,7 @@ interface Props {
 
 const Gallery = ({ initialEntries }: Props) => {
     const [items, setItems] = useState<Media[]>(initialEntries.items)
+    const [nextOffset, setNextOffset] = useState<number>(initialEntries.nextOffset)
     const [hasMore, setHasMore] = useState<boolean>(initialEntries.hasMore)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [categoryFilter, setCategoryFilter] = useState<string | null>(null)
@@ -24,9 +25,10 @@ const Gallery = ({ initialEntries }: Props) => {
     const loadMore = async () => {
         setIsLoading(true)
 
-        const newEntries = await loadMedia(8, 8)
+        const newEntries = await loadMedia(8, nextOffset)
 
         setItems(prev => [...prev, ...newEntries.items])
+        setNextOffset(newEntries.nextOffset)
         setHasMore(newEntries.hasMore)
         setIsLoading(false)
     }
