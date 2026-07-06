@@ -32,6 +32,7 @@ export function mapMedia(
     videoUrl: entry.fields.videoUrl,
     instaUrl: entry.fields.instaUrl,
     year: entry.fields.year,
+    featured: entry.fields.featured,
     projectSlug: entry.fields.slug
   };
 }

@@ -6,7 +6,7 @@ interface Props {
 const ServiceCard = ({ title, children }: Props) => {
   return (
     <div className="
-        w-full lg:w-110 relative
+        w-full lg:w-100 relative
         p-8 lg:p-12
         rounded-2xl lg:rounded-4xl
         gradient-border"

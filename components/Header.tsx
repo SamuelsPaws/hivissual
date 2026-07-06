@@ -44,9 +44,9 @@ const Header = () => {
                 className="block"
             >
                 <Image
-                    src="/assets/logo.png"
-                    width={1567}
-                    height={1041}
+                    src="/assets/logo-white.svg"
+                    width={92}
+                    height={64}
                     className="w-8 lg:w-12"
                     alt="Logo"
                 />

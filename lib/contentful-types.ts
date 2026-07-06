@@ -8,6 +8,7 @@ export interface MediaFields {
   videoUrl: EntryFieldTypes.Text;
   instaUrl: EntryFieldTypes.Text;
   year: EntryFieldTypes.Text;
+  featured: EntryFieldTypes.Boolean;
   slug: EntryFieldTypes.Text;
 }
 

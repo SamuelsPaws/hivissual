@@ -1,4 +1,4 @@
-import { Media, Project } from '@/lib/types';
+import { Media } from '@/lib/types';
 import GridItem from './GridItem'
 import { SetStateAction } from 'react';
 

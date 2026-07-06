@@ -66,7 +66,7 @@ const Gallery = ({ initialEntries }: Props) => {
     return (
     <div className="w-full">
         {/* Filters */}
-        <div className="mb-8 lg:mb-16 flex items-center gap-4 flex-wrap">
+        {false && <div className="mb-8 lg:mb-16 flex items-center gap-4 flex-wrap">
             <span className="text-md lg:text-lg text-brandwhite">
                 Filtros:
             </span>
@@ -88,7 +88,7 @@ const Gallery = ({ initialEntries }: Props) => {
                 selectedCategory={categoryFilter}
                 setCategoryFilter={setCategoryFilter}
             />
-        </div>
+        </div>}
         {/* Grid */}
         <GalleryGrid
             mediaArr={items}

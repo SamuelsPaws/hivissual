@@ -29,7 +29,7 @@ const Footer = () => {
           lg:w-40 lg:h-20 relative"
         >
           <Image
-            src="/assets/logo.png"
+            src="/assets/logo-black.svg"
             fill
             sizes="100%"
             className="w-full object-contain"

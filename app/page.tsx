@@ -1,14 +1,17 @@
 import SectionContentSt from "@/components/SectionContentSt";
 import Hero from "./components/Hero";
 import Image from "next/image";
-import MasonryItem from "./components/MasonryItem";
 import Link from "next/link";
 import ServiceCard from "./components/ServiceCard";
 import ServiceCardLi from "./components/ServiceCardLi";
 import SectionContentCen from "@/components/SectionContentCen";
 import SectionCTA from "@/components/SectionCTA";
+import { getFeaturedMedia } from "@/lib/contentful-queries";
+import GallerySimple from "@/components/GallerySimple";
 
-export default function Home() {
+export default async function Home() {
+  const featuredEntries = await getFeaturedMedia()
+
   return (
     <main>
       <Hero />
@@ -17,20 +20,7 @@ export default function Home() {
         bgColor="bg-brandblack"
       >
         {/* Masonry Grid */}
-        <div className="
-          w-full mb-8
-          md:w-fit md:mx-auto md:mb-24
-          grid
-          grid-cols-2 grid-rows-[repeat(4,200px)] gap-4
-          md:grid-cols-[repeat(4,220px)] md:grid-rows-[repeat(2,160px)] md:gap-8"
-        >
-          <MasonryItem spansTwoRows={false} spansTwoCols={true} />
-          <MasonryItem spansTwoRows={true} spansTwoCols={false} />
-          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
-          <MasonryItem spansTwoRows={true} spansTwoCols={true} />
-          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
-          <MasonryItem spansTwoRows={false} spansTwoCols={false} />
-        </div>
+        <GallerySimple items={featuredEntries} />
         <Link
           href="/portafolio"
           className="

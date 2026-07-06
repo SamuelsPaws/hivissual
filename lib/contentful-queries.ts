@@ -11,7 +11,7 @@ export async function getMedia(
     content_type: 'media',
     limit,
     skip: offset,
-    order: ['-sys.createdAt']
+    order: ['-sys.createdAt'],
   })
 
   const items = entries.items.map(mapMedia)
@@ -22,4 +22,13 @@ export async function getMedia(
     hasMore: offset + items.length < entries.total,
     nextOffset: offset + items.length
   }
+}
+
+export async function getFeaturedMedia(): Promise<Media[]> {
+  const entries = await contentful.getEntries<MediaSkeleton>({
+    content_type: 'media',
+    "fields.featured": true
+  })
+
+  return entries.items.map(mapMedia)
 }
