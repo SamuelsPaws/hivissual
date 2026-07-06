@@ -1,6 +1,8 @@
+'use client'
 import { Media } from '@/lib/types';
 import itemTypeMapper from '@/lib/utils/itemTypeMapper';
 import clsx from 'clsx';
+import { motion } from 'motion/react';
 import Image from 'next/image'
 import { SetStateAction } from 'react';
 
@@ -18,7 +20,7 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
     }
 
   return (
-    <button
+    <motion.button
         onClick={handleClick}
         className={clsx(
             "relative",
@@ -28,6 +30,9 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
             spansTwoRows && "md:row-span-2",
             spansTwoCols && "col-span-2 md:col-span-1"
         )}
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
+        viewport={{ once: true, margin: '-24px 0px' }}
     >
         {/* Dark overlay */}
         <div className="
@@ -80,7 +85,7 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
                 </div>
             </div>
         </div>
-    </button>
+    </motion.button>
   )
 }
 
