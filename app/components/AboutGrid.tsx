@@ -35,8 +35,8 @@ const AboutGrid = () => {
                 whileInView='visible'
                 viewport={{ once: true, margin: '-24px 0px' }}
             >
-                <p className="text-gray-200 text-md lg:text-lg">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes
+                <p className="text-gray-200 text-md lg:text-md">
+                    Hivissual es un estudio creativo especializado en la creación de contenido visual y gestión de redes sociales, enfocado en ayudar a emprendedores y marcas personales a destacar en el entorno digital.
                 </p>
             </motion.div>
             <motion.div
@@ -49,8 +49,8 @@ const AboutGrid = () => {
                 whileInView='visible'
                 viewport={{ once: true, margin: '-24px 0px' }}
             >
-                <p className="text-black text-md lg:text-lg font-semibold">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes
+                <p className="text-black text-md lg:text-md font-normal">
+                    Mi trabajo se basa en una idea simple: cada marca tiene una historia que merece ser contada de la mejor manera posible. Esta filosofía me ayuda a crear contenido visual auténtico, estratégico y alineado con el crecimiento de cada marca.
                 </p>
             </motion.div>
         </div>

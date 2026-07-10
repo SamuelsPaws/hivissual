@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import HeroLeftPart from "./HeroLeftPart"
 
 const Hero = () => {
@@ -17,7 +16,7 @@ const Hero = () => {
                 sizes="100%"
                 className="w-full h-full object-cover object-[80%_100%] lg:object-top-right"
                 priority
-                alt="Hero image"
+                alt="Imagen de Hivissual"
             />
         </div>
         {/* Dark Overlay */}

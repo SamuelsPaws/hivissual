@@ -68,7 +68,7 @@ const Header = () => {
                 isAtTop ?
                 "bg-transparent backgrop-blur-none"
                 :
-                "bg-gray-600/70 backdrop-blur-sm"
+                "bg-gray-700/70 backdrop-blur-sm"
             )}></div>
             {/* Nav */}
             <nav className="hidden lg:block">
@@ -95,14 +95,14 @@ const Header = () => {
                     </li>
                     <li>
                         <Link
-                            href='/contacto'
+                            href='/cotizaciones'
                             className="
                                 block px-4 py-1 relative
                                 bg-brandwhite
                                 text-black text-md font-semibold
                                 rounded-full"
                         >
-                            Contáctame
+                            Cotizar
                         </Link>
                     </li>
                 </ul>

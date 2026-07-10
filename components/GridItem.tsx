@@ -1,6 +1,8 @@
+'use client'
 import { Media } from '@/lib/types';
 import itemTypeMapper from '@/lib/utils/itemTypeMapper';
 import clsx from 'clsx';
+import { motion } from 'motion/react';
 import Image from 'next/image'
 import { SetStateAction } from 'react';
 
@@ -16,7 +18,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
     }
 
   return (
-    <button
+    <motion.button
         onClick={handleClick}
         className='
             w-full h-60 aspect-auto relative
@@ -24,6 +26,9 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
             flex flex-col justify-end
             md:hover:scale-105 duration-300 group
             rounded-4xl overflow-hidden'
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
+        viewport={{ once: true, margin: '-24px 0px' }}
     >
         {/* Dark overlay */}
         <div className="
@@ -76,7 +81,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
                 </div>
             </div>
         </div>
-    </button>
+    </motion.button>
   )
 }
 

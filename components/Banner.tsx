@@ -1,5 +1,3 @@
-'use client'
-import { motion } from 'motion/react';
 import Image from 'next/image'
 
 interface Props {
@@ -29,25 +27,19 @@ const Banner = ({ title, description, bgSrc }: Props) => {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/60 z-10"></div>
         {/* Actual content */}
-        <motion.h1
-            className="
-                z-20 relative
-                text-4xl lg:text-6xl text-brandwhite font-semibold"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+        <h1 className="
+            z-20 relative
+            text-4xl lg:text-6xl text-brandwhite font-semibold"
         >
             {title}
-        </motion.h1>
+        </h1>
         {description &&
-            <motion.p
-                className="
-                    z-20 relative
-                    text-sm lg:text-lg text-brandwhite"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.4 } }}
+            <p className="
+                z-20 relative
+                text-sm lg:text-lg text-brandwhite"
             >
                 {description}
-            </motion.p>
+            </p>
         }
     </section>
   )

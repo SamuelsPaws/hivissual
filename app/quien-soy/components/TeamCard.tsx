@@ -1,3 +1,5 @@
+'use client'
+import { motion } from "motion/react";
 import Image from "next/image"
 
 interface Props {
@@ -6,9 +8,29 @@ interface Props {
     imgSrc: string;
 }
 
+const variants = {
+    hidden: {
+        opacity: 0,
+        y: 16
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.4
+        }
+    }
+}
+
 const TeamCard = ({ name, role, imgSrc }: Props) => {
   return (
-    <div className="w-[80%] lg:w-auto flex flex-col gap-4 lg:gap-8">
+    <motion.div
+        className="w-[80%] lg:w-auto flex flex-col gap-4 lg:gap-8"
+        variants={variants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, margin: '-24px 0px' }}
+    >
         <div className="
             w-full lg:w-75 aspect-square relative
             rounded-4xl overflow-hidden"
@@ -29,7 +51,7 @@ const TeamCard = ({ name, role, imgSrc }: Props) => {
                 {role}
             </span>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

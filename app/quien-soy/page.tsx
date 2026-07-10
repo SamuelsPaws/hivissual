@@ -4,11 +4,11 @@ import SectionContentCen from "@/components/SectionContentCen";
 import SectionContentFr from "@/components/SectionContentFr";
 import SectionContentSt from "@/components/SectionContentSt";
 import SectionCTA from "@/components/SectionCTA";
-import Image from "next/image";
-import ServiceCard from "./components/ServiceCard";
-import ServiceCardLi from "./components/ServiceCardLi";
 import TeamCard from "./components/TeamCard";
 import TrustCard from "./components/TrustCard";
+import ImageGrid from "./components/ImageGrid";
+import StoryGrid from "./components/StoryGrid";
+import ServiceGrid from "./components/ServiceGrid";
 
 export default function About() {
     return (
@@ -26,6 +26,7 @@ export default function About() {
                 w-full
                 flex flex-col lg:flex-row items-start gap-4 lg:gap-8"
             >
+                {/* Text column */}
                 <div className="
                     w-full flex-auto
                     lg:w-auto lg:flex-1
@@ -47,91 +48,14 @@ export default function About() {
                     </p>
                 </div>
                 {/* Images grid */}
-                <div className="
-                    w-full h-100
-                    lg:w-120 lg:h-160
-                    grid grid-cols-[1fr_1fr]"
-                >
-                    <div className="
-                        w-[140%] aspect-square relative
-                        rounded-4xl overflow-hidden"
-                    >
-                        <Image
-                            src="/assets/about-2.webp"
-                            fill
-                            sizes="100%"
-                            className="w-full h-full object-cover scale-200"
-                            alt="Fotografía del fundador de la marca"
-                        />
-                    </div>
-                    <div></div>
-                    <div></div>
-                    <div className="
-                        w-[140%] aspect-square relative
-                        place-self-end
-                        rounded-4xl overflow-hidden shadow-[-4px_-4px_8px_rgb(0,0,0,0.15)]"
-                    >
-                        <Image
-                            src="/assets/about-3.webp"
-                            fill
-                            sizes="100%"
-                            className="w-full h-full object-cover scale-200"
-                            alt="Fotografía del fundador de la marca"
-                        />
-                    </div>
-                </div>
+                <ImageGrid />
             </div>
         </SectionContentFr>
         <SectionContentSt
             title="Mi Historia"
             bgColor="bg-brandblack-200"
         >
-            <div className="
-                w-full lg:w-fit mx-auto
-                flex flex-col lg:flex-row items-center gap-4 lg:gap-8"
-            >
-                <div className="
-                    flex flex-col gap-4 lg:gap-8
-                    text-sm lg:text-lg"
-                >
-                    <div className="
-                        w-full lg:w-140 p-8 relative
-                        bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
-                    >
-                        <p className="text-black text-left">
-                            Mi pasión por la fotografía y el video comenzó desde muy joven, pero mi camino profesional tomó forma a los 21 años, cuando tuve la oportunidad de incorporarme al equipo de Meraki Beauty Center.
-                        </p>
-                    </div>
-                    <div className="
-                        w-full lg:w-140 p-8 relative
-                        bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
-                    >
-                        <p className="text-black text-left">
-                            En ese momento también me encontraba estudiando Artes Visuales, una experiencia que me permitió combinar la creatividad con el marketing digital.
-                        </p>
-                    </div>
-                    <div className="
-                        w-full lg:w-140 p-8 relative
-                        bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
-                    >
-                        <p className="text-black text-left">
-                            Desde entonces, he desarrollado un enfoque que une la estética y la estrategia, creando contenido visual que no solo capta la atención, sino que también ayuda a las marcas a conectar con su audiencia y alcanzar sus objetivos comerciales.
-                        </p>
-                    </div>
-                </div>
-                <div className="
-                    w-full lg:w-100 aspect-square relative
-                    rounded-4xl overflow-hidden"
-                >
-                    <Image
-                        src="/assets/about-1.webp"
-                        fill
-                        sizes="100%"
-                        className="w-full h-full object-cover"
-                        alt="Yo"
-                    />
-                </div>
-            </div>
+            <StoryGrid />
         </SectionContentSt>
         <SectionContentCen
             bgColor="bg-brandgray-100"
@@ -140,59 +64,7 @@ export default function About() {
             <p className="mb-8 lg:mb-16 text-md lg:text-lg text-center text-gray-200">
                 Más de <span className="font-semibold">5 años</span> ayudando a marcas y negocios a fortalecer su presencia digital mediante contenido visual estratégico.
             </p>
-            <div className="
-                w-fit mx-auto
-                flex justify-center gap-8 flex-wrap"
-            >
-                <ServiceCard title="Fotografía">
-                    <ul className="
-                        flex flex-col gap-4
-                        text-md lg:text-md"
-                    >
-                        <ServiceCardLi>
-                            Fotografía comercial
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Fotografía de producto
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Fotografía para redes sociales
-                        </ServiceCardLi>
-                    </ul>
-                </ServiceCard>
-                <ServiceCard title="Producción de Video">
-                    <ul className="
-                        flex flex-col gap-4
-                        text-md lg:text-md"
-                    >
-                        <ServiceCardLi>
-                            Videos promocionales
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Reels y contenido corto
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Producción audiovisual para marcas
-                        </ServiceCardLi>
-                    </ul>
-                </ServiceCard>
-                <ServiceCard title="Estrategia de Contenido">
-                    <ul className="
-                        flex flex-col gap-4
-                        text-md lg:text-md"
-                    >
-                        <ServiceCardLi>
-                            Planificación de contenido
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Dirección creativa
-                        </ServiceCardLi>
-                        <ServiceCardLi>
-                            Contenido orientado al crecimiento digital
-                        </ServiceCardLi>
-                    </ul>
-                </ServiceCard>
-            </div>
+            <ServiceGrid />
         </SectionContentCen>
         <SectionContentSt
             title="Mi Equipo"
