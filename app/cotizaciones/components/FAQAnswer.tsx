@@ -25,7 +25,7 @@ const FAQAnswer = ({ text }: Props) => {
         className="
             mb-8 lg:mb-16 p-4
             text-sm lg:text-lg text-gray-200
-            border border-gray-500 rounded-xl"
+            border border-brandgold-100 rounded-xl"
         variants={variants}
         initial='hidden'
         whileInView='visible'

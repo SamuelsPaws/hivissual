@@ -55,7 +55,7 @@ const HeroLeftPart = () => {
         <motion.h1
             className="
                 text-3xl leading-12
-                lg:text-5xl lg:leading-16
+                lg:text-6xl lg:leading-20
                 text-brandwhite text-center font-semibold"
             variants={variants.h1}
             initial="hidden"

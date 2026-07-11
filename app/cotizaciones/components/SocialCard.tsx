@@ -17,7 +17,7 @@ const variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.2
+            duration: 0.4
         }
     }
 }
@@ -36,7 +36,7 @@ const SocialCard = ({ iconClass, text, href }: Props) => {
         variants={variants}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-16px 0px' }}
+        viewport={{ once: true, margin: '-24px 0px' }}
     >
         <i className={clsx("fa", iconClass)}></i>
         <span>{text}</span>

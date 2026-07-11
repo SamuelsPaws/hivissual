@@ -14,7 +14,7 @@ export default function Contact() {
         <section className="
             relative
             px-8 pt-24 pb-8
-            lg:px-32 lg:pt-32 lg:pb-16
+            lg:px-32 lg:pt-32 lg:pb-24
             flex flex-col lg:flex-row gap-8
             bg-brandblack overflow-hidden"
         >
@@ -53,7 +53,7 @@ export default function Contact() {
                 src="/assets/glow.svg"
                 className="
                     absolute
-                    w-120 top-[25%] left-[25%] opacity-60
+                    w-140 top-[25%] left-[25%] opacity-50
                     lg:w-240 lg:top-[20%] lg:left-[10%] lg:opacity-40"
             />
         </section>
@@ -86,7 +86,7 @@ export default function Contact() {
             <FAQTitle text="¿Trabajas con clientes de cualquier ciudad/país?" />
             <FAQAnswer text="Sí. Dependiendo del proyecto, puedo trabajar tanto de forma local como remota." />
             <FAQTitle text="¿Cómo puedo solicitar una cotización?" />
-            <FAQAnswer text="Puedes completar el formulario de contacto o escribirme directamente por WhatsApp para conversar sobre tu proyecto." />
+            <FAQAnswer text="Puedes utilizar el seleccionador en la parte de arriba de esta página o escribirme directamente por WhatsApp para conversar sobre tu proyecto." />
         </SectionContentSt>
         <SectionCTA bgColor="bg-brandgray-100" />
         <FooterWrapper bgColor="bg-brandgray-100" />

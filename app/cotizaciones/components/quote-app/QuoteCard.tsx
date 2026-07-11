@@ -2,7 +2,7 @@
 import { useState } from "react"
 import SelectBtn from "./SelectBtn"
 
-type Screen = 'main' | 'photoFirst' | 'videoFirst'
+type Screen = 'main' | 'photo' | 'video' | 'both' | 'socialVideo'
 
 const QuoteCard = () => {
     const [screen, setScreen] = useState<Screen>('main')
@@ -26,25 +26,39 @@ const QuoteCard = () => {
             {screen === 'main' && <>
                 <SelectBtn
                     text="Fotografía"
-                    onClick={() => setScreen('photoFirst')}
+                    onClick={() => setScreen('photo')}
                 />
                 <SelectBtn
                     text="Video"
-                    onClick={() => setScreen('videoFirst')}
+                    onClick={() => setScreen('video')}
                 />
                 <SelectBtn
                     text="Ambos"
-                    onClick={() => setScreen('photoFirst')}
+                    onClick={() => setScreen('both')}
                 />
             </>}
-            {screen === 'videoFirst' && <>
+            {screen === 'video' && <>
                 <SelectBtn
                     text="Video Redes Sociales"
-                    onClick={() => setScreen('photoFirst')}
+                    onClick={() => setScreen('socialVideo')}
                 />
                 <SelectBtn
                     text="Video Dron"
-                    onClick={() => setScreen('videoFirst')}
+                    onClick={() => setScreen('video')}
+                />
+            </>}
+            {screen === 'socialVideo' && <>
+                <SelectBtn
+                    text="Menos de 30 segundos"
+                    onClick={() => setScreen('video')}
+                />
+                <SelectBtn
+                    text="30 segundos - 2 minutos"
+                    onClick={() => setScreen('video')}
+                />
+                <SelectBtn
+                    text="Más de 2 minutos"
+                    onClick={() => setScreen('video')}
                 />
             </>}
         </div>

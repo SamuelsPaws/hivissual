@@ -38,6 +38,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
         ></div>
         {/* Image (thumbnail) */}
         <Image
+            key={thisMediaIndex}
             src={thisMedia.imageUrl}
             fill
             sizes='100%'
