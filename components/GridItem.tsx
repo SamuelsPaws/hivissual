@@ -24,7 +24,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
             w-full h-60 aspect-auto relative
             md:w-60 md:h-auto md:aspect-square
             flex flex-col justify-end
-            md:hover:scale-105 duration-300 group
+            md:hover:scale-105 group
             rounded-4xl overflow-hidden'
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
