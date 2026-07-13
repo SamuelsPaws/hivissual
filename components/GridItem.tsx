@@ -24,11 +24,12 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
             w-full h-60 aspect-auto relative
             md:w-60 md:h-auto md:aspect-square
             flex flex-col justify-end
-            md:hover:scale-105 group
+            group
             rounded-4xl overflow-hidden'
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
         viewport={{ once: true, margin: '-24px 0px' }}
+        whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
     >
         {/* Dark overlay */}
         <div className="

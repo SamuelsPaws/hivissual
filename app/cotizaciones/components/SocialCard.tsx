@@ -32,7 +32,7 @@ const SocialCard = ({ iconClass, text, href }: Props) => {
             flex items-center gap-4
             text-xl lg:text-2xl text-gray-300
             gradient-border rounded-2xl
-            outline outline-transparent lg:hover:outline-gray-300 duration-200"
+            outline outline-transparent lg:hover:outline-gray-300"
         variants={variants}
         initial='hidden'
         whileInView='visible'

@@ -41,11 +41,7 @@ const variants = {
         },
         visible: {
             opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.2,
-                delay: 0.4
-            }
+            scale: 1
         }
     }
 }
@@ -89,6 +85,7 @@ const SectionCTA = ({ bgColor }: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-24px 0px' }}
+            transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.4 }}
         >
             Escríbeme a WhatsApp
             <i className="fa fa-whatsapp scale-150 ml-6" aria-hidden="true"></i>
