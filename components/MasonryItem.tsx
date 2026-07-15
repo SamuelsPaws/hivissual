@@ -31,7 +31,7 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
             spansTwoCols && "col-span-2 md:col-span-1"
         )}
         initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
         viewport={{ once: true, margin: '-24px 0px' }}
         whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
     >

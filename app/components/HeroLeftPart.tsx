@@ -33,15 +33,11 @@ const variants = {
     cta: {
         hidden: {
             opacity: 0,
-            y: 16
+            scale: 0.9
         },
         visible: {
             opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4,
-                delay: 0.6
-            }
+            scale: 1
         }
     },
     glow: {
@@ -91,6 +87,7 @@ const HeroLeftPart = () => {
             variants={variants.cta}
             initial="hidden"
             animate="visible"
+            transition={{ type: 'spring', stiffness: 200, damping: 14, delay: 0.6 }}
         >
             <Link
                 href='/portafolio'

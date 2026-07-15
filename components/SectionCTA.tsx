@@ -85,7 +85,7 @@ const SectionCTA = ({ bgColor }: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-24px 0px' }}
-            transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.4 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 14, delay: 0.4 }}
         >
             Escríbeme a WhatsApp
             <i className="fa fa-whatsapp scale-150 ml-6" aria-hidden="true"></i>
