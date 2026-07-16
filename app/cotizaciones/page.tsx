@@ -24,14 +24,14 @@ export default function Contact() {
                 lg:flex-1 z-10
                 flex flex-col justify-center items-center gap-8"
             >
-                <QuoteCard />
+                {/* <QuoteCard />
                 <p className="text-lg lg:text-xl text-brandwhite font-semibold">
                     O si prefieres
-                </p>
+                </p> */}
                 <a
                     href=""
                     className="
-                        px-8 py-4
+                        px-8 py-4 mt-8
                         text-brandwhite text-lg lg:text-xl font-semibold whitespace-nowrap
                         bg-whatsapp-400 rounded-full"
                 >
@@ -70,11 +70,11 @@ export default function Contact() {
                     iconClass="fa-instagram"
                     href="https://www.instagram.com/hivissual/"
                 />
-                <SocialCard
+                {/* <SocialCard
                     text="Hivissual"
                     iconClass="fa-facebook-square"
                     href="https://www.instagram.com/hivissual/"
-                />
+                /> */}
             </div>
         </SectionContentSt>
         <SectionContentSt

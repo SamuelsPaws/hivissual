@@ -17,6 +17,12 @@ export type PaginatedResponse<T> = {
     nextOffset: number
 }
 
+export type Testimonial = {
+    message: string,
+    author: string,
+    imageUrl: string
+}
+
 export type Project = {
     slug: string
     thumbnail: string,

@@ -56,7 +56,7 @@ const BurgerMenu = () => {
                 "top-0 left-0",
                 "w-screen h-[60vh]",
                 "pt-header-height-mob px-8",
-                "bg-brandgray-200 shadow-md"
+                "bg-brandblack-200 border-b border-b-white/10 shadow-md"
             )}>
                 <ul className="
                     w-full h-full
@@ -92,11 +92,11 @@ const BurgerMenu = () => {
                     </li>
                     <li>
                         <Link
-                            href='/contacto'
+                            href='/cotizaciones'
                             className="px-2"
                             onClick={toggleMenu}
                         >
-                            Contáctame
+                            Cotizaciones
                         </Link>
                     </li>
                 </ul>

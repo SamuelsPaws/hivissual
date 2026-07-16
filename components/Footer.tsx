@@ -89,10 +89,10 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="/contacto"
+              href="/cotizaciones"
               className="hover:underline"
             >
-              Contacto
+              Cotizar
             </Link>
           </li>
         </ul>
@@ -102,19 +102,19 @@ const Footer = () => {
             WhatsApp
           </span>
           <a
-            href="/"
+            href="tel:+593983523721"
             className="text-md lg:text-md text-brandblack underline"
           >
-            +593999999
+            +593 98 352 3721
           </a>
           <span className="mt-4 text-lg lg:text-xl text-black font-semibold">
             E-mail
           </span>
           <a
-            href="/"
+            href="mailto:martin.espin7@gmail.com"
             className="text-md lg:text-md text-brandblack underline"
           >
-            hivissual@example.com
+            martin.espin7@gmail.com
           </a>
         </div>
         {/* Socials */}
@@ -123,19 +123,19 @@ const Footer = () => {
             Redes Sociales
           </span>
           <a
-            href="/"
+            href="https://www.instagram.com/hivissual/"
             className="text-md lg:text-md text-brandblack underline"
           >
             <i className="fa fa-instagram mr-2" aria-hidden="true"></i>
-            hivissual
+            @hivissual
           </a>
-          <a
+          {/* <a
             href="/"
             className="text-md lg:text-md text-brandblack underline"
           >
             <i className="fa fa-facebook-square mr-2" aria-hidden="true"></i>
             Hivissual
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
