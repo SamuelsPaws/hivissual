@@ -48,7 +48,7 @@ const TestimonialSlider = ({ testimonials }: Props) => {
             }
         </div>
         <div className="
-            w-[60%] lg:w-[80%] h-120
+            w-[60%] lg:w-[80%] h-100 lg:h-120
             flex justify-center items-center gap-[64px]"
         >
             {testimonials.slice(currIndex, showingCards + currIndex).map(({ message, author, imageUrl }, index) =>
