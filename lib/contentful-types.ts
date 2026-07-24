@@ -12,4 +12,12 @@ export interface MediaFields {
   slug: EntryFieldTypes.Text;
 }
 
+export interface TestimonialFields {
+  author: EntryFieldTypes.Text;
+  message: EntryFieldTypes.Text;
+  contactLink: EntryFieldTypes.Text;
+  image?: EntryFieldTypes.AssetLink;
+}
+
 export type MediaSkeleton = EntrySkeletonType<MediaFields, 'media'>
+export type TestimonialSkeleton = EntrySkeletonType<TestimonialFields, 'testimonial'>

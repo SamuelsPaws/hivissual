@@ -1,7 +1,7 @@
 import { contentful } from './contentful';
-import { mapMedia } from './contentful-mappers';
-import { MediaSkeleton } from './contentful-types';
-import { Media, PaginatedResponse } from './types';
+import { mapMedia, mapTestimonial } from './contentful-mappers';
+import { MediaSkeleton, TestimonialSkeleton } from './contentful-types';
+import { Media, PaginatedResponse, Testimonial } from './types';
 
 export async function getMedia(
   limit = 8,
@@ -31,4 +31,12 @@ export async function getFeaturedMedia(): Promise<Media[]> {
   })
 
   return entries.items.map(mapMedia)
+}
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  const entries = await contentful.getEntries<TestimonialSkeleton>({
+    content_type: 'testimonial'
+  })
+
+  return entries.items.map(mapTestimonial)
 }

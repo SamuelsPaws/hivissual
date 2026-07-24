@@ -1,7 +1,9 @@
 'use client'
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import TestimonialTrack from "./TestimonialTrack"
 import { Testimonial } from "@/lib/types"
+import TestimonialCard from "./TestimonialCard";
+import useMediaQuery from "@/lib/hooks/useMediaQuery";
 
 interface Props {
     testimonials: Testimonial[];
@@ -9,8 +11,7 @@ interface Props {
 
 const TestimonialSlider = ({ testimonials }: Props) => {
     const [currIndex, setCurrIndex] = useState<number>(0)
-
-    const trackTranslateStr = `-translate-x-[calc(((100%+64px)/3)*${currIndex})]`
+    const showingCards = useMediaQuery("(min-width: 1024px)") ? 3 : 1
 
     const increaseCurrIndex = () => {
         setCurrIndex(prev => prev + 1)
@@ -47,19 +48,23 @@ const TestimonialSlider = ({ testimonials }: Props) => {
             }
         </div>
         <div className="
-            w-[80%]
-            overflow-hidden"
+            w-[60%] lg:w-[80%] h-120
+            flex justify-center items-center gap-[64px]"
         >
-            <TestimonialTrack
-                testimonials={testimonials}
-                translateStr={trackTranslateStr}
-            />
+            {testimonials.slice(currIndex, showingCards + currIndex).map(({ message, author, imageUrl }, index) =>
+                <TestimonialCard
+                    key={index}
+                    message={message}
+                    author={author}
+                    imageUrl={imageUrl}
+                />
+            )}
         </div>
         <div className="
             flex-1
             flex justify-end items-center"
         >
-            {currIndex < testimonials.length - 3 &&
+            {currIndex < testimonials.length - showingCards &&
                 <button
                     onClick={increaseCurrIndex}
                     className="

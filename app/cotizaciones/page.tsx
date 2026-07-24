@@ -24,10 +24,10 @@ export default function Contact() {
                 lg:flex-1 z-10
                 flex flex-col justify-center items-center gap-8"
             >
-                {/* <QuoteCard />
+                <QuoteCard />
                 <p className="text-lg lg:text-xl text-brandwhite font-semibold">
                     O si prefieres
-                </p> */}
+                </p>
                 <a
                     href=""
                     className="

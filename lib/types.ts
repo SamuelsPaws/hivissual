@@ -20,7 +20,8 @@ export type PaginatedResponse<T> = {
 export type Testimonial = {
     message: string,
     author: string,
-    imageUrl: string
+    imageUrl: string,
+    contactLink: string | null
 }
 
 export type Project = {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="63.999996"
+   height="63.999996"
+   viewBox="0 0 16.933332 16.933332"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12">
+      <circle
+         style="fill:#868f9d;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel"
+         id="circle12"
+         cx="8.4666662"
+         cy="8.4666662"
+         r="8.4666662" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer1">
+    <circle
+       style="fill:#8c99ae;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel"
+       id="path1"
+       cx="8.4666662"
+       cy="8.4666662"
+       r="8.4666662" />
+    <circle
+       style="fill:#626d80;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel"
+       id="path2"
+       cx="8.4666662"
+       cy="6.8791666"
+       r="3.7041667" />
+    <g
+       id="g3"
+       clip-path="url(#clipPath12)"
+       style="fill:#626d80;fill-opacity:1">
+      <path
+         style="fill:#626d80;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel"
+         d="m 5.9892449,9.525 c 0,0 -2.4744161,2.569586 -3.4261147,5.615021 -0.9516985,3.045436 2.1413216,3.235775 2.1413216,3.235775 H 8.654001 V 9.572585 Z"
+         id="path3" />
+      <path
+         style="fill:#626d80;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:bevel"
+         d="m 10.866839,9.525 c 0,0 2.474416,2.569587 3.426115,5.615022 0.951698,3.045436 -2.141322,3.235775 -2.141322,3.235775 H 8.2020833 V 9.572585 Z"
+         id="path3-9" />
+    </g>
+  </g>
+</svg>

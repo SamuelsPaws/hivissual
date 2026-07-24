@@ -3,52 +3,17 @@ import Hero from "./components/Hero";
 import Link from "next/link";
 import SectionContentCen from "@/components/SectionContentCen";
 import SectionCTA from "@/components/SectionCTA";
-import { getFeaturedMedia } from "@/lib/contentful-queries";
+import { getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
 import GallerySimple from "@/components/GallerySimple";
 import ServiceCardGrid from "./components/ServiceCardGrid";
 import AboutGrid from "./components/AboutGrid";
 import TestimonialSlider from "./components/TestimonialSlider";
 
-const testimonials = [
-  {
-    message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'PUTA dolor, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-  {
-    message: 'maricon MARICPON, sit amet consectetur adipisicing elit. Itaque perferendis eum perspiciatis asperiores. Ullam provident sapiente dolor cum harum commodi nesciunt quisquam suscipit molestias libero obcaecati, magni veniam, cumque officiis.',
-    author: 'Michelle Q., CEO de Meraki Beauty Center',
-    imageUrl: '/assets/about-1.webp'
-  },
-]
-
 export default async function Home() {
   const featuredEntries = await getFeaturedMedia()
+  const testimonials = await getTestimonials()
+  console.log(testimonials);
+  
 
   return (
     <main>
@@ -78,12 +43,12 @@ export default async function Home() {
       >
         <ServiceCardGrid />
       </SectionContentSt>
-      {false && <SectionContentSt
+      <SectionContentSt
         title="Reseñas y Testimonios"
         bgColor="bg-brandblack-200"
       >
         <TestimonialSlider testimonials={testimonials} />
-      </SectionContentSt>}
+      </SectionContentSt>
       <SectionContentCen
         title="Detrás de la Cámara"
         bgColor="bg-brandgray-100"

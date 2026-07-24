@@ -1,3 +1,5 @@
+'use client'
+import { motion } from "motion/react";
 import Image from "next/image"
 
 interface Props {
@@ -8,12 +10,13 @@ interface Props {
 
 const TestimonialCard = ({ message, author, imageUrl }: Props) => {
   return (
-    <div className="
-        flex-[0_0_calc((100%-128px)/3)]
-        flex flex-col items-center gap-8"
+    <motion.div
+        className="
+            w-full lg:w-1/3
+            flex flex-col items-center gap-8"
     >
         <p className="
-            text-lg text-center text-gray-200
+            text-sm lg:text-md xl:text-lg text-center text-gray-200
             before:content-['“'] before:text-2xl before:font-['Source_Serif_4']
             after:content-['”'] after:text-2xl after:font-['Source_Serif_4']"
         >
@@ -21,7 +24,7 @@ const TestimonialCard = ({ message, author, imageUrl }: Props) => {
         </p>
         {/* Lower div with name and photo */}
         <div className="
-            w-full px-8
+            w-full xl:px-8
             flex items-center gap-8"
         >
             <div className="
@@ -36,11 +39,11 @@ const TestimonialCard = ({ message, author, imageUrl }: Props) => {
                     alt="Stock"
                 />
             </div>
-            <div className="flex-1 text-md text-gray-200 text-left">
+            <div className="flex-1 text-sm xl:text-md text-gray-200 text-left">
                 — {author}
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
