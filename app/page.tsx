@@ -12,8 +12,6 @@ import TestimonialSlider from "./components/TestimonialSlider";
 export default async function Home() {
   const featuredEntries = await getFeaturedMedia()
   const testimonials = await getTestimonials()
-  console.log(testimonials);
-  
 
   return (
     <main>
