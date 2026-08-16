@@ -6,7 +6,7 @@
 }
 
 @theme inline {
-  --spacing-header-height: 4.5rem;
+  --spacing-header-height: 5rem;
   --spacing-header-height-mob: 3.5rem;
   --spacing-footer-height: 440px;
   --spacing-footer-height-mob: 760px;
@@ -25,6 +25,7 @@
   --color-whatsapp-600: #25d366;
   --color-whatsapp-500: #21B85A;
   --color-whatsapp-400: #16AB4E;
+  --text-md: 1rem;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -84,7 +85,39 @@ button:hover {
 }
 
 @layer {
-  .crossed-out {
-    @apply relative after:content-[''] after:absolute after:top-1/2 after:left-0 after:w-full after:h-[2px] after:bg-gray-500/70;
-  }
+	.crossed-out {
+		@apply relative after:content-[''] after:absolute after:top-1/2 after:left-0 after:w-full after:h-[2px] after:bg-gray-500/70;
+	}
+
+  .text-my-sm {
+		@apply text-sm md:text-sm xl:text-md;
+	}
+
+	.text-my-md {
+		@apply text-sm md:text-md xl:text-lg;
+	}
+
+	.text-my-lg {
+		@apply text-md md:text-lg xl:text-xl;
+	}
+
+	.text-myf-lg {
+		@apply text-md md:text-lg xl:text-lg;
+	}
+
+	.text-my-xl {
+		@apply text-lg md:text-xl xl:text-2xl;
+	}
+
+	.text-my-2xl {
+		@apply text-xl md:text-2xl xl:text-3xl;
+	}
+
+	.gap-my-md {
+		@apply gap-4 md:gap-8 xl:gap-12;
+	}
+
+	.gap-my-lg {
+		@apply gap-8 md:gap-16 xl:gap-16;
+	}
 }

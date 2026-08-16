@@ -34,9 +34,9 @@ const Header = () => {
         <div className={clsx(
             "h-fit py-2",
             "flex items-center",
-            "rounded-md lg:rounded-xl",
+            "rounded-md lg:rounded-xl border",
             "duration-300",
-            isAtTop ? "bg-transparent px-0" : "bg-gray-700/70 px-4 backdrop-blur-sm"
+            isAtTop ? "bg-transparent px-0 border-transparent" : "bg-gray-700/70 px-4 backdrop-blur-sm border-[#fff5]"
         )}>
             {/* Logo/Home */}
             <Link
@@ -55,12 +55,12 @@ const Header = () => {
         {/* Right compartment */}
         <div className={clsx(
             "h-fit py-1 lg:py-2 relative",
-            "rounded-md lg:rounded-xl overflow-hidden",
+            "rounded-md lg:rounded-xl overflow-hidden border",
             "duration-300",
             isAtTop ?
-                "pl-0 pr-0"
+                "pl-0 pr-0 border-transparent"
                 :
-                "pl-2 lg:pl-8 pr-2 lg:pr-2"
+                "pl-2 lg:pl-8 pr-2 lg:pr-2 border-[#fff5]"
         )}>
             {/* Bg */}
             <div className={clsx(

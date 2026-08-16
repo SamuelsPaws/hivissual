@@ -61,7 +61,7 @@ const BurgerMenu = () => {
                 <ul className="
                     w-full h-full
                     flex flex-col justify-center items-end gap-6
-                    text-xl font-semibold text-white-1"
+                    text-xl font-semibold text-brandwhite"
                 >
                     <li>
                         <Link

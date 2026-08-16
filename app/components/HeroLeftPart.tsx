@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'motion/react'
+import { motion, Variants } from 'motion/react'
 import Link from 'next/link'
 
 const variants = {
@@ -37,7 +37,12 @@ const variants = {
         },
         visible: {
             opacity: 1,
-            scale: 1
+            scale: 1,
+            transition: {
+                type: 'spring',
+                stiffness: 400,
+                damping: 16,
+            }
         }
     },
     glow: {
@@ -52,6 +57,23 @@ const variants = {
             }
         }
     },
+}
+
+const ctaVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        scale: 0.9
+    },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: 'spring',
+            stiffness: 400,
+            damping: 16,
+            delay: 0.6
+        }
+    }
 }
 
 const HeroLeftPart = () => {
@@ -80,14 +102,13 @@ const HeroLeftPart = () => {
             initial="hidden"
             animate="visible"
         >
-            Hivissual - Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
+            Hivissual | Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
         </motion.p>
         <motion.div
             className='mt-2 lg:mt-0'
-            variants={variants.cta}
+            variants={ctaVariants}
             initial="hidden"
             animate="visible"
-            transition={{ type: 'spring', stiffness: 200, damping: 14, delay: 0.6 }}
         >
             <Link
                 href='/portafolio'
@@ -97,7 +118,7 @@ const HeroLeftPart = () => {
                     lg:px-8 lg:py-4
                     bg-brandwhite
                     text-lg lg:text-2xl font-semibold text-black
-                    rounded-full"
+                    rounded-full md:hover:scale-110 duration-400"
             >
                 Explorar Portafolio
             </Link>

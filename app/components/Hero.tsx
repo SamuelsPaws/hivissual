@@ -2,11 +2,12 @@ import Image from "next/image"
 import HeroLeftPart from "./HeroLeftPart"
 
 const Hero = () => {
-  return (
+    return (
     <section className="
-        h-screen lg:h-auto relative
+        h-screen md:h-auto relative
         px-8
-        lg:pt-32 lg:pb-24 lg:px-32"
+        md:pt-32 md:pb-24 md:px-32
+        xl:pt-48 xl:pb-32"
     >
         {/* BG Image */}
         <div className="absolute inset-0 z-0">
@@ -14,7 +15,7 @@ const Hero = () => {
                 src="/assets/hero.webp"
                 fill
                 sizes="100%"
-                className="w-full h-full object-cover object-[80%_100%] lg:object-top-right"
+                className="w-full h-full object-cover object-[80%_100%] lg:object-[100%_20%]"
                 priority
                 alt="Imagen de Hivissual"
             />

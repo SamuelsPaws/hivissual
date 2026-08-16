@@ -8,32 +8,25 @@ import GallerySimple from "@/components/GallerySimple";
 import ServiceCardGrid from "./components/ServiceCardGrid";
 import AboutGrid from "./components/AboutGrid";
 import TestimonialSlider from "./components/TestimonialSlider";
+import WhiteBtn from "@/components/WhiteBtn";
 
 export default async function Home() {
-  const featuredEntries = await getFeaturedMedia()
-  const testimonials = await getTestimonials()
+	const featuredEntries = await getFeaturedMedia()
+	const testimonials = await getTestimonials()
 
-  return (
+	return (
     <main>
-      <Hero />
-      <SectionContentSt
-        title="Mira mis trabajos destacados"
-        bgColor="bg-brandblack"
-      >
+      	<Hero />
+		<SectionContentSt
+			title="Mira mis trabajos destacados"
+			bgColor="bg-brandblack"
+		>
         {/* Masonry Grid */}
         <GallerySimple items={featuredEntries} />
-        <Link
-          href="/portafolio"
-          className="
-            block w-fit mx-auto
-            px-6 py-3
-            lg:px-8 lg:py-4
-            bg-brandwhite
-            text-black text-md lg:text-xl font-semibold
-            rounded-full"
-        >
-          Ver Portafolio Completo
-        </Link>
+        <WhiteBtn
+			href="/portafolio"
+			label="Ver Portafolio Completo"
+		/>
       </SectionContentSt>
       <SectionContentSt
         title="Conoce mis servicios"
@@ -41,12 +34,12 @@ export default async function Home() {
       >
         <ServiceCardGrid />
       </SectionContentSt>
-      <SectionContentSt
+      {/* <SectionContentSt
         title="Reseñas y Testimonios"
         bgColor="bg-brandblack-200"
       >
         <TestimonialSlider testimonials={testimonials} />
-      </SectionContentSt>
+      </SectionContentSt> */}
       <SectionContentCen
         title="Detrás de la Cámara"
         bgColor="bg-brandgray-100"

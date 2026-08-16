@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useRef, useState } from "react"
-import TestimonialTrack from "./TestimonialTrack"
-import { Testimonial } from "@/lib/types"
+import { useState } from "react";
+import { Testimonial } from "@/lib/types";
 import TestimonialCard from "./TestimonialCard";
 import useMediaQuery from "@/lib/hooks/useMediaQuery";
 

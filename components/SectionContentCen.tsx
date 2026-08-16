@@ -10,12 +10,12 @@ const SectionContentCen = ({ title, bgColor, children }: Props) => {
   return (
     <section className={clsx(
         "px-4 py-16",
-        "lg:px-16 lg:py-24",
+        "lg:px-16 lg:py-32",
         bgColor
     )}>
         <h2 className="
             mb-12 lg:mb-16
-            text-center text-3xl lg:text-5xl text-brandwhite font-semibold"
+            text-center text-3xl lg:text-5xl xl:text-6xl text-brandwhite font-semibold"
         >
             {title}
         </h2>
