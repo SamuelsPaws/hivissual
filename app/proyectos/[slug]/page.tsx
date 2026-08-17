@@ -7,7 +7,7 @@ import ServiceTag from "./components/ServiceTag";
 import SectionContentSt from "@/components/SectionContentSt";
 import RelatedProjectCard from "./components/RelatedProjectCard";
 import Link from "next/link";
-import SectionCTA from "@/components/SectionCTA";
+import SectionCTA from "@/components/section-cta/SectionCTA";
 import Gallery from "@/components/Gallery";
 
 export default async function ProjectSlug() {

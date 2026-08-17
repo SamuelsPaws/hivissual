@@ -1,6 +1,6 @@
 import SectionContentSt from "@/components/SectionContentSt";
 import SocialCard from "./components/SocialCard";
-import SectionCTA from "@/components/SectionCTA";
+import SectionCTA from "@/components/section-cta/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
 import QuoteCard from "./components/quote-app/QuoteCard";
 import HeroLeftPart from "./components/HeroLeftPart";

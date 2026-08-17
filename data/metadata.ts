@@ -21,7 +21,7 @@ export const homeMetadata = {
         'estudio creativo',
         'Hivissual'
     ],
-    ogTitle: 'Hivissual | Contenido Visual y Desarrollo Web para Marcas',
+    ogTitle: 'Hivissual | Contenido Visual Publicitario para Marcas',
     ogDescription: 'Fotografía, video y contenido para redes sociales para marcas que buscan crecer con una presencia digital estratégica.',
     twitterTitle: 'Hivissual | Contenido Visual y Desarrollo Web',
     twitterDescription: 'Creamos fotografía, video, contenido estratégico y sitios web que ayudan a marcas y emprendedores a destacar en el entorno digital.',

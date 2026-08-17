@@ -1,7 +1,7 @@
 import SectionContentSt from "@/components/SectionContentSt";
 import Hero from "./components/Hero";
 import SectionContentCen from "@/components/SectionContentCen";
-import SectionCTA from "@/components/SectionCTA";
+import SectionCTA from "@/components/section-cta/SectionCTA";
 import { getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
 import GallerySimple from "@/components/GallerySimple";
 import ServiceCardGrid from "./components/ServiceCardGrid";

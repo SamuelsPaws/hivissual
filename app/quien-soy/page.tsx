@@ -3,7 +3,7 @@ import FooterWrapper from "@/components/FooterWrapper";
 import SectionContentCen from "@/components/SectionContentCen";
 import SectionContentFr from "@/components/SectionContentFr";
 import SectionContentSt from "@/components/SectionContentSt";
-import SectionCTA from "@/components/SectionCTA";
+import SectionCTA from "@/components/section-cta/SectionCTA";
 import TeamCard from "./components/TeamCard";
 import TrustCard from "./components/TrustCard";
 import ImageGrid from "./components/ImageGrid";
