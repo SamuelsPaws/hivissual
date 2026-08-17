@@ -1,0 +1,38 @@
+{
+    "home": [
+        {
+            "name": "Inicio",
+            "url": ""
+        }
+    ],
+    "portfolio": [
+        {
+            "name": "Inicio",
+            "url": ""
+        },
+        {
+            "name": "Portafolio",
+            "url": "/portafolio"
+        }
+    ],
+    "about": [
+        {
+            "name": "Inicio",
+            "url": ""
+        },
+        {
+            "name": "Quién Soy",
+            "url": "/quien-soy"
+        }
+    ],
+    "contact": [
+        {
+            "name": "Inicio",
+            "url": ""
+        },
+        {
+            "name": "Contacto y Cotizaciones",
+            "url": "/cotizaciones"
+        }
+    ]
+}

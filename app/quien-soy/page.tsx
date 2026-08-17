@@ -9,10 +9,94 @@ import TrustCard from "./components/TrustCard";
 import ImageGrid from "./components/ImageGrid";
 import StoryGrid from "./components/StoryGrid";
 import ServiceGrid from "./components/ServiceGrid";
+import company from "@/data/company";
+import { Metadata } from "next";
+import { aboutMetadata } from "@/data/metadata";
+import breadcrumbData from "@/data/breadcrumbs.json";
+import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
+import JsonLd from "@/components/JsonLd";
+import { generateAboutSchema } from "@/lib/seo/schema/about";
+
+const BASE_URL = company.url;
+
+export function generateMetadata(): Metadata {
+	const {
+		title,
+		description,
+		keywords,
+		ogTitle,
+		ogDescription,
+		twitterTitle,
+		twitterDescription,
+		category
+	} = aboutMetadata
+	const canonical = `${BASE_URL}/quien-soy`
+
+    return {
+        metadataBase: new URL(BASE_URL),
+
+        title,
+        description,
+        keywords,
+        applicationName: company.name,
+        authors: [
+            {
+                name: company.name,
+            },
+        ],
+        creator: company.name,
+        publisher: company.name,
+
+        openGraph: {
+            title: ogTitle,
+            description: ogDescription,
+            url: canonical,
+            siteName: company.name,
+            locale: "es_EC",
+            type: "website",
+            images: [
+                {
+                    url: "/opengraph-image.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: "Hivissual",
+                },
+            ],
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: twitterTitle,
+            description: twitterDescription,
+            images: ["/opengraph-image.jpg"],
+        },
+
+        category: category,
+
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+                "max-video-preview": -1,
+            },
+        },
+  	}
+}
 
 export default function About() {
+	const aboutSchema = generateAboutSchema()
+	const bcSchema = getBreadcrumbSchema(breadcrumbData.about, BASE_URL)
+
     return (
     <main>
+        {/* Json ld */}
+		<JsonLd data={aboutSchema} />
+		<JsonLd data={bcSchema} />
+		{/* Page */}
         <Banner
             title="Quién Soy"
             description={null}

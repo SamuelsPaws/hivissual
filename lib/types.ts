@@ -37,3 +37,8 @@ export type Project = {
     results: string[],
     gallery: Media[]
 }
+
+export type Breadcrumb = {
+  name: string;
+  url: string;
+}
