@@ -28,8 +28,9 @@ const MoreBtn = ({ onClick, isLoading }: Props) => {
         block mx-auto
         mt-8 lg:mt-16 px-8 py-4
         bg-brandwhite
-        text-lg text-black font-semibold
-        rounded-full"
+        text-my-md text-black font-semibold
+        rounded-full
+		md:hover:scale-110 duration-400 ease-out"
     >
         Cargar Más
     </button>

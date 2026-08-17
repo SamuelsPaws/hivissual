@@ -100,7 +100,8 @@ const Header = () => {
                                 block px-4 py-1 relative
                                 bg-brandwhite
                                 text-black text-md font-semibold
-                                rounded-full"
+                                rounded-full
+                                md:hover:-translate-y-0.5 duration-200"
                         >
                             Cotizar
                         </Link>

@@ -6,7 +6,7 @@ import SectionCTA from "@/components/SectionCTA";
 import { getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
 import GallerySimple from "@/components/GallerySimple";
 import ServiceCardGrid from "./components/ServiceCardGrid";
-import AboutGrid from "./components/AboutGrid";
+import AboutGrid from "./components/about-grid/AboutGrid";
 import TestimonialSlider from "./components/TestimonialSlider";
 import WhiteBtn from "@/components/WhiteBtn";
 
@@ -28,6 +28,7 @@ export default async function Home() {
 				label="Ver Portafolio Completo"
 			/>
 		</SectionContentSt>
+		{/* Services */}
 		<SectionContentSt
 			title="Conoce mis servicios"
 			bgColor="bg-brandblack-100"
@@ -40,6 +41,7 @@ export default async function Home() {
 		>
 			<TestimonialSlider testimonials={testimonials} />
 		</SectionContentSt> */}
+		{/* About */}
 		<SectionContentCen
 			title="Detrás de la Cámara"
 			bgColor="bg-brandgray-100"

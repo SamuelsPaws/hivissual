@@ -51,6 +51,7 @@ export default function About() {
                 <ImageGrid />
             </div>
         </SectionContentFr>
+        {/* Story */}
         <SectionContentSt
             title="Mi Historia"
             bgColor="bg-brandblack-200"

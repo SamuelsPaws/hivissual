@@ -4,7 +4,6 @@ import Gallery from "@/components/Gallery";
 import SectionCTA from "@/components/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
 import { getMedia } from "@/lib/contentful-queries";
-import MoreBtn from "./components/MoreBtn";
 
 type Props = {
     searchParams: Promise<{

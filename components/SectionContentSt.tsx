@@ -11,6 +11,7 @@ const SectionContentSt = ({ title, bgColor, children }: Props) => {
     <section className={clsx(
         "px-4 py-16",
         "md:px-16 md:py-32",
+        "overflow-clip",
         bgColor
     )}>
         <h2 className="

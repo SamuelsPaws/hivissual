@@ -1,21 +1,5 @@
-'use client'
-import { motion } from "motion/react"
 import Image from "next/image"
-import Link from "next/link"
-
-const itemVariants = {
-    hidden: {
-        opacity: 0,
-        y: 16
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
-}
+import AboutCta from "./subcomponents/AboutCta"
 
 const AboutGrid = () => {
   return (
@@ -63,27 +47,7 @@ const AboutGrid = () => {
                     alt="Stock"
                 />
             </div>
-            <motion.div
-                className="w-full"
-                variants={itemVariants}
-                initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true, margin: '-8px 0px' }}
-            >
-                <Link
-                    href="/quien-soy"
-                    className="
-                    w-full md:w-full
-                    py-4 px-8
-                    flex items-center justify-center
-                    bg-transparent
-                    text-gray-200 text-my-md text-center
-                    border border-gray-200 rounded-full"
-                >
-                    Todo sobre mí y mi Equipo
-                    <i className="fa fa-arrow-right ml-2 scale-90" aria-hidden="true"></i>
-                </Link>
-            </motion.div>
+            <AboutCta />
         </div>
     </div>
   )
