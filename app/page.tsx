@@ -44,6 +44,9 @@ export function generateMetadata(): Metadata {
         ],
         creator: company.name,
         publisher: company.name,
+		alternates: {
+			canonical
+		},
 
         openGraph: {
             title: ogTitle,
