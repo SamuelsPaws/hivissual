@@ -15,7 +15,7 @@ const StoryCard = ({ text, className }: Props) => {
         "gradient-border rounded-2xl",
         className
     )}>
-        <p className="text-brandwhite text-my-sm text-justify">
+        <p className="text-brandwhite text-my-sm text-left">
             {text}
         </p>
     </div>
