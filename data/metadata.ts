@@ -1,6 +1,6 @@
 export const homeMetadata = {
     title: 'Hivissual | Fotografía, Video y Contenido para Marcas',
-    description: 'Hivissual es un estudio creativo especializado en fotografía comercial, producción de video, contenido para redes sociales y desarrollo de sitios web. Ayudamos a marcas y emprendedores a fortalecer su presencia digital con contenido estratégico y experiencias web de alto impacto.',
+    description: 'Hivissual es un estudio creativo especializado en fotografía, producción de video y contenido para redes sociales. Ayudamos a marcas y emprendedores a fortalecer su presencia digital con contenido de alto impacto.',
     keywords: [
         'fotografía comercial',
         'fotografía de producto',
@@ -22,7 +22,7 @@ export const homeMetadata = {
         'Hivissual'
     ],
     ogTitle: 'Hivissual | Contenido Visual y Desarrollo Web para Marcas',
-    ogDescription: 'Fotografía, video, contenido para redes sociales y desarrollo web para marcas que buscan crecer con una presencia digital sólida y estratégica.',
+    ogDescription: 'Fotografía, video y contenido para redes sociales para marcas que buscan crecer con una presencia digital estratégica.',
     twitterTitle: 'Hivissual | Contenido Visual y Desarrollo Web',
     twitterDescription: 'Creamos fotografía, video, contenido estratégico y sitios web que ayudan a marcas y emprendedores a destacar en el entorno digital.',
     category: 'Marketing y Fotografía Comercial'
@@ -51,7 +51,7 @@ export const portfolioMetadata = {
 
 export const aboutMetadata = {
     title: 'Sobre Hivissual | Estudio Creativo para Marcas',
-    description: 'Conoce la filosofía de Hivissual y el enfoque detrás de cada proyecto. Combinamos creatividad, estrategia y producción visual para ayudar a marcas y emprendedores a construir una presencia digital auténtica y memorable.',
+    description: 'Conoce a Hivissual y el enfoque detrás de cada proyecto. Combinamos creatividad, estrategia y producción visual para ayudar a marcas y emprendedores a construir su presencia digital.',
     keywords: [
         'sobre Hivissual',
         'estudio creativo',
@@ -73,7 +73,7 @@ export const aboutMetadata = {
 
 export const contactMetadata = {
     title: 'Contacto y Cotizaciones | Hivissual',
-    description: 'Cuéntanos sobre tu proyecto y recibe una propuesta personalizada. Conoce nuestros servicios de fotografía comercial, producción audiovisual, estrategia de contenido y desarrollo web para hacer crecer tu marca.',
+    description: 'Cuéntanos sobre tu proyecto y recibe una propuesta personalizada. Conoce nuestros servicios para hacer crecer tu marca.',
     keywords: [
         'contacto Hivissual',
         'cotización fotografía',
@@ -87,7 +87,7 @@ export const contactMetadata = {
         'solicitar cotización'
     ],
     ogTitle: 'Contacto y Cotizaciones | Hivissual',
-    ogDescription: 'Hablemos de tu proyecto. Solicita una cotización para fotografía, video, contenido para redes sociales o desarrollo web y descubre cómo podemos ayudar a impulsar tu marca.',
+    ogDescription: 'Solicita una cotización para fotografía, video, contenido para redes sociales o desarrollo web para ayudarte a impulsar tu marca.',
     twitterTitle: 'Contacto y Cotizaciones | Hivissual',
     twitterDescription: 'Solicita una propuesta personalizada para fotografía, producción audiovisual, estrategia de contenido o desarrollo web.',
     category: 'Contacto y Cotizaciones'
