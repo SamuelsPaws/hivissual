@@ -4,7 +4,7 @@ import company from '@/data/company'
 const BASE_URL = company.url
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const frequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly'
+    const frequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'monthly'
 
     const routes = [
         '',
