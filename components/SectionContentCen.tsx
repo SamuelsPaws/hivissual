@@ -9,7 +9,7 @@ interface Props {
 const SectionContentCen = ({ title, bgColor, children }: Props) => {
   return (
     <section className={clsx(
-        "px-4 py-16",
+        "px-4 py-16 relative",
         "lg:px-16 lg:py-32",
         bgColor
     )}>

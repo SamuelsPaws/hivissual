@@ -34,7 +34,7 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
         variants={springRevealHover}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-24px 0px' }}
+        viewport={{ once: true, margin: '-32px 0px' }}
         whileHover="hovered"
     >
         {/* Dark overlay */}

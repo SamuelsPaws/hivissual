@@ -16,39 +16,39 @@ export default async function Home() {
 
 	return (
     <main>
-      	<Hero />
+			<Hero />
+			<SectionContentSt
+				title="Mira mis trabajos destacados"
+				bgColor="bg-brandblack"
+			>
+			{/* Masonry Grid */}
+			<GallerySimple items={featuredEntries} />
+			<WhiteBtn
+				href="/portafolio"
+				label="Ver Portafolio Completo"
+			/>
+		</SectionContentSt>
 		<SectionContentSt
-			title="Mira mis trabajos destacados"
-			bgColor="bg-brandblack"
+			title="Conoce mis servicios"
+			bgColor="bg-brandblack-100"
 		>
-        {/* Masonry Grid */}
-        <GallerySimple items={featuredEntries} />
-        <WhiteBtn
-			href="/portafolio"
-			label="Ver Portafolio Completo"
-		/>
-      </SectionContentSt>
-      <SectionContentSt
-        title="Conoce mis servicios"
-        bgColor="bg-brandblack-100"
-      >
-        <ServiceCardGrid />
-      </SectionContentSt>
-      {/* <SectionContentSt
-        title="Reseñas y Testimonios"
-        bgColor="bg-brandblack-200"
-      >
-        <TestimonialSlider testimonials={testimonials} />
-      </SectionContentSt> */}
-      <SectionContentCen
-        title="Detrás de la Cámara"
-        bgColor="bg-brandgray-100"
-      >
-        <AboutGrid />
-      </SectionContentCen>
-      <SectionCTA bgColor="bg-brandgray-200" />
-      {/* Footer wrapper */}
-      <div className="w-full h-footer-height-mob lg:h-footer-height bg-brandgray-200"></div>
+			<ServiceCardGrid />
+		</SectionContentSt>
+		{/* <SectionContentSt
+			title="Reseñas y Testimonios"
+			bgColor="bg-brandblack-200"
+		>
+			<TestimonialSlider testimonials={testimonials} />
+		</SectionContentSt> */}
+		<SectionContentCen
+			title="Detrás de la Cámara"
+			bgColor="bg-brandgray-100"
+		>
+			<AboutGrid />
+		</SectionContentCen>
+		<SectionCTA bgColor="bg-brandgray-200" />
+		{/* Footer wrapper */}
+		<div className="w-full h-footer-height-mob lg:h-footer-height bg-brandgray-200"></div>
     </main> 
   )
 }

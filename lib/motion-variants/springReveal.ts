@@ -3,7 +3,7 @@ import { Variants } from "motion";
 export const springRevealHover: Variants = {
     hidden: {
         opacity: 0,
-        y: 16,
+        y: 48,
         scale: 0.95
     },
     visible: {
@@ -12,8 +12,8 @@ export const springRevealHover: Variants = {
         scale: 1,
         transition: {
             type: 'spring',
-            stiffness: 350,
-            damping: 16
+            stiffness: 250,
+            damping: 15
         }
     },
     hovered: {

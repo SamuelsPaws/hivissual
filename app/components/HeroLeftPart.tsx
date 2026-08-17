@@ -1,5 +1,6 @@
 'use client'
 import { motion, Variants } from 'motion/react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const variants = {
@@ -85,25 +86,20 @@ const HeroLeftPart = () => {
         flex flex-col justify-center items-center gap-6 lg:gap-8
         text-center"
     >
-        <motion.h1
-            className="
-                text-brandwhite font-semibold
-                text-3xl leading-10
-                lg:text-[2.5rem] lg:leading-14 xl:leading-16"
-            variants={variants.h1}
-            initial="hidden"
-            animate="visible"
+        <h1 className="
+            text-brandwhite font-semibold
+            text-3xl leading-10
+            lg:text-[2.5rem] lg:leading-14 xl:leading-16
+            animate-fade-in-right-400"
         >
-            Tu marca merece verse tan <span className="text-brandgold-600">profesional</span> como el trabajo que haces.
-        </motion.h1>
-        <motion.p
-            className="text-sm lg:text-lg text-gray-200"
-            variants={variants.subheadline}
-            initial="hidden"
-            animate="visible"
+            Tu marca merece verse tan <span className="text-image">profesional</span> como el trabajo que haces.
+        </h1>
+        <p className="
+            text-sm lg:text-lg text-gray-200
+            animate-fade-in-right-800"
         >
             Hivissual | Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
-        </motion.p>
+        </p>
         <motion.div
             className='mt-2 lg:mt-0'
             variants={ctaVariants}

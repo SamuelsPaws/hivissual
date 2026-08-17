@@ -6,28 +6,43 @@
 }
 
 @theme inline {
-  --spacing-header-height: 5rem;
-  --spacing-header-height-mob: 3.5rem;
-  --spacing-footer-height: 440px;
-  --spacing-footer-height-mob: 760px;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brandwhite: #fafafa;
-  --color-brandblack: #0C0C0D;
-  --color-brandblack-100: #121214;
-  --color-brandblack-200: #1a1a1c;
-  --color-brandgray-100: #26262A;
-  --color-brandgray-200: #38383E;
-  --color-brandgray-300: #45454F;
-  --color-brandgray-400: #51515C;
-  --color-brandgold-100: #4F4519;
-  --color-brandgold-600: #C9B23F;
-  --color-whatsapp-600: #25d366;
-  --color-whatsapp-500: #21B85A;
-  --color-whatsapp-400: #16AB4E;
-  --text-md: 1rem;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--spacing-header-height: 5rem;
+	--spacing-header-height-mob: 3.5rem;
+	--spacing-footer-height: 440px;
+	--spacing-footer-height-mob: 760px;
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-brandwhite: #fafafa;
+	--color-brandblack: #0C0C0D;
+	--color-brandblack-100: #121214;
+	--color-brandblack-200: #1a1a1c;
+	--color-brandgray-100: #26262A;
+	--color-brandgray-200: #38383E;
+	--color-brandgray-300: #45454F;
+	--color-brandgray-400: #51515C;
+	--color-brandgold-100: #4F4519;
+	--color-brandgold-600: #C9B23F;
+	--color-whatsapp-600: #25d366;
+	--color-whatsapp-500: #21B85A;
+	--color-whatsapp-400: #16AB4E;
+	--text-md: 1rem;
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+
+	--animate-fade-in-right-400: fade-in-right 400ms ease-out forwards;
+	--animate-fade-in-right-800: fade-in-right 800ms ease-out forwards;
+
+	@keyframes fade-in-right {
+		from {
+			transform: translateX(-80px);
+			opacity: 0;
+		}
+		
+		to {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,23 +76,32 @@ button:hover {
 }
 
 .gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background: linear-gradient(
-    45deg,
-    #7e6c4069,
-    #ababab11,
-    #d5d8db6d
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+	content: "";
+	position: absolute;
+	inset: 0;
+	padding: 1px;
+	border-radius: inherit;
+	background: linear-gradient(
+		45deg,
+		#7e6c4069,
+		#ababab11,
+		#d5d8db6d
+	);
+	-webkit-mask:
+		linear-gradient(#fff 0 0) content-box,
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+}
+
+.text-image {
+	background: linear-gradient(90deg, #9d8d4e, #fff4c7, #9d8d4e);
+	background-position: center;
+	background-size: cover;
+
+	color: transparent;
+	background-clip: text;
 }
 
 .hover-animated-underline {
@@ -119,5 +143,57 @@ button:hover {
 
 	.gap-my-lg {
 		@apply gap-8 md:gap-16 xl:gap-16;
+	}
+}
+
+.reveal-left {
+  animation: reveal-left ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+.reveal-down {
+  animation: reveal-down ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+.reveal-up {
+  animation: reveal-up ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 50%;
+}
+
+@keyframes reveal-left {
+	0% {
+		transform: translateX(60%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes reveal-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes reveal-up {
+	0% {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
 	}
 }
