@@ -8,7 +8,7 @@ interface Props {
 const CtaParallax = ({ gallery }: Props) => {
     return (
     <div className="
-        w-full h-100
+        w-full h-100 hidden
         overflow-hidden"
     >
         <ParallaxTrack gallery={['']} />
