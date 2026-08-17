@@ -60,7 +60,10 @@ const SectionCTA = ({ bgColor }: Props) => {
         bgColor
     )}>
         <motion.h2
-            className="text-2xl lg:text-5xl text-brandwhite text-center font-semibold"
+            className="
+                mx-8
+                text-2xl lg:text-5xl text-brandwhite text-center
+                font-semibold"
             variants={variants.h2}
             initial="hidden"
             whileInView="visible"
@@ -69,7 +72,9 @@ const SectionCTA = ({ bgColor }: Props) => {
             ¿Listo para crear algo para tu marca?
         </motion.h2>
         <motion.p
-            className="text-md lg:text-lg text-gray-200 text-center"
+            className="
+                mx-8
+                text-md lg:text-lg text-gray-200 text-center"
             variants={variants.subheadline}
             initial="hidden"
             whileInView="visible"
