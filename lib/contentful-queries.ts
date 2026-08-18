@@ -27,6 +27,16 @@ export async function getMedia(
 export async function getFeaturedMedia(): Promise<Media[]> {
   const entries = await contentful.getEntries<MediaSkeleton>({
     content_type: 'media',
+    "fields.featured": true,
+    'fields.type': 'Fotografía'
+  })
+
+  return entries.items.map(mapMedia)
+}
+
+export async function getFeaturedImages(): Promise<Media[]> {
+  const entries = await contentful.getEntries<MediaSkeleton>({
+    content_type: 'media',
     "fields.featured": true
   })
 

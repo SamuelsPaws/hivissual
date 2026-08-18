@@ -1,20 +1,23 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { Ref } from "react";
 
 interface Props {
+    ref: Ref<HTMLDivElement> | undefined;
     src: string;
     index: number;
     thisIndex: number;
     hasDuration: boolean;
 }
 
-const ParallaxImg = ({ src, index, thisIndex, hasDuration }: Props) => {
+const ParallaxImg = ({ ref, src, index, thisIndex, hasDuration }: Props) => {
     const indexInView = thisIndex - index
 
     return (
-    <div className="
+    <div ref={ref} className="
         relative
-        h-full w-[calc((100%-4rem)/5)] shrink-0"
+        h-full w-[calc((100%-2rem)/3)] md:w-[calc((100%-4rem)/5)] shrink-0
+        overflow-hidden"
     >
         <Image
             src={src}

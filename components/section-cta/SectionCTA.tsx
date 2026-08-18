@@ -3,10 +3,6 @@ import clsx from "clsx";
 import { motion, Variants } from "motion/react";
 import CtaParallax from "./subcomponents/CtaParallax";
 
-interface Props {
-    bgColor: string;
-}
-
 const variants = {
     h2: {
         hidden: {
@@ -36,6 +32,11 @@ const variants = {
     },
 }
 
+interface Props {
+    bgColor: string;
+    gallery: string[];
+}
+
 const ctaVariants: Variants = {
     hidden: {
         opacity: 0,
@@ -52,7 +53,7 @@ const ctaVariants: Variants = {
     }
 }
 
-const SectionCTA = ({ bgColor }: Props) => {
+const SectionCTA = ({ bgColor, gallery }: Props) => {
   return (
     <section className={clsx(
         "py-16 md:py-32 px-0",
@@ -71,6 +72,7 @@ const SectionCTA = ({ bgColor }: Props) => {
         >
             ¿Listo para crear algo para tu marca?
         </motion.h2>
+        <CtaParallax gallery={gallery} />
         <motion.p
             className="
                 mx-8
@@ -82,7 +84,6 @@ const SectionCTA = ({ bgColor }: Props) => {
         >
             Cuéntame sobre tu proyecto y te responderé personalmente.
         </motion.p>
-        <CtaParallax gallery={['']} />
         <motion.a
             href="https://wa.me/593983523721?text=%C2%A1Hola%21%20Me%20interesa%20solicitar%20un%20proyecto%20para%20mi%20marca."
             target="_blank"

@@ -2,7 +2,7 @@ import SectionContentSt from "@/components/SectionContentSt";
 import Hero from "./components/Hero";
 import SectionContentCen from "@/components/SectionContentCen";
 import SectionCTA from "@/components/section-cta/SectionCTA";
-import { getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
+import { getFeaturedImages, getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
 import GallerySimple from "@/components/GallerySimple";
 import ServiceCardGrid from "./components/ServiceCardGrid";
 import AboutGrid from "./components/about-grid/AboutGrid";
@@ -91,6 +91,7 @@ export function generateMetadata(): Metadata {
 export default async function Home() {
 	const featuredEntries = await getFeaturedMedia()
 	const testimonials = await getTestimonials()
+	const featuredImages = await getFeaturedImages()
 
 	const orgSchema = generateHomeSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.home, BASE_URL)
@@ -133,7 +134,10 @@ export default async function Home() {
 		>
 			<AboutGrid />
 		</SectionContentCen>
-		<SectionCTA bgColor="bg-brandgray-200" />
+		<SectionCTA
+			gallery={featuredImages.map(el => el.imageUrl)}
+			bgColor="bg-brandgray-200"
+		/>
 		{/* Footer wrapper */}
 		<div className="w-full h-footer-height-mob lg:h-footer-height bg-brandgray-200"></div>
     </main> 

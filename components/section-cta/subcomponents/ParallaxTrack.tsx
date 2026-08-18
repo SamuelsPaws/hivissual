@@ -10,6 +10,8 @@ interface Props {
 const ParallaxTrack = ({ gallery }: Props) => {
     const [index, setIndex] = useState<number>(0)
     const [hasDuration, setHasDuration] = useState<boolean>(true)
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [cardWidth, setCardWidth] = useState(0);
     
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -29,6 +31,20 @@ const ParallaxTrack = ({ gallery }: Props) => {
         return () => clearTimeout(timeout)
     }, [index])
 
+    useEffect(() => {
+        if (!cardRef.current) return;
+
+        const observer = new ResizeObserver(([entry]) => {
+            setCardWidth(entry.contentRect.width);
+        });
+
+        observer.observe(cardRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    const offset = index * (cardWidth + 16)
+
     return (
     <div
         className={clsx(
@@ -38,22 +54,19 @@ const ParallaxTrack = ({ gallery }: Props) => {
             "ease-in-out"
         )}
         style={{
-            transform: `translateX(calc(${index * 20}%)`
+            transform: `translateX(-${offset}px)`
         }}
     >
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={0} src="/assets/about-2.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={1} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={2} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={3} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={4} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={5} src="/assets/about-2.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={6} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={7} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={8} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={9} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={10} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={11} src="/assets/about-1.webp" />
-        <ParallaxImg hasDuration={hasDuration} index={index} thisIndex={12} src="/assets/about-1.webp" />
+        {[ ...gallery.slice(0, 5), ...gallery.slice(0, 5)].map((el, i) => (
+            <ParallaxImg
+                key={i}
+                ref={i === 0 ? cardRef : undefined}
+                src={el}
+                index={index}
+                thisIndex={i}
+                hasDuration={hasDuration}
+            />
+        ))}
     </div>
     )
 }
