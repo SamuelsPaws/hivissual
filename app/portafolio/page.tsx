@@ -3,7 +3,7 @@ import Banner from "@/components/Banner";
 import Gallery from "@/components/Gallery";
 import SectionCTA from "@/components/section-cta/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
-import { getMedia } from "@/lib/contentful-queries";
+import { getFeaturedImages, getMedia } from "@/lib/contentful-queries";
 import company from "@/data/company";
 import { portfolioMetadata } from "@/data/metadata";
 import { Metadata } from "next";
@@ -87,6 +87,7 @@ export function generateMetadata(): Metadata {
 
 export default async function Portfolio() {
     const entries = await getMedia(8, 0)
+    const featuredImages = await getFeaturedImages()
 
 	const portfolioSchema = generatePortfolioSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.portfolio, BASE_URL)
@@ -106,7 +107,10 @@ export default async function Portfolio() {
         <SectionContentFr bgColor="bg-brandblack-100">
             <Gallery initialEntries={entries} />
         </SectionContentFr>
-        <SectionCTA bgColor="bg-brandgray-100" />
+        <SectionCTA
+			gallery={featuredImages.map(el => el.imageUrl)}
+            bgColor="bg-brandgray-100"
+        />
         <FooterWrapper bgColor="bg-brandgray-100" />
     </main>
     )

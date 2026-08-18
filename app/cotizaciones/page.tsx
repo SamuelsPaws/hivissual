@@ -13,6 +13,7 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateContactSchema } from "@/lib/seo/schema/contact";
+import { getFeaturedImages } from "@/lib/contentful-queries";
 
 const BASE_URL = company.url;
 
@@ -87,7 +88,9 @@ export function generateMetadata(): Metadata {
   	}
 }
 
-export default function Contact() {
+export default async function Contact() {
+    const featuredImages = await getFeaturedImages()
+    
 	const contactSchema = generateContactSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.contact, BASE_URL)
 
@@ -175,7 +178,10 @@ export default function Contact() {
             <FAQTitle text="¿Cómo puedo solicitar una cotización?" />
             <FAQAnswer text="Puedes utilizar el seleccionador en la parte de arriba de esta página o escribirme directamente por WhatsApp para conversar sobre tu proyecto." />
         </SectionContentSt>
-        <SectionCTA bgColor="bg-brandgray-100" />
+        <SectionCTA
+			gallery={featuredImages.map(el => el.imageUrl)}
+            bgColor="bg-brandgray-100"
+        />
         <FooterWrapper bgColor="bg-brandgray-100" />
     </main>
     )

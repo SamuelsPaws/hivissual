@@ -137,7 +137,7 @@ export default async function ProjectSlug() {
                 Ver Portafolio Completo
             </Link>
         </SectionContentSt>
-        <SectionCTA bgColor="bg-brandgray-200" />
+        {/* <SectionCTA bgColor="bg-brandgray-200" /> */}
         {/* Footer wrapper */}
         <div className="w-full h-footer-height bg-brandgray-200"></div>
     </main>

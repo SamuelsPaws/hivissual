@@ -16,6 +16,7 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateAboutSchema } from "@/lib/seo/schema/about";
+import { getFeaturedImages } from "@/lib/contentful-queries";
 
 const BASE_URL = company.url;
 
@@ -90,7 +91,9 @@ export function generateMetadata(): Metadata {
   	}
 }
 
-export default function About() {
+export default async function About() {
+    const featuredImages = await getFeaturedImages()
+    
 	const aboutSchema = generateAboutSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.about, BASE_URL)
 
@@ -223,7 +226,10 @@ export default function About() {
                 />
             </div>
         </SectionContentCen>
-        <SectionCTA bgColor="bg-brandgray-400" />
+        <SectionCTA
+			gallery={featuredImages.map(el => el.imageUrl)}
+            bgColor="bg-brandgray-400"
+        />
         <FooterWrapper bgColor="bg-brandgray-400" />
     </main>
     )
