@@ -11,7 +11,7 @@ export async function getMedia(
     content_type: 'media',
     limit,
     skip: offset,
-    order: ['-sys.createdAt'],
+    order: ['-fields.priority'],
   })
 
   const items = entries.items.map(mapMedia)

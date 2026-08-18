@@ -13,10 +13,10 @@ const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
     return (
     <div className={clsx(
         isOpen ? 'w-[96%] lg:w-100 h-30 lg:h-50' : 'w-24 h-12',
-        "absolute bottom-[2%] left-[2%] z-[9970]",
-        "bg-brandblack/70 backdrop-blur-md",
-        !isOpen && "lg:hover:bg-brandblack/80",
-        "rounded-lg overflow-hidden",
+        "absolute bottom-4 left-4 z-[9970]",
+        "bg-brandblack",
+        "rounded-xl border border-[#fff5] overflow-hidden",
+        "md:hover:border-[#fffa]",
         "duration-300"
     )}>
         {/* Button to open info */}

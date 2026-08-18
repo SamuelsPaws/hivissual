@@ -138,7 +138,8 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                 "fixed top-1/2 left-1/2 -translate-1/2 z-[9950]",
                 "w-[80vw] aspect-[9/16] lg:w-[80vw] lg:aspect-auto lg:h-[80vh]",
                 "flex flex-col",
-                "bg-brandgray-200 rounded-2xl overflow-hidden"
+                "bg-white/10 backdrop-blur-sm",
+                "border border-white/30 rounded-2xl overflow-hidden"
             )}
         >
             <MediaViewer

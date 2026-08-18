@@ -7,6 +7,7 @@ export type Media = {
     instaUrl: string | null,
     year: string | null,
     featured: boolean,
+    priority: number,
     projectSlug: string | null
 }
 

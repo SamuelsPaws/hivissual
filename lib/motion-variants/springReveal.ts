@@ -12,8 +12,8 @@ export const springRevealHover: Variants = {
         scale: 1,
         transition: {
             type: 'spring',
-            stiffness: 250,
-            damping: 15
+            stiffness: 300,
+            damping: 16
         }
     },
     hovered: {

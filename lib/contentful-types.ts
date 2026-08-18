@@ -9,6 +9,7 @@ export interface MediaFields {
   instaUrl: EntryFieldTypes.Text;
   year: EntryFieldTypes.Text;
   featured: EntryFieldTypes.Boolean;
+  priority?: EntryFieldTypes.Number;
   slug: EntryFieldTypes.Text;
 }
 

@@ -57,7 +57,7 @@ const SectionCTA = ({ bgColor, gallery }: Props) => {
   return (
     <section className={clsx(
         "py-16 md:py-32 px-0",
-        "flex flex-col justify-center items-center gap-8 lg:gap-16",
+        "flex flex-col justify-center items-center gap-12 lg:gap-16",
         bgColor
     )}>
         <motion.h2

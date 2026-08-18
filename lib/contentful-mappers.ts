@@ -41,6 +41,7 @@ export function mapMedia(
     instaUrl: entry.fields.instaUrl,
     year: entry.fields.year,
     featured: entry.fields.featured,
+    priority: entry.fields.priority ?? 1,
     projectSlug: entry.fields.slug
   };
 }

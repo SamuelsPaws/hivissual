@@ -16,23 +16,30 @@ const ParallaxImg = ({ ref, src, index, thisIndex, hasDuration }: Props) => {
     return (
     <div ref={ref} className="
         relative
-        h-full w-[calc((100%-2rem)/3)] md:w-[calc((100%-4rem)/5)] shrink-0
+        h-full w-[calc((100%-1rem)/3)] md:w-[calc((100%-4rem)/5)] shrink-0
         overflow-hidden"
     >
-        <Image
-            src={src}
-            fill
-            sizes="100%"
+        <div
             className={clsx(
-                "w-full h-full",
-                "object-cover",
+                "w-[140%] h-[110%]",
+                "absolute top-1/2 -translate-y-1/2",
                 hasDuration ? "duration-1000" : "duration-0"
             )}
             style={{
-                objectPosition: `${indexInView * 25}% 50%`
+                left: `-${indexInView * 10}%`
             }}
-            alt="about"
-        />
+        >
+            <Image
+                src={src}
+                fill
+                sizes="100%"
+                className={clsx(
+                    "w-full h-full",
+                    "object-cover object-center",
+                )}
+                alt="about"
+            />
+        </div>
     </div>
     )
 }
