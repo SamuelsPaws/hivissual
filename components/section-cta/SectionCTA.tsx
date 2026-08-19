@@ -98,7 +98,7 @@ const SectionCTA = ({ bgColor, gallery }: Props) => {
             initial="hidden"
             whileInView="visible"
             whileHover="hovered"
-            viewport={{ once: true, margin: '-80px 0px' }}
+            viewport={{ once: true, margin: '-32px 0px' }}
         >
             Escríbeme a WhatsApp
             <i className="fa fa-whatsapp scale-150 ml-6" aria-hidden="true"></i>
