@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import CustomIcon from "./CustomIcon"
 
 const Footer = () => {
   return (
@@ -105,7 +106,7 @@ const Footer = () => {
             href="tel:+593983523721"
             className="text-md lg:text-md text-brandblack underline"
           >
-            +593 98 352 3721
+            098 352 3721
           </a>
           <span className="mt-4 text-lg lg:text-xl text-black font-semibold">
             E-mail
@@ -127,7 +128,14 @@ const Footer = () => {
             className="text-md lg:text-md text-brandblack underline"
           >
             <i className="fa fa-instagram mr-2" aria-hidden="true"></i>
-            @hivissual
+            Instagram
+          </a>
+          <a
+            href="https://www.instagram.com/hivissual/"
+            className="text-md lg:text-md text-brandblack underline"
+          >
+            <CustomIcon iconId="tiktok" className="mr-2" />
+            TikTok
           </a>
           {/* <a
             href="/"
