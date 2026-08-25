@@ -113,7 +113,7 @@ button:hover {
 		@apply relative after:content-[''] after:absolute after:top-1/2 after:left-0 after:w-full after:h-[2px] after:bg-gray-500/70;
 	}
 
-  .text-my-sm {
+ 	.text-my-sm {
 		@apply text-sm md:text-sm xl:text-md;
 	}
 

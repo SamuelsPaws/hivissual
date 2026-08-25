@@ -3,7 +3,9 @@ import clsx from "clsx";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
-import BurgerMenu from "./BurgerMenu";
+import BurgerMenu from "../BurgerMenu";
+import navLinks from "@/data/nav";
+import NavLinkDesk from "./subcomponents/NavLinkDesk";
 
 const Header = () => {
     const [isAtTop, setIsAtTop] = useState<boolean>(true);
@@ -73,39 +75,13 @@ const Header = () => {
             {/* Nav */}
             <nav className="hidden lg:block">
                 <ul className="flex items-center gap-12">
-                    <li>
-                        <Link
-                            href='/portafolio'
-                            className="
-                                relative hover-animated-underline
-                                text-brandwhite text-lg font-semibold"
-                        >
-                            Portafolio
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/quien-soy'
-                            className="
-                                relative hover-animated-underline
-                                text-brandwhite text-lg font-semibold"
-                        >
-                            Quién Soy
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/cotizaciones'
-                            className="
-                                block px-4 py-1 relative
-                                bg-brandwhite
-                                text-black text-md font-semibold
-                                rounded-full
-                                md:hover:-translate-y-0.5 duration-200"
-                        >
-                            Cotizar
-                        </Link>
-                    </li>
+                    {navLinks.slice(1).map((el, index) => (
+                        <NavLinkDesk
+                            key={index}
+                            item={el}
+                            isLast={index >= navLinks.length - 2}
+                        />
+                    ))}
                 </ul>
             </nav>
             {/* Burger */}

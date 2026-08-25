@@ -39,7 +39,51 @@ export type Project = {
     gallery: Media[]
 }
 
+export type BlogQuote = {
+    author: string,
+    message: string,
+    type: 'shared.quote'
+}
+
+type BlogSubtitle = {
+    text: string,
+    type: 'shared.subtitulo'
+}
+
+type BlogRichText = {
+    body: string,
+    type: 'shared.rich-text'
+}
+
+type BlogMedia = {
+    src: string,
+    type: 'shared.media'
+}
+
+export type BlogBlock = BlogQuote | BlogSubtitle | BlogRichText | BlogMedia
+
+export type BlogCategory = {
+    label: string,
+    slug: string
+}
+
+export type BlogArticle = {
+    title: string,
+    date: string,
+    description: string,
+    slug: string,
+    coverSrc: string,
+    blocks: (BlogBlock | null)[],
+    category: BlogCategory
+}
+
 export type Breadcrumb = {
   name: string;
   url: string;
+}
+
+export type NavLinkType = {
+    label: string,
+    href: string,
+    external: boolean
 }

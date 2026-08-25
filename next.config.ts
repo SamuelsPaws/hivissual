@@ -11,7 +11,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.ctfassets.net',
         pathname: '/4lgan033pgh0/**'
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'r2-worker.fortales.workers.dev',
+      },
     ]
   }
 }

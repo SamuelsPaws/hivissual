@@ -1,15 +1,17 @@
+import clsx from 'clsx';
 import Image from 'next/image'
 
 interface Props {
     title: string;
     description: string | null;
     bgSrc: string;
+    objectPos?: string;
 }
 
-const Banner = ({ title, description, bgSrc }: Props) => {
+const Banner = ({ title, description, bgSrc, objectPos }: Props) => {
   return (
     <section className="
-        h-70 md:h-110 relative
+        h-70 md:h-115 relative
         p-8 md:p-16
         flex flex-col justify-end items-start gap-4 md:gap-8"
     >
@@ -19,13 +21,13 @@ const Banner = ({ title, description, bgSrc }: Props) => {
                 src={bgSrc}
                 fill
                 sizes="100%"
-                className="w-full object-cover object-[0%_35%]"
+                className={clsx("w-full object-cover", objectPos ?? "object-[0%_35%]")}
                 priority
                 alt="Stock"
             />
         </div>
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-brandblack to-brandblack/60 z-10"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-brandblack/70 to-brandblack/60 z-10"></div>
         {/* Actual content */}
         <h1 className="
             z-20 relative
