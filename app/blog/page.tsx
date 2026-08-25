@@ -13,7 +13,7 @@ export default async function Blog() {
     <main>
         <Banner
             title="Blog: Bitácora de Hivissual"
-            description="Aprende más sobre fotografía, producción audiovisual, creación de contenido y redes sociales a través de mis artículos."
+            description="Aprende más sobre fotografía, producción audiovisual, creación de contenido y redes sociales con mis artículos."
             bgSrc="/assets/about-5.webp"
             objectPos="object-[0%_55%]"
         />
@@ -21,10 +21,15 @@ export default async function Blog() {
             title="Últimos Artículos"
             bgColor="bg-brandblack"
         >
-            <div className="w-full flex gap-8">
+            {/* Container with left content and right table */}
+            <div className="
+                w-full
+                flex flex-col md:flex-row gap-8"
+            >
                 {/* Left part with articles */}
                 <div className="
-                    flex-1
+                    w-full
+                    md:w-auto md:flex-1
                     flex flex-col
                     rounded-2xl border border-gray-400"
                 >
@@ -37,7 +42,7 @@ export default async function Blog() {
                     ))}
                 </div>
                 {/* Right part with table */}
-                <div className="w-100"></div>
+                <div className="w-full md:w-100"></div>
             </div>
         </SectionContentSt>
         <SectionCTA

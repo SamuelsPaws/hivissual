@@ -6,12 +6,13 @@ interface Props {
     coverSrc: string;
 }
 
-const Banner = ({ title, description, coverSrc }: Props) => {
+const ArticleBanner = ({ title, description, coverSrc }: Props) => {
     return (
     <section className="
-        h-120 relative
-        py-16 px-40
-        flex flex-col justify-end items-center gap-8
+        h-80 md:h-120 relative
+        px-8 py-8
+        md:px-40 md:py-16
+        flex flex-col justify-end items-center gap-4 md:gap-8
         text-center"
     >
         {/* Image bg */}
@@ -19,7 +20,7 @@ const Banner = ({ title, description, coverSrc }: Props) => {
             src={coverSrc}
             fill
             sizes="100%"
-            className="w-full h-full object-cover z-0"
+            className="w-full h-full object-cover object-right z-0"
             alt="Portada del artículo"
         />
         {/* Dark overlay */}
@@ -27,13 +28,14 @@ const Banner = ({ title, description, coverSrc }: Props) => {
         {/* Content */}
         <h1 className="
             relative z-20
-            text-5xl text-brandwhite font-semibold leading-16"
+            text-xl md:text-5xl text-brandwhite
+            font-semibold leading-8 md:leading-16"
         >
             {title}
         </h1>
         <p className="
             relative z-20
-            text-myf-lg text-gray-200"
+            text-my-md text-gray-200"
         >
             {description}
         </p>
@@ -41,4 +43,4 @@ const Banner = ({ title, description, coverSrc }: Props) => {
     )
 }
 
-export default Banner
+export default ArticleBanner

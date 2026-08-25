@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
-import BurgerMenu from "../BurgerMenu";
+import BurgerMenu from "./subcomponents/BurgerMenu";
 import navLinks from "@/data/nav";
 import NavLinkDesk from "./subcomponents/NavLinkDesk";
 

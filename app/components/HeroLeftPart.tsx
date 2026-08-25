@@ -54,7 +54,7 @@ const variants = {
             opacity: 1,
             transition: {
                 duration: 0.6,
-                delay: 0.9
+                delay: 0.8
             }
         }
     },
@@ -72,7 +72,7 @@ const ctaVariants: Variants = {
             type: 'spring',
             stiffness: 400,
             damping: 16,
-            delay: 0.6
+            delay: 0.5
         }
     }
 }

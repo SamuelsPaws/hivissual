@@ -24,7 +24,7 @@ const Block = ({ item }: Props) => {
             return (
             <h2 className="
                 mt-4
-                text-3xl text-brandwhite font-semibold"
+                text-xl md:text-3xl text-brandwhite font-semibold"
             >
                 {item.text}
             </h2>
@@ -33,7 +33,7 @@ const Block = ({ item }: Props) => {
 
         if (item.type === 'shared.rich-text') {
             return (
-            <p className="text-my-md text-gray-200 text-justify">
+            <p className="text-my-md text-gray-200 text-left leading-7 md:leading-8">
                 {item.body}
             </p>
             )
@@ -42,12 +42,13 @@ const Block = ({ item }: Props) => {
         if (item.type === 'shared.media') {
             return (
             <div className="
-                w-2/3 min-w-130
+                w-full
+                md:w-2/3 md:min-w-130
                 mx-auto my-8
                 flex flex-col items-center gap-8"
             >
                 <div className="
-                    w-full h-100
+                    w-full h-60 md:h-100
                     relative
                     bg-brandgray-100"
                 >
@@ -59,7 +60,7 @@ const Block = ({ item }: Props) => {
                         alt="Fotografía propiedad de Hivissual"
                     />
                 </div>
-                <p className="text-my-sm text-gray-200 italic">
+                <p className="text-my-sm text-gray-200 text-center italic leading-6">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deserunt.
                 </p>
             </div>

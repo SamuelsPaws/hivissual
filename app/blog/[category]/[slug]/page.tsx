@@ -1,5 +1,5 @@
 import SectionContentFr from "@/components/SectionContentFr"
-import Banner from "./components/Banner"
+import ArticleBanner from "./components/ArticleBanner"
 import { getArticleBySlug, getArticles } from "@/lib/strapi/strapi-queries"
 import Image from "next/image"
 import Block from "./components/Block"
@@ -25,7 +25,7 @@ export default async function BlogArticle({ params }: Props) {
 
     return (
     <main>
-        <Banner
+        <ArticleBanner
             title={article.title}
             description={article.description}
             coverSrc={article.coverSrc}
@@ -35,7 +35,7 @@ export default async function BlogArticle({ params }: Props) {
         >
             
             {/* Author */}
-            <div className="mb-8 text-myf-md text-gray-400 flex items-center gap-4">
+            <div className="mb-0 md:mb-8 text-my-sm text-gray-400 flex items-center gap-4">
                 <span>
                     Por:{' '}
                     <Link
@@ -54,19 +54,32 @@ export default async function BlogArticle({ params }: Props) {
                         alt="Hivissual"
                     />
                 </div>
-                <span>|</span>
-                <span>{article.date}</span>
+                <span className="hidden md:block">|</span>
+                <span className="hidden md:block">{article.date}</span>
             </div>
-            <div className="w-full flex gap-16">
+            {/* Date on mobile */}
+            <span className="mb-8 block text-my-sm text-gray-400">
+                {article.date}
+            </span>
+            {/* Container with content and table */}
+            <div className="
+                w-full
+                flex flex-col gap-8
+                md:flex-row md:gap-16"
+            >
                 {/* Left part with content */}
-                <div className="flex-1 flex flex-col gap-4">
+                <div className="
+                    w-full
+                    md:w-auto md:flex-1
+                    flex flex-col gap-4"
+                >
                     {article.blocks.map((el, index) => (
                         <Block
                             key={index}
                             item={el}
                         />
                     ))}
-                    <p className="my-8 mb-4 text-myf-md text-gray-200">
+                    <p className="my-4 md:my-8 text-my-sm text-gray-200">
                         ¿Quieres seguir aprendiendo? Explora más consejos, ideas y trucos.
                     </p>
                     <WhiteBtn
@@ -77,15 +90,16 @@ export default async function BlogArticle({ params }: Props) {
                 </div>
                 {/* Right part with table */}
                 <div className="
-                    w-[30%] relative
-                    p-8
-                    flex flex-col justify-between gap-8
+                    w-full md:w-[30%] relative
+                    px-4 py-6
+                    md:px-8 md:py-8
+                    flex flex-col justify-between gap-4 md:gap-8
                     gradient-border rounded-2xl"
                 >
                     <div className="flex-1">
                         <div className="w-full sticky top-[calc(var(--spacing-header-height)+1rem)]">
                             <h3 className="
-                                mb-8
+                                mb-4 md:mb-8
                                 text-my-xl text-brandwhite font-semibold"
                             >
                                 Artículos Relacionados

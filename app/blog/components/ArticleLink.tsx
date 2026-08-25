@@ -13,12 +13,15 @@ const ArticleLink = ({ article, isLast }: Props) => {
         href={`/blog/${article.category.slug}/${article.slug}`}
         className="
             w-full relative group
-            px-8 py-8
-            flex gap-8
+            px-4 py-6
+            md:px-8 md:py-8
+            flex flex-col-reverse gap-4
+            md:flex-row md:gap-8
             md:hover:bg-white/5 md:hover:gap-12 duration-200"
     >
         <div className="
-            w-20 h-full relative
+            w-full h-25 relative
+            md:w-20 md:h-full
             rounded-2xl overflow-hidden
             md:group-hover:scale-110 duration-200"
         >
@@ -34,16 +37,22 @@ const ArticleLink = ({ article, isLast }: Props) => {
             flex-1 h-full
             flex flex-col gap-4"
         >
-            <div className="w-full flex justify-between">
+            <div className="
+                w-full
+                flex flex-col gap-2
+                md:flex-row md:justify-between md:gap-0"
+            >
                 <h3 className="text-my-lg text-brandwhite font-semibold">
                     {article.title}
                 </h3>
-                <span className="text-myf-md text-gray-200">
+                <span className="
+                    text-my-sm text-gray-200"
+                >
                     {article.date}
                 </span>
             </div>
             <div className="w-full h-[1px] bg-linear-to-r from-gray-600 to-gray-600/10" />
-            <p className="text-myf-md text-gray-200">
+            <p className="text-my-sm text-gray-200">
                 {article.description}
             </p>
         </div>

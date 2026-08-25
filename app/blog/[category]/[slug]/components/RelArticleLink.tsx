@@ -14,11 +14,12 @@ const RelArticleLink = ({ article, isLast }: Props) => {
         className="
             w-full relative group
             px-4 py-4
-            flex items-center gap-8
+            flex items-center gap-4 md:gap-8
             md:hover:bg-white/5 duration-200"
     >
         <div className="
-            w-20 h-20 relative
+            w-16 h-16 relative
+            md:w-20 md:h-20
             rounded-2xl overflow-hidden
             duration-200"
         >
@@ -32,7 +33,7 @@ const RelArticleLink = ({ article, isLast }: Props) => {
         </div>
         <div className="
             flex-1 h-full
-            flex flex-col gap-4"
+            flex flex-col gap-2 md:gap-4"
         >
             <div className="w-full flex justify-between">
                 <h3 className="text-myf-md text-brandwhite font-semibold">
@@ -43,7 +44,7 @@ const RelArticleLink = ({ article, isLast }: Props) => {
                 </span> */}
             </div>
             <div className="w-full h-[1px] bg-linear-to-r from-gray-600 to-gray-600/10" />
-            <p className="text-sm text-gray-200">
+            <p className="text-my-sm text-gray-200">
                 {article.date}
             </p>
         </div>

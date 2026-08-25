@@ -1,7 +1,9 @@
 'use client'
+import navLinks from "@/data/nav";
 import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react"
+import NavLinkMob from "./NavLinkMob";
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -60,45 +62,16 @@ const BurgerMenu = () => {
             )}>
                 <ul className="
                     w-full h-full
-                    flex flex-col justify-center items-end gap-6
+                    flex flex-col justify-center items-end gap-4
                     text-xl font-semibold text-brandwhite"
                 >
-                    <li>
-                        <Link
-                            href='/'
-                            className="px-2"
+                    {navLinks.map((el, index) => (
+                        <NavLinkMob
+                            key={index}
+                            item={el}
                             onClick={toggleMenu}
-                        >
-                            Inicio
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/portafolio'
-                            className="px-2"
-                            onClick={toggleMenu}
-                        >
-                            Portafolio
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/quien-soy'
-                            className="px-2"
-                            onClick={toggleMenu}
-                        >
-                            Quién Soy
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href='/cotizaciones'
-                            className="px-2"
-                            onClick={toggleMenu}
-                        >
-                            Cotizaciones
-                        </Link>
-                    </li>
+                        />
+                    ))}
                 </ul>
             </div>
         </div>

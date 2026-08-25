@@ -11,7 +11,7 @@ interface Props {
 const Banner = ({ title, description, bgSrc, objectPos }: Props) => {
   return (
     <section className="
-        h-70 md:h-115 relative
+        h-75 md:h-115 relative
         p-8 md:p-16
         flex flex-col justify-end items-start gap-4 md:gap-8"
     >
@@ -31,7 +31,8 @@ const Banner = ({ title, description, bgSrc, objectPos }: Props) => {
         {/* Actual content */}
         <h1 className="
             z-20 relative
-            text-3xl lg:text-6xl text-brandwhite font-semibold"
+            text-3xl lg:text-6xl text-brandwhite
+            font-semibold leading-12 md:leading-16"
         >
             {title}
         </h1>
