@@ -26,7 +26,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
             md:w-60 md:h-auto md:aspect-square
             flex flex-col justify-end
             group
-            border border-[#fff5] md:border-0
+            border border-gray-500 md:border-0
             rounded-4xl overflow-hidden'
         variants={springRevealHover}
         initial="hidden"

@@ -14,7 +14,7 @@ const MasonryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
         md:w-fit md:mx-auto md:mb-24
         grid
         grid-cols-2 grid-rows-[repeat(4,200px)] gap-4
-        md:grid-cols-[repeat(4,220px)] md:grid-rows-[repeat(2,160px)] md:gap-8"
+        md:grid-cols-[220px_280px_220px_280px] md:grid-rows-[repeat(2,180px)] md:gap-8"
     >
         {mediaArr[0] &&<MasonryItem
             thisMediaIndex={0}

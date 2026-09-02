@@ -82,8 +82,17 @@ export type Breadcrumb = {
   url: string;
 }
 
-export type NavLinkType = {
+export type NavDdItemType = {
     label: string,
     href: string,
     external: boolean
+}
+
+type NavLinkDropdown = NavDdItemType[] | null
+
+export type NavLinkType = {
+    label: string,
+    href: string,
+    external: boolean,
+    dropdown: NavLinkDropdown
 }

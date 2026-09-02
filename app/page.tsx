@@ -129,7 +129,7 @@ export default async function Home() {
 		</SectionContentSt> */}
 		{/* About */}
 		<SectionContentCen
-			title="Detrás de la Cámara"
+			title="Quién Soy"
 			bgColor="bg-brandgray-100"
 		>
 			<AboutGrid />

@@ -3,7 +3,7 @@ import Banner from "@/components/Banner";
 import Gallery from "@/components/Gallery";
 import SectionCTA from "@/components/section-cta/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
-import { getFeaturedImages, getMedia } from "@/lib/contentful-queries";
+import { getFeaturedImages, getMedia, getMediaByCategory } from "@/lib/contentful-queries";
 import company from "@/data/company";
 import { portfolioMetadata } from "@/data/metadata";
 import { Metadata } from "next";
@@ -11,6 +11,14 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import breadcrumbData from "@/data/breadcrumbs.json";
 import { generatePortfolioSchema } from "@/lib/seo/schema/portfolio";
+import { mapCategoryLabel } from "@/lib/utils/mapCategory";
+import portfolioCategories from "@/data/portfolioCategories";
+
+type Props = {
+    params: Promise<{
+        category: string
+    }>
+}
 
 const BASE_URL = company.url;
 
@@ -85,9 +93,13 @@ export function generateMetadata(): Metadata {
   	}
 }
 
-export default async function Portfolio() {
-    const entries = await getMedia(8, 0)
+export default async function Portfolio({ params }: Props) {
+    const { category } = await params
+
+    const entries = await getMediaByCategory(8, 0, mapCategoryLabel(category))
     const featuredImages = await getFeaturedImages()
+
+    const categoryData = portfolioCategories.find(el => el.slug === category)
 
 	const portfolioSchema = generatePortfolioSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.portfolio, BASE_URL)
@@ -99,7 +111,7 @@ export default async function Portfolio() {
 		<JsonLd data={bcSchema} />
 		{/* Page */}
         <Banner
-            title="Mi Trabajo"
+            title={categoryData ? categoryData.h1 : 'Mis Trabajos'}
             description="Explora proyectos, fotografías y producciones creadas para marcas y profesionales."
             bgSrc="/assets/banner.webp"
         />

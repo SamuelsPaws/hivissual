@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import BurgerMenu from "./subcomponents/BurgerMenu";
 import navLinks from "@/data/nav";
 import NavLinkDesk from "./subcomponents/NavLinkDesk";
+import ProjectsDdContainer from "./subcomponents/nav-dropdown/NavDd";
 
 const Header = () => {
     const [isAtTop, setIsAtTop] = useState<boolean>(true);
@@ -57,7 +58,7 @@ const Header = () => {
         {/* Right compartment */}
         <div className={clsx(
             "h-fit py-1 lg:py-2 relative",
-            "rounded-md lg:rounded-xl overflow-hidden border",
+            "rounded-md lg:rounded-xl border",
             "duration-300",
             isAtTop ?
                 "pl-0 pr-0 border-transparent"
@@ -67,6 +68,7 @@ const Header = () => {
             {/* Bg */}
             <div className={clsx(
                 "absolute inset-0 duration-300",
+                "rounded-md md:rounded-xl",
                 isAtTop ?
                 "bg-transparent backgrop-blur-none"
                 :

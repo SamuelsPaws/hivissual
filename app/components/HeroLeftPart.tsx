@@ -66,7 +66,7 @@ const ctaVariants: Variants = {
         scale: 0.9
     },
     visible: {
-        opacity: 1,
+        opacity: 0.8,
         scale: 1,
         transition: {
             type: 'spring',
@@ -100,37 +100,41 @@ const HeroLeftPart = () => {
         >
             Hivissual | Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
         </p>
-        <motion.div
-            className='mt-2 lg:mt-0'
-            variants={ctaVariants}
-            initial="hidden"
-            animate="visible"
-        >
-            <Link
-                href='/portafolio'
-                className="
-                    block
-                    px-6 py-3
-                    lg:px-8 lg:py-4
-                    bg-brandwhite
-                    text-lg lg:text-2xl font-semibold text-black
-                    rounded-full md:hover:scale-110 duration-400"
+        <div className="relative">
+            <motion.div
+                className='mt-2 lg:mt-0'
+                variants={ctaVariants}
+                initial="hidden"
+                animate="visible"
             >
-                Explorar Portafolio
-            </Link>
-        </motion.div>
-        {/* Glow */}
-        <motion.div
-            className="
-                w-screen h-8 mt-4
-                lg:w-140 lg:h-12
-                bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                opacity-100 lg:opacity-70 mix-blend-screen blur-[20px]
-                bg-contain"
-            variants={variants.glow}
-            initial="hidden"
-            animate="visible"
-        ></motion.div>
+                <Link
+                    href='/portafolio'
+                    className="
+                        block w-fit z-30
+                        mx-auto
+                        px-6 py-3
+                        lg:px-8 lg:py-4
+                        bg-brandwhite
+                        text-lg lg:text-2xl font-semibold text-black
+                        rounded-full md:hover:scale-110 duration-400"
+                >
+                    Explorar Portafolio
+                </Link>
+            </motion.div>
+            {/* Glow */}
+            <motion.div
+                className="
+                    absolute -bottom-5 left-1/2 -translate-x-1/2
+                    w-[160%] h-8
+                    lg:w-[140%] lg:h-10
+                    bg-radial-[at_center] from-brandwhite via-transparent to-transparent
+                    opacity-100 lg:opacity-80 mix-blend-screen blur-[8px]
+                    bg-contain"
+                variants={variants.glow}
+                initial="hidden"
+                animate="visible"
+            ></motion.div>
+        </div>
     </div>
   )
 }

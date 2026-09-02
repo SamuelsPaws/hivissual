@@ -56,22 +56,37 @@ const BurgerMenu = () => {
             <div className={clsx(
                 isOpen ? 'fixed' : 'hidden',
                 "top-0 left-0",
-                "w-screen h-[60vh]",
+                "w-screen h-[70vh]",
                 "pt-header-height-mob px-8",
-                "bg-brandblack-200 border-b border-b-white/10 shadow-md"
+                "bg-linear-to-b from-brandblack to-brandblack-200",
+                "border-b border-b-white/10 shadow-md"
             )}>
                 <ul className="
                     w-full h-full
-                    flex flex-col justify-center items-end gap-4
+                    flex flex-col justify-center items-end gap-6
                     text-xl font-semibold text-brandwhite"
                 >
-                    {navLinks.map((el, index) => (
+                    {navLinks.map((el, index) => {
+                        if (el.dropdown) {
+                            return (
+                            el.dropdown.map(ddEl => ({ ...ddEl, label: `${el.label}: ${ddEl.label}`})).map((ddEl, ddI) => (
+                                <NavLinkMob
+                                    key={ddI + 999}
+                                    item={ddEl}
+                                    onClick={toggleMenu}
+                                />
+                            ))
+                            )
+                        }
+
+                        return (
                         <NavLinkMob
                             key={index}
                             item={el}
                             onClick={toggleMenu}
                         />
-                    ))}
+                        )
+                    })}
                 </ul>
             </div>
         </div>

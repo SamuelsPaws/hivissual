@@ -1,8 +1,8 @@
-import { NavLinkType } from "@/lib/types"
+import { NavDdItemType, NavLinkType } from "@/lib/types"
 import Link from "next/link";
 
 interface Props {
-    item: NavLinkType;
+    item: NavLinkType | NavDdItemType;
     onClick: () => void;
 }
 

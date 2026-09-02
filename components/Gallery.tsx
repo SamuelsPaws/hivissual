@@ -4,7 +4,7 @@ import FilterTag from './FilterTag'
 import GalleryGrid from './GalleryGrid'
 import Lightbox from '@/components/Lightbox'
 import { Media, PaginatedResponse } from '@/lib/types'
-import MoreBtn from '@/app/portafolio/components/MoreBtn'
+import MoreBtn from '@/app/portafolio/[category]/components/MoreBtn'
 import { loadMedia } from '@/lib/actions'
 
 interface Props {

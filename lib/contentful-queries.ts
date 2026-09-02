@@ -24,6 +24,29 @@ export async function getMedia(
   }
 }
 
+export async function getMediaByCategory(
+  limit = 8,
+  offset = 0,
+  category: string
+): Promise<PaginatedResponse<Media>> {
+  const entries = await contentful.getEntries<MediaSkeleton>({
+    content_type: 'media',
+    limit,
+    skip: offset,
+    order: ['-fields.priority', 'sys.createdAt'],
+    'fields.category': category,
+  })
+
+  const items = entries.items.map(mapMedia)
+
+  return {
+    items,
+    total: entries.total,
+    hasMore: offset + items.length < entries.total,
+    nextOffset: offset + items.length
+  }
+}
+
 export async function getFeaturedImages(): Promise<Media[]> {
   const entries = await contentful.getEntries<MediaSkeleton>({
     content_type: 'media',

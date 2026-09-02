@@ -1,5 +1,6 @@
 import { NavLinkType } from "@/lib/types";
 import Link from "next/link";
+import NavDd from "./nav-dropdown/NavDd";
 
 interface Props {
     item: NavLinkType;
@@ -26,6 +27,17 @@ const NavLinkDesk = ({ item, isLast }: Props) => {
             >
                 {item.label}
             </a>
+        </li>
+        )
+    }
+
+    if (item.dropdown) {
+        return (
+        <li>
+            <NavDd
+                item={item}
+                className={isLast ? cnLast : cn}
+            />
         </li>
         )
     }

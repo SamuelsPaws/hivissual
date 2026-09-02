@@ -3,6 +3,7 @@ import type { EntryFieldTypes, EntrySkeletonType } from 'contentful';
 export interface MediaFields {
   client: EntryFieldTypes.Text;
   type: EntryFieldTypes.Text;
+  category: EntryFieldTypes.Text;
   image: EntryFieldTypes.AssetLink;
   description: EntryFieldTypes.Text;
   videoUrl: EntryFieldTypes.Text;
