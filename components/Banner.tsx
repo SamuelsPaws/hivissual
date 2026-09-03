@@ -31,8 +31,8 @@ const Banner = ({ title, description, bgSrc, objectPos }: Props) => {
         {/* Actual content */}
         <h1 className="
             z-20 relative
-            text-3xl lg:text-6xl text-brandwhite
-            font-semibold leading-12 md:leading-16"
+            text-2xl lg:text-6xl text-brandwhite
+            font-semibold leading-10 md:leading-16"
         >
             {title}
         </h1>

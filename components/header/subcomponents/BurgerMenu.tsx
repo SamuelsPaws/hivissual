@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react"
 import NavLinkMob from "./NavLinkMob";
+import BurgerNavDd from "./BurgerNavDd";
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -56,26 +57,24 @@ const BurgerMenu = () => {
             <div className={clsx(
                 isOpen ? 'fixed' : 'hidden',
                 "top-0 left-0",
-                "w-screen h-[70vh]",
+                "w-screen h-[75vh]",
                 "pt-header-height-mob px-8",
-                "bg-linear-to-b from-brandblack to-brandblack-200",
+                "bg-linear-to-t from-brandblack to-brandgray-100",
                 "border-b border-b-white/10 shadow-md"
             )}>
                 <ul className="
                     w-full h-full
-                    flex flex-col justify-center items-end gap-6
-                    text-xl font-semibold text-brandwhite"
+                    flex flex-col justify-center items-end gap-4
+                    font-semibold text-brandwhite"
                 >
                     {navLinks.map((el, index) => {
                         if (el.dropdown) {
                             return (
-                            el.dropdown.map(ddEl => ({ ...ddEl, label: `${el.label}: ${ddEl.label}`})).map((ddEl, ddI) => (
-                                <NavLinkMob
-                                    key={ddI + 999}
-                                    item={ddEl}
-                                    onClick={toggleMenu}
-                                />
-                            ))
+                            <BurgerNavDd
+                                key={index}
+                                item={el}
+                                onLinkClick={toggleMenu}
+                            />
                             )
                         }
 

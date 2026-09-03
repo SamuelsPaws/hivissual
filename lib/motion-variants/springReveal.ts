@@ -21,7 +21,7 @@ export const springRevealHover: Variants = {
         transition: {
             type: 'spring',
             stiffness: 350,
-            damping: 16,
+            damping: 17,
         },
         border: '1px solid #fff5'
     }

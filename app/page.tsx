@@ -107,12 +107,12 @@ export default async function Home() {
 			title="Mira mis trabajos destacados"
 			bgColor="bg-brandblack"
 		>
-		{/* Masonry Grid */}
-		<GallerySimple items={featuredEntries} />
-		<WhiteBtn
-			href="/portafolio"
-			label="Ver Portafolio Completo"
-		/>
+			{/* Masonry Grid */}
+			<GallerySimple items={featuredEntries} />
+			<WhiteBtn
+				href="/portafolio/redes-sociales"
+				label="Ver Portafolio Completo"
+			/>
 		</SectionContentSt>
 		{/* Services */}
 		<SectionContentSt

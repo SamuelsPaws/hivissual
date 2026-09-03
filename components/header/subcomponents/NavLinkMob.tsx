@@ -11,7 +11,7 @@ const NavLinkMob = ({ item, onClick }: Props) => {
     <li>
         <Link
             href={item.href}
-            className="px-2"
+            className="px-2 text-lg"
             onClick={onClick}
         >
             {item.label}

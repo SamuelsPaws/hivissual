@@ -45,8 +45,8 @@ const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
 
         return () => {
             document.removeEventListener("pointerdown", handlePointerDown);
-        };
-    }, [btnCurrent]);
+        }
+    }, [btnCurrent, isDdOpen])
 
     const handleClick = () => {
         setIsDdOpen(false)
@@ -60,7 +60,8 @@ const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
             w-[200%]
             flex flex-col
             text-center
-            border border-gray-500 rounded-2xl overflow-hidden"
+            border border-gray-500
+            rounded-2xl overflow-hidden shadow-lg"
         variants={variants}
         animate={isDdOpen ? 'open' : 'closed'}
         initial={false}
