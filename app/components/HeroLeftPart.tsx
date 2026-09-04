@@ -108,7 +108,7 @@ const HeroLeftPart = () => {
                 animate="visible"
             >
                 <Link
-                    href='/portafolio'
+                    href='/portafolio/redes-sociales'
                     className="
                         block w-fit z-30
                         mx-auto
@@ -125,7 +125,7 @@ const HeroLeftPart = () => {
             <motion.div
                 className="
                     absolute -bottom-5 left-1/2 -translate-x-1/2
-                    w-[160%] h-8
+                    w-[160%] h-8 z-20
                     lg:w-[140%] lg:h-10
                     bg-radial-[at_center] from-brandwhite via-transparent to-transparent
                     opacity-100 lg:opacity-80 mix-blend-screen blur-[8px]
