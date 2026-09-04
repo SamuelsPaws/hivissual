@@ -15,8 +15,8 @@ const SectionContentCen = ({ title, bgColor, children }: Props) => {
         bgColor
     )}>
         <h2 className="
-            mb-12 lg:mb-16
-            text-center text-3xl lg:text-5xl xl:text-6xl text-brandwhite font-semibold"
+            mb-12 lg:mb-24
+            text-center text-3xl lg:text-4xl xl:text-5xl text-brandwhite font-semibold"
         >
             {title}
         </h2>

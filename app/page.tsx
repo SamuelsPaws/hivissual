@@ -14,6 +14,22 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateHomeSchema } from "@/lib/seo/schema/home";
+import BrandStrip from "./components/brand-strip/BrandStrip";
+
+const sampleSrcs = [
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/toyota-logo.png',
+	'/assets/brand-logos/humboldt-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/toyota-logo.png',
+	'/assets/brand-logos/humboldt-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+	'/assets/brand-logos/watch-out-logo.png',
+]
 
 const BASE_URL = company.url;
 
@@ -104,7 +120,7 @@ export default async function Home() {
 		{/* Page */}
 		<Hero />
 		<SectionContentSt
-			title="Mira mis trabajos destacados"
+			title="Explora mis trabajos destacados"
 			bgColor="bg-brandblack"
 		>
 			{/* Masonry Grid */}
@@ -116,17 +132,17 @@ export default async function Home() {
 		</SectionContentSt>
 		{/* Services */}
 		<SectionContentSt
-			title="Conoce mis servicios"
+			title="Mis servicios"
 			bgColor="bg-brandblack-100"
 		>
 			<ServiceCardGrid />
 		</SectionContentSt>
-		{/* <SectionContentSt
-			title="Reseñas y Testimonios"
+		<SectionContentCen
+			title="Marcas Que Han Trabajado Conmigo"
 			bgColor="bg-brandblack-200"
 		>
-			<TestimonialSlider testimonials={testimonials} />
-		</SectionContentSt> */}
+			<BrandStrip srcs={sampleSrcs} />
+		</SectionContentCen>
 		{/* About */}
 		<SectionContentCen
 			title="Quién Soy"

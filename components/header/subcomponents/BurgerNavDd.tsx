@@ -39,7 +39,7 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
                 <ul className="
                     w-full mt-2
                     px-2
-                    flex flex-col items-end gap-2
+                    flex flex-col items-end gap-4
                     text-md"
                 >
                     {item.dropdown && item.dropdown.map((el, index) => (

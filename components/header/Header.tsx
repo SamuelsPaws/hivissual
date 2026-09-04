@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import BurgerMenu from "./subcomponents/BurgerMenu";
 import navLinks from "@/data/nav";
 import NavLinkDesk from "./subcomponents/NavLinkDesk";
-import ProjectsDdContainer from "./subcomponents/nav-dropdown/NavDd";
 
 const Header = () => {
     const [isAtTop, setIsAtTop] = useState<boolean>(true);
@@ -25,7 +24,7 @@ const Header = () => {
         };
     }, []);
 
-  return (
+    return (
     <header className={clsx(
         "w-full h-header-height-mob lg:h-header-height z-[999]",
         "fixed top-0 left-0",

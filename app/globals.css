@@ -31,6 +31,7 @@
 
 	--animate-fade-in-right-400: fade-in-right 400ms ease-out forwards;
 	--animate-fade-in-right-800: fade-in-right 800ms ease-out forwards;
+	--animate-scroll-left: scroll-left 20s linear infinite;
 
 	@keyframes fade-in-right {
 		from {
@@ -41,6 +42,16 @@
 		to {
 			transform: translateX(0);
 			opacity: 1;
+		}
+	}
+
+	@keyframes scroll-left {
+		from {
+			transform: translateX(0);
+		}
+
+		to {
+			transform: translateX(calc(-100% - 2rem));
 		}
 	}
 }
