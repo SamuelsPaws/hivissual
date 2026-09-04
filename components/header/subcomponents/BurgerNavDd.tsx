@@ -41,7 +41,7 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
         )}>
             <div className="overflow-hidden">
                 <ul className="
-                    w-full mt-2
+                    w-full mt-4
                     px-2
                     flex flex-col items-end gap-4
                     text-md"
