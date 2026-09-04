@@ -108,7 +108,7 @@ const Footer = () => {
 				Instagram
 			</a>
 			<a
-				href="https://www.instagram.com/hivissual/"
+				href="https://www.tiktok.com/@hivissual"
 				className="text-md lg:text-md text-brandblack underline"
 			>
 				<CustomIcon iconId="tiktok" className="mr-2" />
