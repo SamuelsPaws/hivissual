@@ -102,7 +102,7 @@ const HeroLeftPart = () => {
         </p>
         <div className="relative">
             <motion.div
-                className='mt-2 lg:mt-0'
+                className='mt-2 lg:mt-0 z-30 relative'
                 variants={ctaVariants}
                 initial="hidden"
                 animate="visible"
@@ -110,7 +110,7 @@ const HeroLeftPart = () => {
                 <Link
                     href='/portafolio/redes-sociales'
                     className="
-                        block w-fit z-30 relative
+                        block w-fit
                         mx-auto
                         px-6 py-3
                         lg:px-8 lg:py-4
