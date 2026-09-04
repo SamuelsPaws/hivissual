@@ -17,7 +17,11 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
     }
 
     return (
-    <li className="flex flex-col items-end">
+    <li className={clsx(
+        "flex flex-col items-end",
+        "border-y duration-400",
+        isExpanded ? "border-brandwhite py-2" : "border-transparent py-0"
+    )}>
         <button
             onClick={handleBtnClick}
             className="
