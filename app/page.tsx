@@ -137,12 +137,12 @@ export default async function Home() {
 		>
 			<ServiceCardGrid />
 		</SectionContentSt>
-		<SectionContentCen
+		{/* <SectionContentCen
 			title="Marcas Que Han Trabajado Conmigo"
 			bgColor="bg-brandblack-200"
 		>
 			<BrandStrip srcs={sampleSrcs} />
-		</SectionContentCen>
+		</SectionContentCen> */}
 		{/* About */}
 		<SectionContentCen
 			title="Quién Soy"
