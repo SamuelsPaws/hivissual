@@ -110,7 +110,7 @@ const HeroLeftPart = () => {
                 <Link
                     href='/portafolio/redes-sociales'
                     className="
-                        block w-fit z-30
+                        block w-fit z-30 relative
                         mx-auto
                         px-6 py-3
                         lg:px-8 lg:py-4
