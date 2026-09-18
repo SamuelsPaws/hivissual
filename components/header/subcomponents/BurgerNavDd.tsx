@@ -3,6 +3,8 @@ import { NavLinkType } from "@/lib/types"
 import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { springSnappy } from "@/lib/motion";
 
 interface Props {
     item: NavLinkType;
@@ -17,14 +19,14 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
     }
 
     return (
-    <li className={clsx(
+    <motion.li variants={{ closed: { opacity: 0, y: -8 }, open: { opacity: 1, y: 0, transition: springSnappy } }} className={clsx(
         "flex flex-col items-end",
-        "border-y duration-400",
+        "border-y transition-[border-color,padding] duration-600 ease-[var(--ease-premium)]",
         isExpanded ? "border-brandwhite py-2" : "border-transparent py-0"
     )}>
         <button
             onClick={handleBtnClick}
-            className="
+            className="pressable
                 px-2
                 flex items-center gap-1
                 text-lg"
@@ -32,11 +34,11 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
             <span>{item.label}</span>
             <CustomIcon
                 iconId="chevronDown"
-                className={clsx("scale-110 duration-400", isExpanded && "-rotate-180")}
+                className={clsx("scale-110 transition-transform duration-300 ease-[var(--ease-premium)]", isExpanded && "-rotate-180")}
             />
         </button>
         <div className={clsx(
-            "grid transition-[grid-template-rows] duration-400 ease-out",
+            "grid transition-[grid-template-rows] duration-600 ease-[var(--ease-premium)]",
             isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         )}>
             <div className="overflow-hidden">
@@ -59,7 +61,7 @@ const BurgerNavDd = ({ item, onLinkClick }: Props) => {
                 </ul>
             </div>
         </div>
-    </li>
+    </motion.li>
     )
 }
 

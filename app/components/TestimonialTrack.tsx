@@ -1,7 +1,6 @@
 import clsx from "clsx"
 import TestimonialCard from "./TestimonialCard"
 import { Testimonial } from "@/lib/types";
-import { useEffect, useState } from "react";
 
 interface Props {
     testimonials: Testimonial[];
@@ -14,7 +13,7 @@ const TestimonialTrack = ({ testimonials, currIndex }: Props) => {
     <div className={clsx(
         "h-120",
         "flex justify-start items-center gap-[64px]",
-        "duration-400"
+        "transition-transform duration-400 ease-[var(--ease-premium)]"
     )}>
         {testimonials.map(({ message, author, imageUrl }, index) =>
             <TestimonialCard

@@ -1,34 +1,19 @@
 'use client'
-import { motion, Variants } from 'motion/react'
+import { motion } from 'motion/react'
 import Link from 'next/link'
-
-const variants: Variants = {
-    hidden: {
-        opacity: 0,
-        y: 16
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.2
-        }
-    },
-    hovered: {
-        scale: 1.05,
-        transition: { duration: 0.4, ease: 'easeOut' }
-    }
-}
+import { fadeUp, lift, press, springSnappy, viewportOnce } from '@/lib/motion'
 
 const AboutCta = () => {
     return (
     <motion.div
         className="w-full"
-        variants={variants}
+        variants={fadeUp}
         initial='hidden'
         whileInView='visible'
-        whileHover='hovered'
-        viewport={{ once: true, margin: '-8px 0px' }}
+        whileHover={lift}
+        whileTap={press}
+        transition={springSnappy}
+        viewport={viewportOnce}
     >
         <Link
             href="/quien-soy"

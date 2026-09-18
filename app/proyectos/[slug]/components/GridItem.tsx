@@ -9,14 +9,14 @@ const GridItem = () => {
             w-full h-60 aspect-auto
             md:w-60 md:aspect-square relative
             flex flex-col justify-end
-            md:hover:scale-105 duration-300 group
+            pressable md:hover:scale-[1.02] group
             rounded-4xl overflow-hidden'
     >
         {/* Dark overlay */}
         <div className="
             absolute inset-0 z-10
             bg-linear-to-b from-transparent via-brandblack/30 to-brandblack/70
-            opacity-0 md:group-hover:opacity-100 duration-300"
+            opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-[var(--ease-premium)]"
         ></div>
         {/* Image */}
         <Image

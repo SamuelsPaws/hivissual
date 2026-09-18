@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "motion/react";
 import ServiceCardLi from "./ServiceCardLi";
+import { springSmooth, springSnappy, viewportOnce } from "@/lib/motion";
 
 interface Props {
     title: string;
@@ -16,14 +17,12 @@ const variants = {
         opacity: 1,
         y: 0,
         border: '1px solid #fff0',
-        transition: {
-            duration: 0.4
-        }
+        transition: springSmooth
     },
     hovered: {
-        y: -4,
+        y: -3,
         border: '1px solid #fff8',
-        transition: { duration: 0.8 }
+        transition: springSnappy
     }
 }
 
@@ -38,7 +37,7 @@ const ServiceCard = ({ title, items }: Props) => {
         variants={variants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-24px 0px' }}
+        viewport={viewportOnce}
         whileHover="hovered"
     >
         <h3 className="

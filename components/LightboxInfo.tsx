@@ -1,5 +1,9 @@
+"use client";
+
 import itemTypeMapper from "@/lib/utils/itemTypeMapper";
 import clsx from "clsx"
+import { AnimatePresence, motion } from "motion/react";
+import { springSmooth } from "@/lib/motion";
 
 interface Props {
     isOpen: boolean;
@@ -11,17 +15,26 @@ interface Props {
 const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
 
     return (
-    <div className={clsx(
+    <motion.div
+      layout
+      transition={springSmooth}
+      className={clsx(
         isOpen ? 'w-[calc(100%-2rem)] md:w-100 h-30 md:h-50' : 'w-24 h-12',
         "absolute bottom-4 left-4 z-[9970]",
         "bg-brandblack",
         "rounded-xl border border-[#fff5] overflow-hidden",
         "md:hover:border-[#fffa]",
-        "duration-300"
+        "shadow-[0_16px_45px_rgba(0,0,0,0.35)]"
     )}>
         {/* Button to open info */}
-        {!isOpen &&
-            <div className="
+        <AnimatePresence mode="wait" initial={false}>
+        {!isOpen ?
+            <motion.div
+              key="closed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="
                 w-full h-full
                 text-lg text-brandwhite
                 flex justify-center items-center
@@ -30,11 +43,15 @@ const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
             >
                 <i className="fa fa-info-circle scale-90 mr-2"></i>
                 Info
-            </div>
-        }
-        {/* Open info */}
-        {isOpen &&
-            <div className="
+            </motion.div>
+        :
+            <motion.div
+              key="open"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={springSmooth}
+              className="
                 w-full h-full relative
                 p-4
                 flex flex-col
@@ -65,9 +82,10 @@ const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
                         </p>
                     }
                 </div>
-            </div>
+            </motion.div>
         }
-    </div>
+        </AnimatePresence>
+    </motion.div>
     )
 }
 

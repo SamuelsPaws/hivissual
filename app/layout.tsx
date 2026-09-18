@@ -4,6 +4,7 @@ import "./globals.css";
 import clsx from "clsx";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import MotionProvider from "@/components/MotionProvider";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -34,9 +35,11 @@ export default function RootLayout({
           'relative'
         )}
       >
-        <Header />
-        {children}
-        <Footer />
+        <MotionProvider>
+          <Header />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

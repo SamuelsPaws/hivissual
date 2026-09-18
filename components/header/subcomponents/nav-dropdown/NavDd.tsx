@@ -28,7 +28,7 @@ const NavDd = ({ item, className }: Props) => {
         <NavDdMenu
             isDdOpen={isDdOpen}
             setIsDdOpen={setIsDdOpen}
-            btnCurrent={btnRef.current}
+            btnRef={btnRef}
             items={item.dropdown}
         />
     </div>

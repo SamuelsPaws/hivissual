@@ -1,4 +1,3 @@
-import ParallaxImg from "./ParallaxImg";
 import ParallaxTrack from "./ParallaxTrack";
 
 interface Props {

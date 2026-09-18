@@ -17,13 +17,13 @@ const ArticleLink = ({ article, isLast }: Props) => {
             md:px-8 md:py-8
             flex flex-col-reverse gap-4
             md:flex-row md:gap-8
-            md:hover:bg-white/5 md:hover:gap-12 duration-200"
+            pressable md:hover:bg-white/5 md:hover:gap-10"
     >
         <div className="
             w-full h-25 relative
             md:w-20 md:h-full
             rounded-2xl overflow-hidden
-            md:group-hover:scale-110 duration-200"
+            transition-transform duration-300 ease-[var(--ease-premium)] md:group-hover:scale-[1.04]"
         >
             <Image
                 src={article.coverSrc}

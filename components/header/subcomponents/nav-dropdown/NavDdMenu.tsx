@@ -1,8 +1,8 @@
 import { motion } from "motion/react"
-import Link from "next/link"
-import { SetStateAction, useEffect, useRef } from "react";
+import { RefObject, SetStateAction, useEffect, useRef } from "react";
 import NavDdItem from "./NavDdItem";
 import { NavDdItemType } from "@/lib/types";
+import { springSnappy } from "@/lib/motion";
 
 const variants = {
     closed: {
@@ -15,7 +15,7 @@ const variants = {
         y: 0,
         pointerEvents: 'auto',
         transition: {
-            duration: 0.2
+            ...springSnappy
         }
     }
 }
@@ -23,11 +23,11 @@ const variants = {
 interface Props {
     isDdOpen: boolean;
     setIsDdOpen: React.Dispatch<SetStateAction<boolean>>;
-    btnCurrent: HTMLButtonElement | null;
+    btnRef: RefObject<HTMLButtonElement | null>;
     items: NavDdItemType[] | null;
 }
 
-const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
+const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnRef, items }: Props) => {
     const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
         function handlePointerDown(e: PointerEvent) {
             if (!ref.current) return
         
-            if (!ref.current.contains(e.target as Node) && !btnCurrent?.contains(e.target as Node)) {
+            if (!ref.current.contains(e.target as Node) && !btnRef.current?.contains(e.target as Node)) {
                 setIsDdOpen(false)
             }
         }
@@ -46,7 +46,7 @@ const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
         return () => {
             document.removeEventListener("pointerdown", handlePointerDown);
         }
-    }, [btnCurrent, isDdOpen])
+    }, [btnRef, isDdOpen, setIsDdOpen])
 
     const handleClick = () => {
         setIsDdOpen(false)
@@ -60,11 +60,13 @@ const NavDdMenu = ({ isDdOpen, setIsDdOpen, btnCurrent, items }: Props) => {
             w-[200%]
             flex flex-col
             text-center
-            border border-gray-500
-            rounded-2xl overflow-hidden shadow-lg"
+            border border-white/20
+            rounded-2xl overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.38)]
+            backdrop-blur-xl"
         variants={variants}
         animate={isDdOpen ? 'open' : 'closed'}
         initial={false}
+        style={{ transformOrigin: "top center" }}
     >
         {items && items.map((el, index) => (
             <NavDdItem

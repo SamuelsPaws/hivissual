@@ -1,56 +1,12 @@
 'use client'
 import clsx from "clsx";
-import { motion, Variants } from "motion/react";
+import { motion } from "motion/react";
 import CtaParallax from "./subcomponents/CtaParallax";
-
-const variants = {
-    h2: {
-        hidden: {
-            opacity: 0,
-            y: 16
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4
-            }
-        }
-    },
-    subheadline: {
-        hidden: {
-            opacity: 0,
-            y: 16
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4
-            }
-        }
-    },
-}
+import { fadeUp, lift, press, scaleReveal, springSnappy, viewportOnce } from "@/lib/motion";
 
 interface Props {
     bgColor: string;
     gallery: string[];
-}
-
-const ctaVariants: Variants = {
-    hidden: {
-        opacity: 0,
-        scale: 0.9
-    },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: { type: 'spring', stiffness: 250, damping: 15 }
-    },
-    hovered: {
-        scale: 1.1,
-        transition: { duration: 0.4 }
-    }
 }
 
 const SectionCTA = ({ bgColor, gallery }: Props) => {
@@ -65,10 +21,10 @@ const SectionCTA = ({ bgColor, gallery }: Props) => {
                 mx-8
                 text-2xl lg:text-5xl text-brandwhite text-center
                 font-semibold"
-            variants={variants.h2}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-24px 0px' }}
+            viewport={viewportOnce}
         >
             ¿Listo para crear algo para tu marca?
         </motion.h2>
@@ -77,10 +33,10 @@ const SectionCTA = ({ bgColor, gallery }: Props) => {
             className="
                 mx-8
                 text-md lg:text-lg text-gray-200 text-center"
-            variants={variants.subheadline}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-24px 0px' }}
+            viewport={viewportOnce}
         >
             Cuéntame sobre tu proyecto y te responderé personalmente.
         </motion.p>
@@ -94,11 +50,13 @@ const SectionCTA = ({ bgColor, gallery }: Props) => {
                 text-brandwhite text-md lg:text-2xl font-semibold whitespace-nowrap
                 bg-whatsapp-400 rounded-full"
             aria-label="Chat on WhatsApp"
-            variants={ctaVariants}
+            variants={scaleReveal}
             initial="hidden"
             whileInView="visible"
-            whileHover="hovered"
-            viewport={{ once: true, margin: '-32px 0px' }}
+            whileHover={lift}
+            whileTap={press}
+            transition={springSnappy}
+            viewport={viewportOnce}
         >
             Escríbeme a WhatsApp
             <i className="fa fa-whatsapp scale-150 ml-6" aria-hidden="true"></i>

@@ -1,25 +1,12 @@
 'use client'
 import clsx from "clsx";
 import { motion } from "motion/react";
+import { fadeUp, lift, press, springSnappy, viewportOnce } from "@/lib/motion";
 
 interface Props {
     iconClass: string;
     text: string;
     href: string;
-}
-
-const variants = {
-    hidden: {
-        opacity: 0,
-        y: 16
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
 }
 
 const SocialCard = ({ iconClass, text, href }: Props) => {
@@ -33,10 +20,13 @@ const SocialCard = ({ iconClass, text, href }: Props) => {
             text-xl lg:text-2xl text-gray-300
             gradient-border rounded-2xl
             outline outline-transparent lg:hover:outline-gray-300"
-        variants={variants}
+        variants={fadeUp}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-24px 0px' }}
+        whileHover={lift}
+        whileTap={press}
+        transition={springSnappy}
+        viewport={viewportOnce}
     >
         <i className={clsx("fa", iconClass)}></i>
         <span>{text}</span>

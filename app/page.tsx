@@ -136,6 +136,11 @@ export default async function Home() {
 			bgColor="bg-brandblack-100"
 		>
 			<ServiceCardGrid />
+			<WhiteBtn
+				href="/cotizaciones"
+				label="Pide una Cotización"
+				centered
+			/>
 		</SectionContentSt>
 		{/* <SectionContentCen
 			title="Marcas Que Han Trabajado Conmigo"

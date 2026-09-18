@@ -12,7 +12,7 @@ const TestimonialCard = ({ message, author, imageUrl }: Props) => {
   return (
     <motion.div
         className="
-            w-full lg:w-1/3
+            w-full
             flex flex-col items-center gap-8"
     >
         <p className="

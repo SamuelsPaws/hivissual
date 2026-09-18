@@ -1,6 +1,7 @@
 'use client'
 import { motion } from "motion/react"
 import Image from "next/image"
+import { springSmooth } from "@/lib/motion"
 
 const variants = {
     h1: {
@@ -11,9 +12,7 @@ const variants = {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.4
-            }
+            transition: springSmooth
         }
     },
     subheadline: {
@@ -25,7 +24,7 @@ const variants = {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.4,
+                ...springSmooth,
                 delay: 0.3
             }
         }
@@ -39,7 +38,7 @@ const variants = {
             opacity: 1,
             scale: 1,
             transition: {
-                duration: 0.4,
+                ...springSmooth,
                 delay: 0.6
             }
         }

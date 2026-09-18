@@ -56,9 +56,9 @@ const Footer = () => {
 			</div>
 			{/* Right part with columns */}
 			<div className="
-				flex-1
+				flex-1 self-center
 				flex flex-col justify-between gap-8
-				lg:flex-row lg:items-center lg:justify-evenly lg:gap-4"
+				lg:flex-row lg:items-start lg:justify-evenly lg:gap-4"
 			>
 				{/* Navigation */}
 				<ul className="
@@ -74,58 +74,65 @@ const Footer = () => {
 						/>
 					))}
 				</ul>
-			{/* Whatsapp and e-mail */}
-			<div className="flex flex-col items-end gap-2 lg:gap-4">
-			<span className="text-lg lg:text-xl text-black font-semibold">
-				WhatsApp
-			</span>
-			<a
-				href="tel:+593983523721"
-				className="text-md lg:text-md text-brandblack underline"
-			>
-				098 352 3721
-			</a>
-			<span className="mt-4 text-lg lg:text-xl text-black font-semibold">
-				E-mail
-			</span>
-			<a
-				href="mailto:martin.espin7@gmail.com"
-				className="text-md lg:text-md text-brandblack underline"
-			>
-				martin.espin7@gmail.com
-			</a>
-			</div>
-			{/* Socials */}
-			<div className="flex flex-col items-end gap-2 lg:gap-4">
-			<span className="text-lg lg:text-xl text-black font-semibold">
-				Redes Sociales
-			</span>
-			<a
-				href="https://www.instagram.com/hivissual/"
-				className="text-md lg:text-md text-brandblack underline"
-			>
-				<i className="fa fa-instagram mr-2" aria-hidden="true"></i>
-				Instagram
-			</a>
-			<a
-				href="https://www.tiktok.com/@hivissual"
-				className="text-md lg:text-md text-brandblack underline"
-			>
-				<CustomIcon iconId="tiktok" className="mr-2" />
-				TikTok
-			</a>
-			{/* <a
-				href="/"
-				className="text-md lg:text-md text-brandblack underline"
-			>
-				<i className="fa fa-facebook-square mr-2" aria-hidden="true"></i>
-				Hivissual
-			</a> */}
-			</div>
+				{/* Whatsapp and e-mail */}
+				<div className="flex flex-col items-end gap-2 lg:gap-4">
+					<span className="text-lg lg:text-xl text-black font-semibold">
+						WhatsApp
+					</span>
+					<a
+						href="tel:+593983523721"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						098 352 3721
+					</a>
+					<span className="mt-4 text-lg lg:text-xl text-black font-semibold">
+						E-mail
+					</span>
+					<a
+						href="mailto:martin.espin7@gmail.com"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						martin.espin7@gmail.com
+					</a>
+				</div>
+				{/* Socials */}
+				<div className="flex flex-col items-end gap-2 lg:gap-4">
+					<span className="text-lg lg:text-xl text-black font-semibold">
+						Redes Sociales
+					</span>
+					<a
+						href="https://www.instagram.com/hivissual/"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						<i className="fa fa-instagram mr-2" aria-hidden="true"></i>
+						Instagram
+					</a>
+					<a
+						href="https://www.tiktok.com/@hivissual"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						<CustomIcon iconId="tiktok" className="mr-2" />
+						TikTok
+					</a>
+					<a
+						href="https://www.tiktok.com/@hivissual"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						<CustomIcon iconId="youtube" className="mr-2" />
+						YouTube
+					</a>
+					{/* <a
+						href="/"
+						className="text-md lg:text-md text-brandblack underline"
+					>
+						<i className="fa fa-facebook-square mr-2" aria-hidden="true"></i>
+						Hivissual
+					</a> */}
+				</div>
 			</div>
 		</div>
-  </footer>
-  )
+	</footer>
+	)
 }
 
 export default Footer

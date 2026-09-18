@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
 import Image from 'next/image'
+import { springSmooth, viewportOnce } from '@/lib/motion'
 
 const variants = {
     left: {
@@ -11,9 +12,7 @@ const variants = {
         visible: {
             opacity: 1,
             x: 0,
-            transition: {
-                duration: 0.4
-            }
+            transition: springSmooth
         }
     },
     right: {
@@ -24,9 +23,7 @@ const variants = {
         visible: {
             opacity: 1,
             x: 0,
-            transition: {
-                duration: 0.4
-            }
+            transition: springSmooth
         }
     },
 }
@@ -45,7 +42,7 @@ const ImageGrid = () => {
             variants={variants.left}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-24px 0px' }}
+            viewport={viewportOnce}
         >
             <Image
                 src="/assets/about-2.webp"
@@ -65,7 +62,7 @@ const ImageGrid = () => {
             variants={variants.right}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-24px 0px' }}
+            viewport={viewportOnce}
         >
             <Image
                 src="/assets/about-3.webp"

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import ParallaxImg from "./ParallaxImg";
 import clsx from "clsx";
 import useMediaQuery from "@/lib/hooks/useMediaQuery";
+import { useReducedMotion } from "motion/react";
 
 interface Props {
     gallery: string[];
@@ -14,11 +15,13 @@ const ParallaxTrack = ({ gallery }: Props) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [cardWidth, setCardWidth] = useState(0);
     const isDesktop = useMediaQuery("(min-width: 768px)")
-    const showingCards = isDesktop ? 5 : 3
     const resetIndex = isDesktop ? 5 : 6
     const gap = isDesktop ? 16 : 8
+    const shouldReduceMotion = useReducedMotion()
     
     useEffect(() => {
+        if (shouldReduceMotion) return
+
         const timeout = setTimeout(() => {
             if (index >= resetIndex) {
                 setHasDuration(false)
@@ -34,7 +37,7 @@ const ParallaxTrack = ({ gallery }: Props) => {
         }, 3000)
 
         return () => clearTimeout(timeout)
-    }, [index])
+    }, [index, shouldReduceMotion, resetIndex])
 
     useEffect(() => {
         if (!cardRef.current) return;
@@ -55,8 +58,8 @@ const ParallaxTrack = ({ gallery }: Props) => {
         className={clsx(
             "h-full",
             "flex gap-2 md:gap-4",
-            hasDuration ? "duration-1000" : "duration-0",
-            "ease-in-out"
+            hasDuration && !shouldReduceMotion ? "duration-700" : "duration-0",
+            "transition-transform ease-[var(--ease-premium)] will-change-transform"
         )}
         style={{
             transform: `translateX(-${offset}px)`
@@ -69,7 +72,7 @@ const ParallaxTrack = ({ gallery }: Props) => {
                 src={el}
                 index={index}
                 thisIndex={i}
-                hasDuration={hasDuration}
+                hasDuration={hasDuration && !shouldReduceMotion}
             />
         ))}
     </div>

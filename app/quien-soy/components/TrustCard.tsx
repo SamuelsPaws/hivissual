@@ -1,23 +1,10 @@
 'use client'
 import { motion } from "motion/react";
+import { fadeUp, viewportOnce } from "@/lib/motion";
 
 interface Props {
     title: string;
     text: string;
-}
-
-const variants = {
-    hidden: {
-        opacity: 0,
-        y: 16
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
 }
 
 const TrustCard = ({ title, text }: Props) => {
@@ -27,10 +14,10 @@ const TrustCard = ({ title, text }: Props) => {
             w-full lg:w-100 relative
             p-8 lg:p-8
             bg-linear-to-b from-brandwhite to-gray-200 rounded-2xl lg:rounded-4xl"
-        variants={variants}
+        variants={fadeUp}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-24px 0px' }}
+        viewport={viewportOnce}
     >
         <h3 className="
             mb-4 lg:mb-8

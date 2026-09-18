@@ -3,12 +3,13 @@ import { stagger } from "motion"
 import ServiceCard from "./ServiceCard"
 import ServiceCardLi from "./ServiceCardLi"
 import { motion } from "motion/react"
+import { viewportOnce } from "@/lib/motion"
 
 const gridVariants = {
     hidden: {},
     visible: {
         transition: {
-            delayChildren: stagger(0.3)
+            delayChildren: stagger(0.08)
         }
     }
 }
@@ -22,7 +23,7 @@ const ServiceGrid = () => {
         variants={gridVariants}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-24px 0px' }}
+        viewport={viewportOnce}
     >
         <ServiceCard title="Fotografía">
             <ul className="

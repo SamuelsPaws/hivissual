@@ -13,8 +13,8 @@ const NavDdItem = ({ item, onClick, isLast }: Props) => {
         "p-4",
         "grid place-content-center",
         "text-md",
-        "bg-gray-700/70 hover:bg-gray-500/70 duration-200",
-        "backdrop-blur-md",
+        "pressable bg-brandblack/75 hover:bg-brandgray-300/85",
+        "backdrop-blur-xl",
         !isLast && "border-b border-gray-500"
     )
 

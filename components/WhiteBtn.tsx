@@ -19,7 +19,7 @@ const WhiteBtn = ({ href, label, centered = true }: Props) => {
             "bg-brandwhite",
             "text-black text-myf-lg font-semibold",
             "rounded-full",
-            "md:hover:scale-110 duration-400 ease-out"
+            "md:hover:scale-[1.05] duration-400 ease-out"
         )}
     >
         {label}

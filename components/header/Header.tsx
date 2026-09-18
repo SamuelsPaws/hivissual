@@ -37,13 +37,13 @@ const Header = () => {
             "h-fit py-2",
             "flex items-center",
             "rounded-md lg:rounded-xl border",
-            "duration-300",
-            isAtTop ? "bg-transparent px-0 border-transparent" : "bg-gray-700/70 px-4 backdrop-blur-sm border-[#fff5]"
+            "transition-[background-color,padding,border-color,box-shadow] duration-300 ease-[var(--ease-premium)]",
+            isAtTop ? "bg-transparent px-0 border-transparent" : "bg-brandblack/60 px-4 backdrop-blur-md border-white/20 shadow-[0_10px_35px_rgba(0,0,0,0.22)]"
         )}>
             {/* Logo/Home */}
             <Link
                 href="/"
-                className="block"
+                className="pressable block rounded-md"
             >
                 <Image
                     src="/assets/logo-white.svg"
@@ -58,7 +58,7 @@ const Header = () => {
         <div className={clsx(
             "h-fit py-1 lg:py-2 relative",
             "rounded-md lg:rounded-xl border",
-            "duration-300",
+            "transition-[padding,border-color,box-shadow] duration-300 ease-[var(--ease-premium)]",
             isAtTop ?
                 "pl-0 pr-0 border-transparent"
                 :
@@ -66,12 +66,12 @@ const Header = () => {
         )}>
             {/* Bg */}
             <div className={clsx(
-                "absolute inset-0 duration-300",
+                "absolute inset-0 transition-[background-color,backdrop-filter] duration-300 ease-[var(--ease-premium)]",
                 "rounded-md md:rounded-xl",
                 isAtTop ?
                 "bg-transparent backgrop-blur-none"
                 :
-                "bg-gray-700/70 backdrop-blur-sm"
+                "bg-brandblack/60 backdrop-blur-md shadow-[0_10px_35px_rgba(0,0,0,0.22)]"
             )}></div>
             {/* Nav */}
             <nav className="hidden lg:block">

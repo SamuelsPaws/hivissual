@@ -1,23 +1,10 @@
 'use client'
 import { motion } from "motion/react";
+import { fadeUp } from "@/lib/motion";
 
 interface Props {
     title: string;
     children: React.ReactNode;
-}
-
-const cardVariants = {
-    hidden: {
-        opacity: 0,
-        y: 16
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
 }
 
 const ServiceCard = ({ title, children }: Props) => {
@@ -28,7 +15,7 @@ const ServiceCard = ({ title, children }: Props) => {
             p-8 lg:p-12
             rounded-2xl lg:rounded-4xl
             gradient-border"
-        variants={cardVariants}
+        variants={fadeUp}
     >
         <h3 className="
             mb-8 lg:mb-8

@@ -1,64 +1,7 @@
 'use client'
 import { motion, Variants } from 'motion/react'
-import Image from 'next/image'
 import Link from 'next/link'
-
-const variants = {
-    h1: {
-        hidden: {
-            opacity: 0,
-            y: 16
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4
-            }
-        }
-    },
-    subheadline: {
-        hidden: {
-            opacity: 0,
-            y: 16
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.4,
-                delay: 0.3
-            }
-        }
-    },
-    cta: {
-        hidden: {
-            opacity: 0,
-            scale: 0.9
-        },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                type: 'spring',
-                stiffness: 400,
-                damping: 16,
-            }
-        }
-    },
-    glow: {
-        hidden: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                duration: 0.6,
-                delay: 0.8
-            }
-        }
-    },
-}
+import { springSmooth, springSnappy } from '@/lib/motion'
 
 const ctaVariants: Variants = {
     hidden: {
@@ -69,10 +12,8 @@ const ctaVariants: Variants = {
         opacity: 0.8,
         scale: 1,
         transition: {
-            type: 'spring',
-            stiffness: 400,
-            damping: 16,
-            delay: 0.5
+            ...springSnappy,
+            delay: 0.4
         }
     }
 }
@@ -102,7 +43,7 @@ const HeroLeftPart = () => {
         </p>
         <div className="relative">
             <motion.div
-                className='mt-2 lg:mt-0 z-30 relative'
+                className='mt-2 lg:mt-0 z-50 relative'
                 variants={ctaVariants}
                 initial="hidden"
                 animate="visible"
@@ -116,24 +57,20 @@ const HeroLeftPart = () => {
                         lg:px-8 lg:py-4
                         bg-brandwhite
                         text-lg lg:text-2xl font-semibold text-black
-                        rounded-full md:hover:scale-110 duration-400"
+                        rounded-full md:hover:scale-[1.05] duration-400 ease-out"
                 >
                     Explorar Portafolio
                 </Link>
             </motion.div>
             {/* Glow */}
-            <motion.div
-                className="
-                    absolute -bottom-5 left-1/2 -translate-x-1/2
-                    w-[160%] h-8 z-20
-                    lg:w-[140%] lg:h-10
-                    bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                    opacity-100 lg:opacity-80 mix-blend-screen blur-[8px]
-                    bg-contain"
-                variants={variants.glow}
-                initial="hidden"
-                animate="visible"
-            ></motion.div>
+            <div className="
+                absolute -bottom-5 left-1/2 -translate-x-1/2
+                w-[160%] h-8 z-20
+                lg:w-[140%] lg:h-10
+                bg-radial-[at_center] from-brandwhite via-transparent to-transparent
+                opacity-100 lg:opacity-80 mix-blend-screen blur-[8px]
+                bg-contain"
+            ></div>
         </div>
     </div>
   )

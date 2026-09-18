@@ -15,13 +15,12 @@ const RelArticleLink = ({ article, isLast }: Props) => {
             w-full relative group
             px-4 py-4
             flex items-center gap-4 md:gap-8
-            md:hover:bg-white/5 duration-200"
+            pressable md:hover:bg-white/5"
     >
         <div className="
             w-16 h-16 relative
             md:w-20 md:h-20
-            rounded-2xl overflow-hidden
-            duration-200"
+            rounded-2xl overflow-hidden"
         >
             <Image
                 src={article.coverSrc}

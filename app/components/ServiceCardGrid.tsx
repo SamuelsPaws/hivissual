@@ -4,7 +4,7 @@ const ServiceCardGrid = () => {
   return (
     <div
         className="
-            w-fit mx-auto
+            w-fit mx-auto mb-8 md:mb-16
             flex justify-center gap-8 flex-wrap"
     >
         <ServiceCard

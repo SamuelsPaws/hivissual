@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { motion } from 'motion/react';
 import Image from 'next/image'
 import { SetStateAction } from 'react';
+import { press } from '@/lib/motion';
 
 interface Props {
     thisMediaIndex: number;
@@ -36,12 +37,13 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
         whileInView="visible"
         viewport={{ once: true, margin: '-32px 0px' }}
         whileHover="hovered"
+        whileTap={press}
     >
         {/* Dark overlay */}
         <div className="
             absolute inset-0 z-10
             bg-linear-to-b from-transparent via-brandblack/70 to-brandblack/90
-            opacity-0 md:group-hover:opacity-100 duration-300"
+            opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-[var(--ease-premium)]"
         ></div>
         {/* Image (thumbnail) */}
         <Image

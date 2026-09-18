@@ -8,13 +8,13 @@ interface Props {
 }
 
 const NavLinkDesk = ({ item, isLast }: Props) => {
-    const cn = "relative hover-animated-underline text-brandwhite text-lg font-semibold"
+    const cn = "pressable relative hover-animated-underline text-brandwhite text-lg font-semibold"
     const cnLast = `
         block px-4 py-1 relative
         bg-brandwhite
         text-black text-md font-semibold
         rounded-full
-        md:hover:-translate-y-0.5 duration-200
+        md:hover:-translate-y-0.5 duration-200 ease-out active:translate-y-0
     `
 
     if (item.external) {

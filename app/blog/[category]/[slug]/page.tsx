@@ -126,9 +126,9 @@ export default async function BlogArticle({ params }: Props) {
                             flex items-center justify-center gap-2
                             text-brandwhite text-my-lg text-center
                             border border-gray-400 rounded-2xl
-                            md:hover:bg-white/5 duration-200"
+                            pressable md:hover:bg-white/5"
                     >
-                        <span className="md:group-hover:ml-2 duration-200">
+                        <span className="transition-transform duration-300 ease-[var(--ease-premium)] md:group-hover:translate-x-1">
                             Ver Todos los Artículos
                         </span>
                         <CustomIcon

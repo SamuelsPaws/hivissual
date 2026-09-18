@@ -29,13 +29,14 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 
-	--animate-fade-in-right-400: fade-in-right 400ms ease-out forwards;
-	--animate-fade-in-right-800: fade-in-right 800ms ease-out forwards;
+	--animate-fade-in-right-400: fade-in-right 800ms var(--ease-premium) forwards;
+	--animate-fade-in-right-800: fade-in-right 1600ms var(--ease-premium) 80ms both;
 	--animate-scroll-left: scroll-left 20s linear infinite;
+	--ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 
 	@keyframes fade-in-right {
 		from {
-			transform: translateX(-80px);
+			transform: translateX(-20px);
 			opacity: 0;
 		}
 		
@@ -68,6 +69,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+:where(button, a) {
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+}
+
+.pressable {
+	transition-property: transform, opacity, color, background-color, border-color, box-shadow, gap;
+	transition-duration: 400ms;
+	transition-timing-function: var(--ease-premium);
+}
+
+.pressable:active {
+	transform: scale(0.97);
+	transition-duration: 90ms;
 }
 
 .rb {
@@ -117,7 +134,7 @@ button:hover {
 
 @layer {
 	.hover-animated-underline {
-		@apply after:content-[''] after:w-0 hover:after:w-[100%] after:duration-200 after:h-[1px] after:absolute after:-bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-brandwhite;
+		@apply after:content-[''] after:w-0 hover:after:w-[100%] after:duration-200 after:ease-out after:h-[1px] after:absolute after:-bottom-0 after:left-1/2 after:-translate-x-1/2 after:bg-brandwhite;
 	}
 
 	.crossed-out {
@@ -164,47 +181,97 @@ button:hover {
 }
 
 .reveal-right {
-  animation: reveal-right ease-in-out both;
+  animation: reveal-right var(--ease-premium) both;
   animation-timeline: view();
   animation-range: entry 0% entry 100%;
 }
 
 .reveal-down {
-  animation: reveal-down ease-in-out both;
+  animation: reveal-down var(--ease-premium) both;
   animation-timeline: view();
   animation-range: entry 0% entry 100%;
 }
 
 .reveal-up {
-  animation: reveal-up ease-in-out both;
+  animation: reveal-up var(--ease-premium) both;
   animation-timeline: view();
   animation-range: entry 0% entry 50%;
 }
 
 @keyframes reveal-left {
 	0% {
-		transform: translateX(60%);
+		opacity: 0;
+		transform: translateX(20%);
 	}
 
 	100% {
 		transform: translateX(0);
+		opacity: 1;
 	}
 }
 
 @keyframes reveal-right {
 	0% {
-		transform: translateX(-60%);
+		opacity: 0;
+		transform: translateX(-20%);
 	}
 
 	100% {
 		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		scroll-behavior: auto !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+	}
+
+	.pressable {
+		transition-duration: 160ms;
+		transition-property: opacity, color, background-color, border-color, box-shadow;
+	}
+
+	.pressable:active {
+		transform: none;
+		opacity: 0.78;
+	}
+
+	.animate-scroll-left {
+		animation: none !important;
+	}
+
+	.reveal-left,
+	.reveal-right,
+	.reveal-down,
+	.reveal-up {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+	[class*="backdrop-blur"] {
+		background-color: #1a1a1c !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+}
+
+@media (prefers-contrast: more) {
+	[class*="backdrop-blur"] {
+		background-color: #121214 !important;
+		border-color: rgba(255, 255, 255, 0.85) !important;
 	}
 }
 
 @keyframes reveal-down {
 	0% {
 		opacity: 0;
-		transform: translateY(-20%);
+		transform: translateY(-24px);
 	}
 
 	100% {
@@ -216,7 +283,7 @@ button:hover {
 @keyframes reveal-up {
 	0% {
 		opacity: 0;
-		transform: translateY(20%);
+		transform: translateY(24px);
 	}
 
 	100% {

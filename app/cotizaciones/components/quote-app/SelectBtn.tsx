@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { fadeIn, press, springSnappy } from "@/lib/motion";
 
 interface Props {
     text: string;
@@ -12,11 +13,13 @@ const SelectBtn = ({ text, onClick }: Props) => {
         className="
             w-60 py-4
             text-brandwhite text-sm
-            bg-transparent lg:hover:bg-brandwhite/10 duration-100
+            bg-transparent lg:hover:bg-brandwhite/10
             border border-gray-200 rounded-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
+        whileTap={press}
+        transition={springSnappy}
     >
         {text}
     </motion.button>

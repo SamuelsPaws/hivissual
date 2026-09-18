@@ -30,7 +30,7 @@ const MoreBtn = ({ onClick, isLoading }: Props) => {
         bg-brandwhite
         text-my-md text-black font-semibold
         rounded-full
-		md:hover:scale-110 duration-400 ease-out"
+		pressable md:hover:scale-[1.025]"
     >
         Cargar Más
     </button>

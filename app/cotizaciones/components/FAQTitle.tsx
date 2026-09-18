@@ -1,32 +1,19 @@
 'use client'
 import { motion } from "motion/react";
+import { fadeUpSmall, viewportOnce } from "@/lib/motion";
 
 interface Props {
     text: string;
-}
-
-const variants = {
-    hidden: {
-        opacity: 0,
-        y: 8
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
 }
 
 const FAQTitle = ({ text }: Props) => {
   return (
     <motion.h3
         className="mb-4 lg:mb-8 text-lg lg:text-2xl text-brandwhite font-semibold"
-        variants={variants}
+        variants={fadeUpSmall}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-8px 0px' }}
+        viewport={viewportOnce}
     >
         {text}
     </motion.h3>

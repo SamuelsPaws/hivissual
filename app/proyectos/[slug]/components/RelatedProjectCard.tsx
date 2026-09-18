@@ -10,7 +10,7 @@ const RelatedProjectCard = () => {
             md:w-80 md:h-auto md:aspect-square
             flex items-end
             rounded-4xl overflow-hidden
-            md:hover:scale-105 duration-300"
+            pressable md:hover:scale-[1.02]"
     >
         <Image
             src="/assets/stock.jpg"

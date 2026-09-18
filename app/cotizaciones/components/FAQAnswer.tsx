@@ -1,22 +1,9 @@
 'use client'
 import { motion } from "motion/react";
+import { fadeUpSmall, viewportOnce } from "@/lib/motion";
 
 interface Props {
     text: string;
-}
-
-const variants = {
-    hidden: {
-        opacity: 0,
-        y: 8
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.4
-        }
-    }
 }
 
 const FAQAnswer = ({ text }: Props) => {
@@ -26,10 +13,10 @@ const FAQAnswer = ({ text }: Props) => {
             mb-8 lg:mb-16 p-4
             text-sm lg:text-lg text-gray-200
             border border-brandgold-100 rounded-xl"
-        variants={variants}
+        variants={fadeUpSmall}
         initial='hidden'
         whileInView='visible'
-        viewport={{ once: true, margin: '-8px 0px' }}
+        viewport={viewportOnce}
     >
         {text}
     </motion.p>

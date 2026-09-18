@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { SetStateAction, useState } from 'react';
+import { SetStateAction } from 'react';
 
 interface Props {
     text: string;
@@ -24,7 +24,7 @@ const FilterTag = ({ text, thisCategory, selectedCategory, setCategoryFilter }: 
             "px-4 py-2",
             "text-sm lg:text-md",
             "outline rounded-lg",
-            "duration-0",
+            "pressable",
             selectedCategory === thisCategory
                 ? "outline-brandwhite bg-brandwhite text-black font-semibold"
                 : "outline-brandwhite bg-transparent font-normal",
