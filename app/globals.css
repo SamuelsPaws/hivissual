@@ -146,7 +146,7 @@ button:hover {
 	}
 
 	.text-my-md {
-		@apply text-sm md:text-md xl:text-lg;
+		@apply text-md md:text-md xl:text-lg;
 	}
 
 	.text-my-lg {
