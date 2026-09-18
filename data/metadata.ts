@@ -92,3 +92,24 @@ export const contactMetadata = {
     twitterDescription: 'Solicita una propuesta personalizada para fotografía, producción audiovisual, estrategia de contenido o desarrollo web.',
     category: 'Contacto y Cotizaciones'
 }
+
+export const blogMetadata = {
+    title: 'Blog de Fotografía, Video y Contenido Digital | Hivissual',
+    description: 'Consejos, ideas y recursos sobre fotografía, producción audiovisual, creación de contenido y redes sociales para marcas y emprendedores.',
+    keywords: [
+        'blog de fotografía',
+        'consejos de fotografía',
+        'producción audiovisual',
+        'creación de contenido',
+        'contenido para redes sociales',
+        'fotografía para marcas',
+        'video para marcas',
+        'marketing de contenido',
+        'Hivissual'
+    ],
+    ogTitle: 'Blog de Fotografía y Contenido Digital | Hivissual',
+    ogDescription: 'Aprende sobre fotografía, video, creación de contenido y redes sociales con ideas prácticas para potenciar tu marca.',
+    twitterTitle: 'Blog de Fotografía y Contenido | Hivissual',
+    twitterDescription: 'Consejos e ideas sobre fotografía, video y contenido digital para marcas y emprendedores.',
+    category: 'Fotografía, Video y Marketing de Contenidos'
+}

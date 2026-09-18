@@ -1,22 +1,32 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 import company from '@/data/company'
+import { getArticleSitemapEntries } from '@/lib/strapi/strapi-queries'
 
 const BASE_URL = company.url
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const frequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'monthly'
 
-    const routes = [
+    const staticRoutes: MetadataRoute.Sitemap = [
         '',
         '/portafolio',
         '/quien-soy',
-        '/cotizaciones'
+        '/cotizaciones',
+        '/blog',
     ].map(route => ({
         url: `${BASE_URL}${route}`,
         lastModified: new Date(),
-        changeFrequency: frequency,
+        changeFrequency: route === '/blog' ? 'weekly' : frequency,
         priority: route === "" ? 1 : 0.8,
     }))
 
-    return routes
+    const articles = await getArticleSitemapEntries()
+    const articleRoutes: MetadataRoute.Sitemap = articles.map(article => ({
+        url: `${BASE_URL}/blog/${encodeURIComponent(article.categorySlug)}/${encodeURIComponent(article.slug)}`,
+        lastModified: new Date(article.updatedAt),
+        changeFrequency: frequency,
+        priority: 0.7,
+    }))
+
+    return [...staticRoutes, ...articleRoutes]
 }

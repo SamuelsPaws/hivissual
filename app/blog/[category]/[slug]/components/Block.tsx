@@ -61,7 +61,7 @@ const Block = ({ item }: Props) => {
                     />
                 </div>
                 <p className="text-my-sm text-gray-200 text-center italic leading-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, deserunt.
+                    {item.caption}
                 </p>
             </div>
             )

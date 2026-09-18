@@ -30,6 +30,7 @@ function mapArticleBlock(entryBlock: BlockSkeleton): BlogBlock | null {
         if (entryBlock.file) {
             return {
                 src: `https://r2-worker.fortales.workers.dev/${entryBlock.file.hash}${entryBlock.file.ext}`,
+                caption: entryBlock.file.caption,
                 type: entryBlock.__component
             }
         }
@@ -44,6 +45,9 @@ export function mapArticle(entry: ArticleSkeleton): BlogArticle {
     return {
         title: entry.title,
         date: mapCreatedDate(entry.createdAt),
+        createdAt: entry.createdAt,
+        updatedAt: entry.updatedAt,
+        publishedAt: entry.publishedAt ?? entry.createdAt,
         description: entry.description,
         slug: entry.slug,
         coverSrc: `https://r2-worker.fortales.workers.dev/${entry.cover.hash}${entry.cover.ext}`,

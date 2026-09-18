@@ -58,8 +58,8 @@ const ParallaxTrack = ({ gallery }: Props) => {
         className={clsx(
             "h-full",
             "flex gap-2 md:gap-4",
-            hasDuration && !shouldReduceMotion ? "duration-700" : "duration-0",
-            "transition-transform ease-[var(--ease-premium)] will-change-transform"
+            hasDuration && !shouldReduceMotion ? "duration-800" : "duration-0",
+            "transition-transform ease-in-out"
         )}
         style={{
             transform: `translateX(-${offset}px)`

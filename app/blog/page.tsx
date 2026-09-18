@@ -4,6 +4,64 @@ import SectionContentSt from "@/components/SectionContentSt"
 import ArticleLink from "./components/ArticleLink"
 import SectionCTA from "@/components/section-cta/SectionCTA"
 import { getFeaturedImages } from "@/lib/contentful-queries"
+import company from "@/data/company"
+import { blogMetadata } from "@/data/metadata"
+import type { Metadata } from "next"
+
+const BASE_URL = company.url
+
+export function generateMetadata(): Metadata {
+    const canonical = `${BASE_URL}/blog`
+
+    return {
+        metadataBase: new URL(BASE_URL),
+        title: blogMetadata.title,
+        description: blogMetadata.description,
+        keywords: blogMetadata.keywords,
+        applicationName: company.name,
+        authors: [{
+            name: 'Martín Espín',
+            url: `${BASE_URL}/quien-soy`,
+        }],
+        creator: 'Martín Espín',
+        publisher: company.name,
+        alternates: {
+            canonical,
+        },
+        openGraph: {
+            title: blogMetadata.ogTitle,
+            description: blogMetadata.ogDescription,
+            url: canonical,
+            siteName: company.name,
+            locale: 'es_EC',
+            type: 'website',
+            images: [{
+                url: company.image,
+                width: 1200,
+                height: 630,
+                alt: `Blog de ${company.name}`,
+            }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: blogMetadata.twitterTitle,
+            description: blogMetadata.twitterDescription,
+            images: [company.image],
+        },
+        category: blogMetadata.category,
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+                'max-video-preview': -1,
+            },
+        },
+    }
+}
 
 export default async function Blog() {
     const articles = await getArticles()

@@ -57,6 +57,7 @@ type BlogRichText = {
 
 type BlogMedia = {
     src: string,
+    caption: string | null,
     type: 'shared.media'
 }
 
@@ -70,6 +71,9 @@ export type BlogCategory = {
 export type BlogArticle = {
     title: string,
     date: string,
+    createdAt: string,
+    updatedAt: string,
+    publishedAt: string,
     description: string,
     slug: string,
     coverSrc: string,

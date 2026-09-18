@@ -9,11 +9,90 @@ import Link from "next/link"
 import RelArticleLink from "./components/RelArticleLink"
 import CustomIcon from "@/components/CustomIcon"
 import WhiteBtn from "@/components/WhiteBtn"
+import company from "@/data/company"
+import type { Metadata } from "next"
 
 type Props = {
     params: Promise<{
+        category: string
         slug: string
     }>
+}
+
+const BASE_URL = company.url
+const AUTHOR_NAME = 'Martín Espín'
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params
+    const article = await getArticleBySlug(slug)
+    const canonical = `${BASE_URL}/blog/${encodeURIComponent(article.category.slug)}/${encodeURIComponent(article.slug)}`
+    const title = `${article.title} | ${company.name}`
+    const modifiedTime = new Date(Math.max(
+        Date.parse(article.publishedAt),
+        Date.parse(article.updatedAt)
+    )).toISOString()
+
+    return {
+        metadataBase: new URL(BASE_URL),
+        title,
+        description: article.description,
+        keywords: [
+            article.title,
+            article.category.label,
+            `${article.category.label} para marcas`,
+            'fotografía y producción audiovisual',
+            'creación de contenido',
+            company.name,
+        ],
+        applicationName: company.name,
+        authors: [{
+            name: AUTHOR_NAME,
+            url: `${BASE_URL}/quien-soy`,
+        }],
+        creator: AUTHOR_NAME,
+        publisher: company.name,
+        alternates: {
+            canonical,
+        },
+        openGraph: {
+            title,
+            description: article.description,
+            url: canonical,
+            siteName: company.name,
+            locale: 'es_EC',
+            type: 'article',
+            publishedTime: article.publishedAt,
+            modifiedTime,
+            authors: [AUTHOR_NAME],
+            section: article.category.label,
+            tags: [article.category.label, 'Fotografía', 'Video', 'Contenido digital'],
+            images: [{
+                url: article.coverSrc,
+                alt: article.title,
+            }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description: article.description,
+            images: [{
+                url: article.coverSrc,
+                alt: article.title,
+            }],
+        },
+        category: article.category.label,
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+                'max-video-preview': -1,
+            },
+        },
+    }
 }
 
 export default async function BlogArticle({ params }: Props) {
