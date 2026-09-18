@@ -12,7 +12,7 @@ interface Props {
 
 const ParallaxImg = ({ ref, src, index, thisIndex, hasDuration }: Props) => {
     const indexInView = thisIndex - index
-    const parallaxOffset = -indexInView * (10 / 1.4)
+    const parallaxOffset = -indexInView * (-10 / 1.4)
 
     return (
     <div ref={ref} className="
@@ -23,9 +23,9 @@ const ParallaxImg = ({ ref, src, index, thisIndex, hasDuration }: Props) => {
         <div
             className={clsx(
                 "w-[140%] h-[110%]",
-                "absolute top-1/2 -translate-y-1/2 left-0",
+                "absolute top-1/2 -translate-y-1/2 right-0",
                 "transition-transform ease-in-out",
-                hasDuration ? "duration-800" : "duration-0"
+                hasDuration ? "duration-1000" : "duration-0"
             )}
             style={{
                 transform: `translateX(${parallaxOffset}%)`
@@ -34,7 +34,7 @@ const ParallaxImg = ({ ref, src, index, thisIndex, hasDuration }: Props) => {
             <Image
                 src={src}
                 fill
-                sizes="100%"
+                sizes="(max-width: 768px) 33vw, 20vw"
                 className={clsx(
                     "w-full h-full",
                     "object-cover object-center",

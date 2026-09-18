@@ -14,7 +14,7 @@ const Hero = () => {
             <Image
                 src="/assets/hero.webp"
                 fill
-                sizes="100%"
+                sizes="100vw"
                 className="w-full h-full object-cover object-[80%_100%] lg:object-[100%_20%]"
                 priority
                 alt="Imagen de Hivissual"

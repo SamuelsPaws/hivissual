@@ -10,7 +10,7 @@ interface Props {
 const RelArticleLink = ({ article, isLast }: Props) => {
     return (
     <Link
-        href={`/blog/${article.slug}`}
+        href={`/blog/${article.category.slug}/${article.slug}`}
         className="
             w-full relative group
             px-4 py-4

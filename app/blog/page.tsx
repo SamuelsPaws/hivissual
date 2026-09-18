@@ -7,6 +7,7 @@ import { getFeaturedImages } from "@/lib/contentful-queries"
 import company from "@/data/company"
 import { blogMetadata } from "@/data/metadata"
 import type { Metadata } from "next"
+import createdAtSort from "@/lib/utils/createdAtSort"
 
 const BASE_URL = company.url
 
@@ -91,7 +92,7 @@ export default async function Blog() {
                     flex flex-col
                     rounded-2xl border border-gray-400"
                 >
-                    {articles.map((el, index) => (
+                    {articles.sort(createdAtSort).map((el, index) => (
                         <ArticleLink
                             key={index}
                             article={el}

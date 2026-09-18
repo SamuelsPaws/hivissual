@@ -23,7 +23,7 @@ const Block = ({ item }: Props) => {
         if (item.type === 'shared.subtitulo') {
             return (
             <h2 className="
-                mt-4
+                mt-8 mb-4
                 text-xl md:text-3xl text-brandwhite font-semibold"
             >
                 {item.text}
@@ -33,7 +33,10 @@ const Block = ({ item }: Props) => {
 
         if (item.type === 'shared.rich-text') {
             return (
-            <p className="text-my-md text-gray-200 text-left leading-7 md:leading-8">
+            <p className="
+                text-my-md text-gray-300 text-left
+                font-['Source_Serif_4'] leading-7 md:leading-8 xl:leading-9"
+            >
                 {item.body}
             </p>
             )

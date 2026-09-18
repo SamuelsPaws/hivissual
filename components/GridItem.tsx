@@ -47,7 +47,7 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
             key={thisMediaIndex}
             src={thisMedia.imageUrl}
             fill
-            sizes='100%'
+            sizes='(max-width:768px) 100vw, 240px'
             className='w-full h-full object-cover z-0'
             alt={thisMedia.alt}
         />

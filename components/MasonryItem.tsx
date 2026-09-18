@@ -44,12 +44,12 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
             absolute inset-0 z-10
             bg-linear-to-b from-transparent via-brandblack/70 to-brandblack/90
             opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ease-[var(--ease-premium)]"
-        ></div>
+        />
         {/* Image (thumbnail) */}
         <Image
             src={thisMedia.imageUrl}
             fill
-            sizes='100%'
+            sizes='(max-width:768px) 100vw, 250px'
             className='w-full h-full object-cover z-0'
             alt={thisMedia.alt}
         />

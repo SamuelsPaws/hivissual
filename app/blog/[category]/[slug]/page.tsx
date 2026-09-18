@@ -149,8 +149,7 @@ export default async function BlogArticle({ params }: Props) {
                 {/* Left part with content */}
                 <div className="
                     w-full
-                    md:w-auto md:flex-1
-                    flex flex-col gap-4"
+                    md:w-auto md:flex-1"
                 >
                     {article.blocks.map((el, index) => (
                         <Block

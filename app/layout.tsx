@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import Header from "@/components/header/Header";
@@ -9,6 +9,11 @@ import MotionProvider from "@/components/MotionProvider";
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '600'],
+})
+
+const serif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--serif',
 })
 
 export const metadata: Metadata = {
@@ -32,7 +37,8 @@ export default function RootLayout({
       <body
         className={clsx(
           poppins.className,
-          'relative'
+          'relative',
+          serif.variable
         )}
       >
         <MotionProvider>

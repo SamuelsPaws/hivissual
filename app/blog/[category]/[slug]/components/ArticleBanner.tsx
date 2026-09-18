@@ -19,9 +19,10 @@ const ArticleBanner = ({ title, description, coverSrc }: Props) => {
         <Image
             src={coverSrc}
             fill
-            sizes="100%"
+            sizes="100vw"
             className="w-full h-full object-cover object-right z-0"
             alt="Portada del artículo"
+            priority
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 z-10 bg-linear-to-b from-black/60 to-black/60"></div>
