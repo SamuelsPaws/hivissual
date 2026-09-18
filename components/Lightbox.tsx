@@ -60,12 +60,19 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                 >
                     <motion.button
                         onClick={onClose}
-                        className="absolute z-[9910] left-4 top-4 lg:left-8 lg:top-8 p-3 rounded-full bg-white/10 backdrop-blur-xl"
+                        className="absolute z-[9910] left-4 top-4 lg:left-8 lg:top-8"
                         aria-label="Cerrar galería"
                         whileTap={press}
                         transition={springSnappy}
                     >
-                        <img src="/assets/x.svg" className="w-6 h-6 opacity-90" alt="" />
+                        <img
+                            src="/assets/x.svg"
+                            className="
+                                w-4 h-4
+                                md:w-6 md:h-6
+                                opacity-90"
+                            alt=""
+                        />
                     </motion.button>
 
                     <motion.button

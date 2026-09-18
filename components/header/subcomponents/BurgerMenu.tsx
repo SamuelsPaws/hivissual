@@ -65,7 +65,7 @@ const BurgerMenu = () => {
                     "fixed top-0 left-0",
                     "w-screen h-[75vh]",
                     "pt-header-height-mob px-8",
-                    "bg-linear-to-b from-brandgray-100 to-brandblack",
+                    "bg-brandblack/80 backdrop-blur-2xl",
                     "border-b border-b-white/15 shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
                 )}
                 initial={{ opacity: 0, y: -20, scale: 0.985 }}
