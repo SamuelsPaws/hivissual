@@ -45,3 +45,10 @@ export async function getArticleBySlug(slug: string): Promise<BlogArticle> {
 
     return mapArticle(entries.data[0])
 }
+
+// TODO !!!!
+export async function getPortfolioItems(): Promise<BlogArticle[]> {
+    const entries: ArticleResponse = await strapiFetch('/articles?populate=*')    
+
+    return entries.data.map(mapArticle)
+}

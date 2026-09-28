@@ -162,39 +162,19 @@ export default async function About() {
             bgColor="bg-brandgray-200"
         >
             <div className="
-                w-fit mx-auto
-                flex justify-center gap-x-8 gap-y-8 lg:gap-y-16 flex-wrap"
-            >
-                <TeamCard
-                    name="Milena Ayala"
-                    role="Project Manager"
-                    imgSrc="/assets/about-2.webp"
-                />
-                <TeamCard
-                    name="Adri Guzmán"
-                    role="Editora"
-                    imgSrc="/assets/about-2.webp"
-                />
-                <TeamCard
-                    name="Martín A. Borja"
-                    role="Especialista en Pauta Digital"
-                    imgSrc="/assets/about-2.webp"
-                />
-                <TeamCard
-                    name="Juan M. Carvajal"
-                    role="Editor"
-                    imgSrc="/assets/about-2.webp"
-                />
-            </div>
-            <div className="
-                w-full lg:w-fit
-                mt-8 lg:mt-16
-                mx-auto flex justify-center"
+                w-full lg:w-fit mx-auto
+                flex flex-col md:flex-row justify-center gap-8 md:gap-16"
             >
                 <TeamCard
                     name="Martín Espín"
-                    role="Filmmaker y Fundador"
+                    role="Yo, Filmmaker y Fundador"
                     imgSrc="/assets/about-2.webp"
+                />
+                <TeamCard
+                    name="Milena Ayala"
+                    role="Project Manager"
+                    imgSrc="/assets/team-mile.jpg"
+                    imgCn="object-top"
                 />
             </div>
         </SectionContentSt>
