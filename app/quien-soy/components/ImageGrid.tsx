@@ -32,7 +32,7 @@ const ImageGrid = () => {
   return (
     <div className="
         w-full h-100
-        lg:w-120 lg:h-160
+        md:w-120 md:h-160 md:mx-auto
         grid grid-cols-[1fr_1fr]"
     >
         <motion.div

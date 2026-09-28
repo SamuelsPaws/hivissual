@@ -43,8 +43,8 @@ const navLinks: NavLinkType[] = [
         dropdown: null
     },
     {
-        label: 'Cotizar',
-        href: '/cotizaciones',
+        label: 'Contáctame',
+        href: '/contacto',
         external: false,
         dropdown: null
     },

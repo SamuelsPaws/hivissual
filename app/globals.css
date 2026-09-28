@@ -29,10 +29,14 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 
+	--ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+	
 	--animate-fade-in-right-400: fade-in-right 800ms var(--ease-premium) forwards;
 	--animate-fade-in-right-800: fade-in-right 1600ms var(--ease-premium) 80ms both;
 	--animate-scroll-left: scroll-left 20s linear infinite;
-	--ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+
+	--animate-spin-loop: spin 1600ms ease-in-out infinite;
+
 
 	@keyframes fade-in-right {
 		from {
@@ -53,6 +57,20 @@
 
 		to {
 			transform: translateX(calc(-100% - 2rem));
+		}
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		50% {
+			transform: rotate(180deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
 		}
 	}
 }

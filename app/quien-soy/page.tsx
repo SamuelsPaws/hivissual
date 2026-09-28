@@ -111,19 +111,14 @@ export default async function About() {
         <SectionContentFr
             bgColor="bg-brandblack-100"
         >
-            {/* Div with two columns */}
-            <div className="
-                w-full
-                flex flex-col lg:flex-row items-start gap-4 lg:gap-8"
-            >
                 {/* Text column */}
                 <div className="
-                    w-full flex-auto
-                    lg:w-auto lg:flex-1
-                    flex flex-col"
+                    w-full md:w-2/3 mx-auto
+                    mb-8 md:mb-16
+                    flex flex-col gap-4 md:gap-8"
                 >
                     <p className="
-                        mb-4 lg:mb-8 p-8 relative
+                        p-8 relative
                         text-sm lg:text-lg text-black
                         bg-linear-to-b from-gray-100 to-gray-300 rounded-2xl"
                     >
@@ -139,7 +134,6 @@ export default async function About() {
                 </div>
                 {/* Images grid */}
                 <ImageGrid />
-            </div>
         </SectionContentFr>
         {/* Story */}
         <SectionContentSt

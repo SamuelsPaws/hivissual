@@ -14,6 +14,8 @@ import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateContactSchema } from "@/lib/seo/schema/contact";
 import { getFeaturedImages } from "@/lib/contentful-queries";
+import FormTemplate from "@/components/form-template/FormTemplate";
+import CustomIcon from "@/components/CustomIcon";
 
 const BASE_URL = company.url;
 
@@ -105,7 +107,7 @@ export default async function Contact() {
             relative
             px-8 pt-24 pb-8
             lg:px-32 lg:pt-32 lg:pb-24
-            flex flex-col lg:flex-row gap-8
+            flex flex-col lg:flex-row lg:flex-wrap lg:justify-center gap-16
             bg-brandblack overflow-hidden"
         >
             <HeroLeftPart />
@@ -114,19 +116,62 @@ export default async function Contact() {
                 lg:flex-1 z-10
                 flex flex-col justify-center items-center gap-8"
             >
-                <QuoteCard />
+                <FormTemplate
+                    fields={[
+                        {
+                            id: 'name',
+                            label: 'Nombre',
+                        },
+                        {
+                            id: 'email',
+                            label: 'Correo electrónico',
+                            type: 'email',
+                        },
+                        {
+                            id: 'company',
+                            label: 'Empresa',
+                            optional: true,
+                        },
+                        {
+                            id: 'budget',
+                            label: 'Presupuesto estimado (USD)',
+                            type: 'number',
+                            optional: true,
+                        },
+                        {
+                            id: 'need',
+                            label: '¿Qué tipo de proyecto necesitas?',
+                            type: 'textarea',
+                            className: 'col-span-2',
+                        },
+                        {
+                            id: 'message',
+                            label: 'Cuéntanos más sobre tu proyecto',
+                            type: 'textarea',
+                            optional: true,
+                            className: 'col-span-2',
+                        },
+                    ]}
+                    endpoints={[
+                        '/api/send-contact-form'
+                    ]}
+                />
                 <p className="text-lg lg:text-xl text-brandwhite font-semibold">
                     O si prefieres
                 </p>
                 <a
-                    href=""
+                    href={`https://wa.me/${company.phone.replace(/\D/g, '')}?text=${encodeURIComponent('¡Hola! Me gustaría conocer más sobre sus servicios y conversar sobre mi proyecto.')}`}
                     className="
-                        px-8 py-4 mt-8
-                        text-brandwhite text-lg lg:text-xl font-semibold whitespace-nowrap
+                        px-8 py-4
+                        flex items-center gap-3
+                        text-brandwhite text-lg md:text-xl font-semibold whitespace-nowrap
                         bg-whatsapp-400 rounded-full"
                 >
-                    Escríbeme un Mensaje
-                    <i className="fa fa-whatsapp scale-150 ml-4" aria-hidden="true"></i>
+                    <span>Escríbeme un Mensaje</span>
+                    <CustomIcon
+                        iconId="whatsapp"
+                        className="scale-125"
+                    />
                 </a>
             </div>
             {/* Glow */}

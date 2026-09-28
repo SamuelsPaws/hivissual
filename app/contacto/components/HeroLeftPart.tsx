@@ -48,8 +48,8 @@ const variants = {
 const HeroLeftPart = () => {
   return (
     <div className="
-        w-full lg:w-1/2 z-10
-        flex flex-col justify-center items-center gap-4 lg:gap-8"
+        w-full lg:w-1/2 lg:min-w-120 z-10
+        flex flex-col justify-center items-center gap-8 lg:gap-8"
     >
         <motion.h1
             className="
