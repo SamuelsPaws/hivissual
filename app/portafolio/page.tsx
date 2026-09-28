@@ -111,7 +111,7 @@ export default async function Portfolio({ params }: Props) {
 		<JsonLd data={bcSchema} />
 		{/* Page */}
         <Banner
-            title={categoryData ? categoryData.h1 : 'Mis Trabajos'}
+            title={'Mis Trabajos'}
             description="Explora proyectos, fotografías y producciones creadas para marcas y profesionales."
             bgSrc="/assets/banner.webp"
         />

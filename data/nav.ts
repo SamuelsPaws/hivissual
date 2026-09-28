@@ -11,23 +11,24 @@ const navLinks: NavLinkType[] = [
         label: 'Portafolio',
         href: '/portafolio',
         external: false,
-        dropdown: [
-            {
-                label: 'Corporativo',
-                href: '/portafolio/corporativo',
-                external: false
-            },
-            {
-                label: 'Cinemático',
-                href: '/portafolio/cinematico',
-                external: false
-            },
-            {
-                label: 'Redes Sociales',
-                href: '/portafolio/redes-sociales',
-                external: false
-            },
-        ]
+        dropdown: null
+        // dropdown: [
+        //     {
+        //         label: 'Corporativo',
+        //         href: '/portafolio/corporativo',
+        //         external: false
+        //     },
+        //     {
+        //         label: 'Cinemático',
+        //         href: '/portafolio/cinematico',
+        //         external: false
+        //     },
+        //     {
+        //         label: 'Redes Sociales',
+        //         href: '/portafolio/redes-sociales',
+        //         external: false
+        //     },
+        // ]
     },
     {
         label: 'Blog',

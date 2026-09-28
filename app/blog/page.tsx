@@ -100,8 +100,8 @@ export default async function Blog() {
                         />
                     ))}
                 </div>
-                {/* Right part with table */}
-                <div className="w-full md:w-100"></div>
+                {/* Right part with table (hidden until there are more articles to justify category filtering) */}
+                <div className="hidden w-full md:w-100"></div>
             </div>
         </SectionContentSt>
         <SectionCTA
