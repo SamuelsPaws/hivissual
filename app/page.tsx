@@ -4,7 +4,7 @@ import SectionContentCen from "@/components/SectionContentCen";
 import SectionCTA from "@/components/section-cta/SectionCTA";
 import { getFeaturedImages, getFeaturedMedia, getTestimonials } from "@/lib/contentful-queries";
 import GallerySimple from "@/components/GallerySimple";
-import ServiceCardGrid from "./components/ServiceCardGrid";
+import ServiceGrid from "./components/ServiceGrid";
 import AboutGrid from "./components/about-grid/AboutGrid";
 import WhiteBtn from "@/components/WhiteBtn";
 import company from "@/data/company";
@@ -14,7 +14,6 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateHomeSchema } from "@/lib/seo/schema/home";
-import BrandStrip from "./components/brand-strip/BrandStrip";
 
 const sampleSrcs = [
 	'/assets/brand-logos/watch-out-logo.png',
@@ -135,9 +134,9 @@ export default async function Home() {
 			title="Mis servicios"
 			bgColor="bg-brandblack-100"
 		>
-			<ServiceCardGrid />
+			<ServiceGrid />
 			<WhiteBtn
-				href="/cotizaciones"
+				href="/contacto"
 				label="Pide una Cotización"
 				centered
 			/>

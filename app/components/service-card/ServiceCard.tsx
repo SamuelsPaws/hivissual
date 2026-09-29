@@ -1,14 +1,24 @@
 'use client'
-import { motion } from "motion/react";
-import ServiceCardLi from "./ServiceCardLi";
-import { springSmooth, springSnappy, viewportOnce } from "@/lib/motion";
+import { motion, Variants } from "motion/react";
+import ServiceCardLi from "./subcomponents/ServiceCardLi";
+import ServiceImage from "./subcomponents/ServiceImage";
+import ServiceVideo from "./subcomponents/ServiceVideo";
+import { springSmooth, viewportOnce } from "@/lib/motion";
+
+interface ServiceMedia {
+    type: 'image' | 'video';
+    src: string;
+    alt: string;
+    cn?: string;
+}
 
 interface Props {
     title: string;
     items: string[];
+    media: ServiceMedia;
 }
 
-const variants = {
+const variants: Variants = {
     hidden: {
         opacity: 0,
         y: 32
@@ -22,11 +32,11 @@ const variants = {
     hovered: {
         y: -3,
         border: '1px solid #fff8',
-        transition: springSnappy
+        transition: { duration: 0.4, ease: 'easeOut' }
     }
 }
 
-const ServiceCard = ({ title, items }: Props) => {
+const ServiceCard = ({ title, items, media }: Props) => {
   return (
     <motion.div
         className="
@@ -40,6 +50,26 @@ const ServiceCard = ({ title, items }: Props) => {
         viewport={viewportOnce}
         whileHover="hovered"
     >
+        <div className="
+            w-full h-40 md:h-60 relative
+            mb-8
+            rounded-4xl overflow-hidden"
+        >
+            {media.type === 'image' && (
+                <ServiceImage
+                    src={media.src}
+                    alt={media.alt}
+                    cn={media.cn}
+                />
+            )}
+            {media.type === 'video' && (
+                <ServiceVideo
+                    src={media.src}
+                    alt={media.alt}
+                    cn={media.cn}
+                />
+            )}
+        </div>
         <h3 className="
             mb-8 lg:mb-8
             text-brandwhite text-xl md:text-2xl font-semibold"
