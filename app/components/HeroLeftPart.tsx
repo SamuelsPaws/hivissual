@@ -68,7 +68,7 @@ const HeroLeftPart = () => {
             bg-radial-[at_center] from-brandwhite via-transparent to-transparent
             mix-blend-screen blur-[14px] lg:blur-[16px]
             bg-contain
-            opacity-0 animate-fade-in-400-600"
+            opacity-0 animate-fade-in-80-400-600"
         />
     </div>
   )
