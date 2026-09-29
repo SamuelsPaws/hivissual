@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import EmailTemplate from './email-template';
 import { ContactFormSubmission } from '@/lib/types/emailTemplates';
+import company from '@/data/company';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -10,7 +11,7 @@ export async function POST(req: Request) {
         
         const { data, error } = await resend.emails.send({
             from: 'Fortales Automatic <automatic@fortal.es>',
-            to: ['samsantbaq@gmail.com'],
+            to: [company.email],
             subject: 'Contacto desde el Sitio Web',
             react: <EmailTemplate {...body} />
         });

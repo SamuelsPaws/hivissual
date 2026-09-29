@@ -9,7 +9,7 @@ const ctaVariants: Variants = {
         scale: 0.9
     },
     visible: {
-        opacity: 0.8,
+        opacity: 1,
         scale: 1,
         transition: {
             ...springSnappy,
@@ -41,37 +41,35 @@ const HeroLeftPart = () => {
         >
             Hivissual | Fotografía, video y contenido estratégico para empresas y profesionales que quieren destacar en redes sociales y medios digitales.
         </p>
-        <div className="relative">
-            <motion.div
-                className='mt-2 lg:mt-0 z-50 relative'
-                variants={ctaVariants}
-                initial="hidden"
-                animate="visible"
+        <motion.div
+            className='z-50 relative'
+            variants={ctaVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <Link
+                href='/portafolio'
+                className="
+                    block w-fit
+                    mx-auto
+                    px-6 py-3
+                    lg:px-8 lg:py-4
+                    bg-brandwhite
+                    text-lg lg:text-2xl font-semibold text-black
+                    rounded-full md:hover:scale-[1.05] duration-400 ease-out"
             >
-                <Link
-                    href='/portafolio/redes-sociales'
-                    className="
-                        block w-fit
-                        mx-auto
-                        px-6 py-3
-                        lg:px-8 lg:py-4
-                        bg-brandwhite
-                        text-lg lg:text-2xl font-semibold text-black
-                        rounded-full md:hover:scale-[1.05] duration-400 ease-out"
-                >
-                    Explorar Portafolio
-                </Link>
-            </motion.div>
-            {/* Glow */}
-            <div className="
-                absolute -bottom-5 left-1/2 -translate-x-1/2
-                w-[160%] h-8 z-20
-                lg:w-[140%] lg:h-10
-                bg-radial-[at_center] from-brandwhite via-transparent to-transparent
-                opacity-100 lg:opacity-80 mix-blend-screen blur-[8px]
-                bg-contain"
-            ></div>
-        </div>
+                Explorar Portafolio
+            </Link>
+        </motion.div>
+        {/* Glow */}
+        <div className="
+            w-[100%] h-12 z-20 lg:-translate-y-2
+            lg:w-3/4 lg:h-16
+            bg-radial-[at_center] from-brandwhite via-transparent to-transparent
+            mix-blend-screen blur-[14px] lg:blur-[16px]
+            bg-contain
+            opacity-0 animate-fade-in-400-600"
+        />
     </div>
   )
 }
