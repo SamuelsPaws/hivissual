@@ -3,7 +3,6 @@ import Banner from "@/components/Banner";
 import Gallery from "@/components/Gallery";
 import SectionCTA from "@/components/section-cta/SectionCTA";
 import FooterWrapper from "@/components/FooterWrapper";
-import { getFeaturedImages, getMedia, getMediaByCategory } from "@/lib/contentful-queries";
 import company from "@/data/company";
 import { portfolioMetadata } from "@/data/metadata";
 import { Metadata } from "next";
@@ -11,7 +10,6 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import breadcrumbData from "@/data/breadcrumbs.json";
 import { generatePortfolioSchema } from "@/lib/seo/schema/portfolio";
-import { mapCategoryLabel } from "@/lib/utils/mapCategory";
 import portfolioCategories from "@/data/portfolioCategories";
 import { getPortfolioItems } from "@/lib/strapi/strapi-queries";
 

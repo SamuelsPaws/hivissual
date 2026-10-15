@@ -13,7 +13,6 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateContactSchema } from "@/lib/seo/schema/contact";
-import { getFeaturedImages } from "@/lib/contentful-queries";
 import FormTemplate from "@/components/form-template/FormTemplate";
 import CustomIcon from "@/components/CustomIcon";
 import { getFeaturedPortfolioItems, getPortfolioItems } from "@/lib/strapi/strapi-queries";

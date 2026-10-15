@@ -2,7 +2,6 @@ import SectionContentSt from "@/components/SectionContentSt";
 import Hero from "./components/Hero";
 import SectionContentCen from "@/components/SectionContentCen";
 import SectionCTA from "@/components/section-cta/SectionCTA";
-import { getTestimonials } from "@/lib/contentful-queries";
 import ServiceGrid from "./components/ServiceGrid";
 import AboutGrid from "./components/about-grid/AboutGrid";
 import WhiteBtn from "@/components/WhiteBtn";
@@ -106,7 +105,6 @@ export function generateMetadata(): Metadata {
 
 export default async function Home() {
 	const featuredPortfolioItems = await getFeaturedPortfolioItems()
-	const testimonials = await getTestimonials()
 	const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
 
 	const orgSchema = generateHomeSchema()

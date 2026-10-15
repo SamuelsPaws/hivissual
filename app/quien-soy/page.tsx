@@ -16,7 +16,6 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateAboutSchema } from "@/lib/seo/schema/about";
-import { getFeaturedImages } from "@/lib/contentful-queries";
 import { getPortfolioItems } from "@/lib/strapi/strapi-queries";
 
 const BASE_URL = company.url;

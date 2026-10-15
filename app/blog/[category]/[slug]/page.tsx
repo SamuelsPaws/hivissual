@@ -4,7 +4,6 @@ import { getArticleBySlug, getArticles, getPortfolioItems } from "@/lib/strapi/s
 import Image from "next/image"
 import Block from "./components/Block"
 import SectionCTA from "@/components/section-cta/SectionCTA"
-import { getFeaturedImages } from "@/lib/contentful-queries"
 import Link from "next/link"
 import RelArticleLink from "./components/RelArticleLink"
 import CustomIcon from "@/components/CustomIcon"
