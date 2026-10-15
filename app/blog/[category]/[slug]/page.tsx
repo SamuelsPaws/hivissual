@@ -1,6 +1,6 @@
 import SectionContentFr from "@/components/SectionContentFr"
 import ArticleBanner from "./components/ArticleBanner"
-import { getArticleBySlug, getArticles } from "@/lib/strapi/strapi-queries"
+import { getArticleBySlug, getArticles, getPortfolioItems } from "@/lib/strapi/strapi-queries"
 import Image from "next/image"
 import Block from "./components/Block"
 import SectionCTA from "@/components/section-cta/SectionCTA"
@@ -98,7 +98,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogArticle({ params }: Props) {
     const { slug } = await params
     const article = await getArticleBySlug(slug)
-    const ctaGallery = await getFeaturedImages()
+    const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
     const allArticles = await getArticles()
     const relatedArticles = allArticles.filter(el => el.slug !== article.slug)
 
@@ -217,9 +217,9 @@ export default async function BlogArticle({ params }: Props) {
             </div>
         </SectionContentFr>
         <SectionCTA
-            bgColor="bg-brandgray-100"
-            gallery={ctaGallery.map(el => el.imageUrl)}
-        />
+			gallery={featuredImages.map(el => el.media.src)}
+			bgColor="bg-brandgray-200"
+		/>
         {/* Footer wrapper */}
 		<div className="w-full h-footer-height-mob lg:h-footer-height bg-brandgray-100"></div>
     </main>
