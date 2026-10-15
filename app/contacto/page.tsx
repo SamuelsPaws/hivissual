@@ -15,7 +15,7 @@ import JsonLd from "@/components/JsonLd";
 import { generateContactSchema } from "@/lib/seo/schema/contact";
 import FormTemplate from "@/components/form-template/FormTemplate";
 import CustomIcon from "@/components/CustomIcon";
-import { getFeaturedPortfolioItems, getPortfolioItems } from "@/lib/strapi/strapi-queries";
+import { getPortfolioItems } from "@/lib/strapi/strapi-queries";
 
 const BASE_URL = company.url;
 
