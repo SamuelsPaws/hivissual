@@ -1,5 +1,5 @@
 import { BlockSkeleton } from "./block";
-import { StrapiImage } from "./image";
+import { StrapiMedia } from "./image";
 
 interface StrapiSystemFields {
   id: number;
@@ -36,9 +36,38 @@ export interface ArticleSkeleton extends StrapiSystemFields {
     title: string;
     description: string;
     slug: string;
-    cover: StrapiImage;
+    cover: StrapiMedia;
     category: CategorySkeleton;
     blocks: BlockSkeleton[];
 }
 
 export type ArticleResponse = StrapiResponse<ArticleSkeleton>
+
+export type PortfolioItemMediaSkeleton = {
+    id: number,
+    item: StrapiMedia,
+    __component: 'shared.fotografia-de-portafolio'
+} | {
+    id: number,
+    item: StrapiMedia,
+    __component: 'shared.video-de-portafolio',
+    linkToPost: string,
+    postPlatform: string,
+    thumbnail: StrapiMedia
+};
+
+export interface PortfolioItemSkeleton extends StrapiSystemFields {
+    innerTitle: string;
+    displayTitle: string | null;
+    date: string;
+    client: string;
+    category: string;
+    slug: string;
+    description: string | null;
+    priority: string;
+    industry: string;
+    featured: boolean;
+    media: PortfolioItemMediaSkeleton[];
+}
+
+export type PortfolioItemResponse = StrapiResponse<PortfolioItemSkeleton>

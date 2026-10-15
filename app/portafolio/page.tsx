@@ -13,6 +13,7 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { generatePortfolioSchema } from "@/lib/seo/schema/portfolio";
 import { mapCategoryLabel } from "@/lib/utils/mapCategory";
 import portfolioCategories from "@/data/portfolioCategories";
+import { getPortfolioItems } from "@/lib/strapi/strapi-queries";
 
 type Props = {
     params: Promise<{
@@ -95,9 +96,8 @@ export function generateMetadata(): Metadata {
 
 export default async function Portfolio({ params }: Props) {
     const { category } = await params
-
-    const entries = await getMediaByCategory(8, 0, mapCategoryLabel(category))
-    const featuredImages = await getFeaturedImages()
+    const entries = await getPortfolioItems()
+	const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
 
     const categoryData = portfolioCategories.find(el => el.slug === category)
 
@@ -120,9 +120,9 @@ export default async function Portfolio({ params }: Props) {
             <Gallery initialEntries={entries} />
         </SectionContentFr>
         <SectionCTA
-			gallery={featuredImages.map(el => el.imageUrl)}
-            bgColor="bg-brandgray-100"
-        />
+			gallery={featuredImages.map(el => el.media.src)}
+			bgColor="bg-brandgray-200"
+		/>
         <FooterWrapper bgColor="bg-brandgray-100" />
     </main>
     )

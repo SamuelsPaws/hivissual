@@ -1,92 +1,81 @@
 "use client";
 
 import itemTypeMapper from "@/lib/utils/itemTypeMapper";
-import clsx from "clsx"
-import { AnimatePresence, motion } from "motion/react";
-import { springSmooth } from "@/lib/motion";
+import mapCreatedDate from "@/lib/utils/mapCreatedDate";
+import clsx from "clsx";
+import { useId } from "react";
 
 interface Props {
     isOpen: boolean;
     type: string;
     client: string;
-    year: string | null;
+    date: string | null;
 }
 
-const LightboxInfo = ({ isOpen, type, client, year }: Props) => {
+const LightboxInfo = ({ isOpen, type, client, date }: Props) => {
+    const panelId = useId();
+    const easing = "cubic-bezier(0.32, 0.72, 0, 1)";
+    const surface = "bg-brandblack rounded-xl border border-[#fff5] shadow-[0_16px_45px_rgba(0,0,0,0.35)]";
 
+    // Keep both surfaces mounted so rapid toggles reverse the current transition.
     return (
-    <motion.div
-      layout
-      transition={springSmooth}
-      className={clsx(
-        isOpen ? 'w-[calc(100%-2rem)] md:w-100 h-30 md:h-50' : 'w-24 h-12',
-        "absolute bottom-4 left-4 z-[9970]",
-        "bg-brandblack",
-        "rounded-xl border border-[#fff5] overflow-hidden",
-        "md:hover:border-[#fffa]",
-        "shadow-[0_16px_45px_rgba(0,0,0,0.35)]"
-    )}>
-        {/* Button to open info */}
-        <AnimatePresence mode="wait" initial={false}>
-        {!isOpen ?
-            <motion.div
-              key="closed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="
-                w-full h-full
-                text-lg text-brandwhite
-                flex justify-center items-center
-                rounded-lg
-                cursor-pointer"
+        <div
+            className="absolute bottom-4 left-4 right-4 z-[9970] pointer-events-none"
+        >
+            <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                aria-hidden={isOpen}
+                inert={isOpen}
+                className={clsx(
+                    surface,
+                    "absolute bottom-0 left-0 w-24 h-12 flex justify-center items-center text-lg text-brandwhite cursor-pointer md:hover:border-[#fffa]",
+                    "transition-opacity duration-150 motion-reduce:duration-100",
+                    isOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto",
+                )}
+                style={{ transitionTimingFunction: easing }}
             >
-                <i className="fa fa-info-circle scale-90 mr-2"></i>
+                <i className="fa fa-info-circle scale-90 mr-2" aria-hidden="true" />
                 Info
-            </motion.div>
-        :
-            <motion.div
-              key="open"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={springSmooth}
-              className="
-                w-full h-full relative
-                p-4
-                flex flex-col
-                text-brandwhite"
+            </button>
+            <div
+                id={panelId}
+                aria-hidden={!isOpen}
+                inert={!isOpen}
+                className={clsx(
+                    surface,
+                    "relative w-full md:w-100 min-h-30 md:min-h-50 p-4 flex flex-col text-brandwhite cursor-pointer",
+                    "transition-[translate,opacity] motion-reduce:translate-none motion-reduce:duration-100",
+                    isOpen
+                        ? "opacity-100 translate-y-0 duration-250 pointer-events-auto"
+                        : "opacity-0 translate-y-2 duration-180 pointer-events-none",
+                )}
+                style={{ transitionTimingFunction: easing }}
             >
-                {/* Close button */}
-                <div className="
-                    absolute right-2 top-2
-                    px-3 py-1
-                    text-lg cursor-pointer"
+                <button
+                    type="button"
+                    aria-label="Cerrar información"
+                    className="absolute right-2 top-2 w-8 h-8 flex items-center justify-center text-lg cursor-pointer"
                 >
-                    <i className="fa fa-chevron-down"></i>
-                </div>
-                <p className="mb-4 text-lg lg:text-xl font-semibold">
+                    <i className="fa fa-chevron-down" aria-hidden="true" />
+                </button>
+                <p className="mb-4 pr-8 text-lg xl:text-xl font-semibold">
                     {itemTypeMapper(type)}
                 </p>
-                {/* Wrapper for client, year, etc */}
-                <div className="
-                    flex-1
-                    flex flex-col justify-between"
-                >
-                    <p className="mb-2 text-sm lg:text-md">
+                <div className="flex-1 flex flex-col justify-between">
+                    <p className="mb-2 text-sm xl:text-base">
                         <span className="font-semibold">Cliente: </span>{client}
                     </p>
-                    {year !== null &&
-                        <p className="text-sm lg:text-md">
-                            <span className="font-semibold">Año: </span>{year}
+                    {date !== null && (
+                        <p className="text-sm xl:text-base">
+                            <span className="font-semibold">Fecha: </span>{mapCreatedDate(date)}
                         </p>
-                    }
+                    )}
                 </div>
-            </motion.div>
-        }
-        </AnimatePresence>
-    </motion.div>
-    )
-}
+            </div>
+        </div>
+    );
+};
 
 export default LightboxInfo

@@ -17,6 +17,7 @@ import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateAboutSchema } from "@/lib/seo/schema/about";
 import { getFeaturedImages } from "@/lib/contentful-queries";
+import { getPortfolioItems } from "@/lib/strapi/strapi-queries";
 
 const BASE_URL = company.url;
 
@@ -92,7 +93,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function About() {
-    const featuredImages = await getFeaturedImages()
+    const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
     
 	const aboutSchema = generateAboutSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.about, BASE_URL)
@@ -201,9 +202,9 @@ export default async function About() {
             </div>
         </SectionContentCen>
         <SectionCTA
-			gallery={featuredImages.map(el => el.imageUrl)}
-            bgColor="bg-brandgray-400"
-        />
+			gallery={featuredImages.map(el => el.media.src)}
+			bgColor="bg-brandgray-200"
+		/>
         <FooterWrapper bgColor="bg-brandgray-400" />
     </main>
     )

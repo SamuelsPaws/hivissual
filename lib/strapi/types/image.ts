@@ -19,7 +19,7 @@ type ImageFormats = {
     thumbnail: ImageFormat;
 };
 
-export type StrapiImage = {
+export type StrapiMedia = {
     alternativeText: string | null;
     caption: string | null;
     createdAt: string;

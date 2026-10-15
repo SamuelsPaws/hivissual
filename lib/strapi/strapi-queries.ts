@@ -1,8 +1,8 @@
 'use server'
-import { BlogArticle } from "../types";
-import { mapArticle } from "./strapi-mappers";
+import { BlogArticle, PaginatedResponse, PortfolioItem } from "../types";
+import { mapArticle, mapPortfolioItem } from "./strapi-mappers";
 import strapiFetch from "./strapiFetch";
-import { ArticleResponse } from "./types/strapi-types";
+import { ArticleResponse, PortfolioItemResponse } from "./types/strapi-types";
 
 export async function getArticles(): Promise<BlogArticle[]> {
     const entries: ArticleResponse = await strapiFetch('/articles?populate=*')    
@@ -46,9 +46,23 @@ export async function getArticleBySlug(slug: string): Promise<BlogArticle> {
     return mapArticle(entries.data[0])
 }
 
-// TODO !!!!
-export async function getPortfolioItems(): Promise<BlogArticle[]> {
-    const entries: ArticleResponse = await strapiFetch('/articles?populate=*')    
+export async function getPortfolioItems(limit = 8, offset = 0): Promise<PaginatedResponse<PortfolioItem>> {
+    const entries: PortfolioItemResponse = await strapiFetch(`/portfolio-items?populate[media][populate]=*&pagination[limit]=${limit}&pagination[start]=${offset}`)
 
-    return entries.data.map(mapArticle)
+    const items = entries.data.map(mapPortfolioItem)
+    const total = entries.meta?.pagination?.total ?? 0
+
+    return {
+        items,
+        total,
+        hasMore: offset + items.length < total,
+        nextOffset: offset + items.length
+    }
+}
+
+export async function getFeaturedPortfolioItems(): Promise<PortfolioItem[]> {
+    const entries: PortfolioItemResponse = await strapiFetch(`/portfolio-items?filters[featured][$eq]=true&populate[media][populate]=*&pagination[limit]=8`)
+
+    const items = entries.data.map(mapPortfolioItem)
+    return items
 }

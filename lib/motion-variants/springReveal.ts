@@ -15,7 +15,7 @@ export const springRevealHover: Variants = {
     },
     hovered: {
         y: -3,
-        scale: 1.05,
+        scale: 1.1,
         transition: springSnappy,
         border: '1px solid #555'
     }

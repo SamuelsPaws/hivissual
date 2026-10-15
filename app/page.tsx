@@ -14,6 +14,8 @@ import breadcrumbData from "@/data/breadcrumbs.json";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/schema";
 import JsonLd from "@/components/JsonLd";
 import { generateHomeSchema } from "@/lib/seo/schema/home";
+import { getFeaturedPortfolioItems, getPortfolioItems } from "@/lib/strapi/strapi-queries";
+import Gallery from "@/components/gallery/Gallery";
 
 const sampleSrcs = [
 	'/assets/brand-logos/watch-out-logo.png',
@@ -104,9 +106,9 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function Home() {
-	const featuredEntries = await getFeaturedMedia()
+	const featuredPortfolioItems = await getFeaturedPortfolioItems()
 	const testimonials = await getTestimonials()
-	const featuredImages = await getFeaturedImages()
+	const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
 
 	const orgSchema = generateHomeSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.home, BASE_URL)
@@ -123,9 +125,20 @@ export default async function Home() {
 			bgColor="bg-brandblack"
 		>
 			{/* Masonry Grid */}
-			<GallerySimple items={featuredEntries} />
+			<Gallery
+				items={featuredPortfolioItems}
+				gridVersion="featuredItems"
+				gridClassName="
+					w-full md:w-fit mx-auto
+					mb-8 md:mb-16
+					grid
+					grid-cols-1 grid-rows-auto
+					md:grid-cols-2
+					xl:grid-cols-4
+					gap-4 md:gap-8"
+			/>
 			<WhiteBtn
-				href="/portafolio/redes-sociales"
+				href="/portafolio"
 				label="Ver Portafolio Completo"
 			/>
 		</SectionContentSt>
@@ -155,7 +168,7 @@ export default async function Home() {
 			<AboutGrid />
 		</SectionContentCen>
 		<SectionCTA
-			gallery={featuredImages.map(el => el.imageUrl)}
+			gallery={featuredImages.map(el => el.media.src)}
 			bgColor="bg-brandgray-200"
 		/>
 		{/* Footer wrapper */}

@@ -6,29 +6,33 @@ interface Props {
 }
 
 const MediaViewer = ({ media }: Props) => {
+    console.log(media);
+    
+
     if (!media) return null
 
-    if (media.type === 'image' || media.type === 'project') {
+    if (media.type === 'image') {
         return (
-            <Image
-                src={media.imageUrl}
-                fill
-                sizes="100%"
-                className="w-full h-full object-contain z-[9960]"
-                alt={media.alt}
-            />
+        <Image
+            src={media.src}
+            fill
+            sizes="82vw"
+            className="w-full h-full object-contain z-[9960]"
+            alt={media.alt}
+        />
         )
     }
 
-    if (media.type === 'video' && media.videoUrl) {
+    if (media.type === 'video') {
         return (
-            <video
-                src={media.videoUrl}
-                autoPlay
-                loop
-                playsInline
-                className="w-full h-[85%] object-contain z-[9960]"
-            ></video>
+        <video
+            src={media.src}
+            autoPlay
+            loop
+            playsInline
+            className="w-full h-full object-contain z-[9960]"
+            aria-label={media.alt}
+        ></video>
         )
     }
 

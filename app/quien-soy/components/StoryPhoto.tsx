@@ -16,7 +16,7 @@ const StoryPhoto = ({ src, className }: Props) => {
         <Image
             src={src}
             fill
-            sizes="100%"
+            sizes="(max-width: 768px) 100vw, 480px"
             className="w-full h-full object-cover"
             alt="Stock"
         />

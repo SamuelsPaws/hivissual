@@ -1,15 +1,15 @@
-import { Media } from '@/lib/types';
-import GridItem from './GridItem'
+import { PortfolioItem } from '@/lib/types';
+import GridItem from './gallery/subcomponents/ImageBtn'
 import { SetStateAction } from 'react';
 
 interface Props {
-    mediaArr: Media[];
+    items: PortfolioItem[];
     setSelectedMediaIndex: React.Dispatch<SetStateAction<number | null>>;
 }
 
-const GalleryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
+const GalleryGrid = ({ items, setSelectedMediaIndex }: Props) => {
 
-  return (
+  	return (
     <div className="
         w-full md:w-fit mx-auto
         grid
@@ -18,14 +18,14 @@ const GalleryGrid = ({ mediaArr, setSelectedMediaIndex }: Props) => {
         xl:grid-cols-4
         gap-4 md:gap-8"
     >
-      {mediaArr.map((el, index) =>
-        <GridItem
-          key={index}
-          setSelectedMediaIndex={setSelectedMediaIndex}
-          thisMediaIndex={index}
-          thisMedia={el}
-        />
-      )}
+		{items.map((el, index) => (
+			<GridItem
+				key={index}
+				setSelectedMediaIndex={setSelectedMediaIndex}
+				thisItemIndex={index}
+				thisItem={el}
+			/>
+		))}
     </div>
   )
 }

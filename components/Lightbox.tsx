@@ -1,6 +1,6 @@
 "use client";
 
-import { Media } from "@/lib/types";
+import { PortfolioItem } from "@/lib/types";
 import { useCallback, useEffect, useState } from "react";
 import MediaViewer from "./MediaViewer";
 import Link from "next/link";
@@ -12,12 +12,12 @@ import { press, springMomentum, springSmooth, springSnappy } from "@/lib/motion"
 interface Props {
     isOpen: boolean;
     onClose: () => void;
-    media: Media | null;
+    item: PortfolioItem | null;
     previousMedia: () => void;
     nextMedia: () => void;
 }
 
-const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) => {
+const Lightbox = ({ isOpen, onClose, item, previousMedia, nextMedia }: Props) => {
     const [isInfoOpen, setIsInfoOpen] = useState(false);
     const shouldReduceMotion = useReducedMotion();
 
@@ -126,32 +126,20 @@ const Lightbox = ({ isOpen, onClose, media, previousMedia, nextMedia }: Props) =
                             if (projectedX > 80) changeMedia("previous");
                         }}
                     >
-                        <MediaViewer media={media} />
-
-                        {media?.type === "project" && (
-                            <div className="absolute bottom-4 left-4 z-[9960] w-[calc(100%-2rem)] max-w-140 p-5 lg:p-8 bg-brandblack/75 backdrop-blur-xl text-brandwhite rounded-2xl border border-white/15">
-                                <p className="mb-4 text-xl lg:text-2xl font-semibold">Cliente: {media.client}</p>
-                                <p className="mb-6 text-sm lg:text-md">Campaña de crecimiento en redes sociales con fotografía y producción de videos publicitarios</p>
-                                <p className="mb-5 text-lg lg:text-xl font-semibold">¿Quieres saber cómo ayudé a este cliente a impulsar su marca?</p>
-                                <Link href={`/proyectos/${media.projectSlug}`} className="pressable block w-fit px-6 py-3 text-lg text-black font-semibold bg-brandwhite rounded-full">
-                                    Ver Proyecto
-                                </Link>
-                            </div>
-                        )}
-
-                        {media?.type === "video" && (
-                            <div className="w-full h-[15%] px-2 lg:px-8 py-2 lg:py-0 flex flex-col items-start justify-end gap-2 lg:flex-row lg:items-center lg:justify-between lg:gap-0 bg-brandblack-200">
-                                <span className="ml-2 text-xs lg:text-lg text-brandwhite"><span className="mr-2 font-semibold">Cliente:</span>{media.client}</span>
-                                {media.instaUrl && (
-                                    <a href={media.instaUrl} className="pressable block px-4 lg:px-6 py-2 bg-linear-30 from-fuchsia-700 to-amber-600 text-xs lg:text-lg text-brandwhite font-semibold rounded-full">
-                                        Mira este post en Instagram
-                                    </a>
-                                )}
-                            </div>
-                        )}
-
-                        {media?.type === "image" && (
-                            <LightboxInfo isOpen={isInfoOpen} type={media.type} client={media.client} year={media.year} />
+                        <MediaViewer
+                            media={item ? {
+                                type: item.media.type,
+                                src: item.media.src,
+                                alt: item.media.caption ?? ''
+                            } : null}
+                        />
+                        {item && (
+                            <LightboxInfo
+                                isOpen={isInfoOpen}
+                                type={item.media.type}
+                                client={item.client}
+                                date={item.date}
+                            />
                         )}
                     </motion.div>
                 </motion.div>

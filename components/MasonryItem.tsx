@@ -1,6 +1,6 @@
 'use client'
 import { springRevealHover } from '@/lib/motion-variants/springReveal';
-import { Media } from '@/lib/types';
+import { Media, PortfolioItem } from '@/lib/types';
 import itemTypeMapper from '@/lib/utils/itemTypeMapper';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
@@ -11,7 +11,7 @@ import { press } from '@/lib/motion';
 interface Props {
     thisMediaIndex: number;
     setSelectedMediaIndex: React.Dispatch<SetStateAction<number | null>>;
-    thisMedia: Media;
+    thisMedia: PortfolioItem;
     spansTwoRows: boolean;
     spansTwoCols: boolean;
 }
@@ -47,11 +47,11 @@ const MasonryItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia, spansTw
         />
         {/* Image (thumbnail) */}
         <Image
-            src={thisMedia.imageUrl}
+            src={thisMedia.media.src}
             fill
             sizes='(max-width:768px) 100vw, 250px'
             className='w-full h-full object-cover z-0'
-            alt={thisMedia.alt}
+            alt={thisMedia.media.src}
         />
         {/* Lower part with info */}
         <div className="

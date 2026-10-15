@@ -16,6 +16,7 @@ import { generateContactSchema } from "@/lib/seo/schema/contact";
 import { getFeaturedImages } from "@/lib/contentful-queries";
 import FormTemplate from "@/components/form-template/FormTemplate";
 import CustomIcon from "@/components/CustomIcon";
+import { getFeaturedPortfolioItems, getPortfolioItems } from "@/lib/strapi/strapi-queries";
 
 const BASE_URL = company.url;
 
@@ -91,7 +92,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function Contact() {
-    const featuredImages = await getFeaturedImages()
+    const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
     
 	const contactSchema = generateContactSchema()
 	const bcSchema = getBreadcrumbSchema(breadcrumbData.contact, BASE_URL)
@@ -205,6 +206,16 @@ export default async function Contact() {
                     iconClass="fa-instagram"
                     href="https://www.instagram.com/hivissual/"
                 />
+                <SocialCard
+                    text="hivissual"
+                    iconId="tiktok"
+                    href="https://www.tiktok.com/@hivissual"
+                />
+                <SocialCard
+                    text="hivissual"
+                    iconId="youtube"
+                    href="https://www.youtube.com/@hivissual"
+                />
                 {/* <SocialCard
                     text="Hivissual"
                     iconClass="fa-facebook-square"
@@ -224,7 +235,7 @@ export default async function Contact() {
             <FAQAnswer text="Puedes utilizar el seleccionador en la parte de arriba de esta página o escribirme directamente por WhatsApp para conversar sobre tu proyecto." />
         </SectionContentSt>
         <SectionCTA
-			gallery={featuredImages.map(el => el.imageUrl)}
+			gallery={featuredImages.map(el => el.media.src)}
             bgColor="bg-brandgray-100"
         />
         <FooterWrapper bgColor="bg-brandgray-100" />

@@ -1,6 +1,6 @@
 'use client'
 import { springRevealHover } from '@/lib/motion-variants/springReveal';
-import { Media } from '@/lib/types';
+import { PortfolioItem } from '@/lib/types';
 import itemTypeMapper from '@/lib/utils/itemTypeMapper';
 import clsx from 'clsx';
 import { motion } from 'motion/react';
@@ -9,17 +9,21 @@ import { SetStateAction } from 'react';
 import { press } from '@/lib/motion';
 
 interface Props {
-    thisMediaIndex: number;
+    thisItemIndex: number;
     setSelectedMediaIndex: React.Dispatch<SetStateAction<number | null>>;
-    thisMedia: Media;
+    thisItem: PortfolioItem;
 }
 
-const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) => {
+const ImageBtn = ({ thisItemIndex, setSelectedMediaIndex, thisItem }: Props) => {
     const handleClick = () => {
-        setSelectedMediaIndex(thisMediaIndex)
+        setSelectedMediaIndex(thisItemIndex)
     }
 
-  return (
+    const thumbnailSrc = thisItem.media.type === 'video'
+        ? thisItem.media.thumbnail.src
+        : thisItem.media.src;
+
+    return (
     <motion.button
         onClick={handleClick}
         className='
@@ -44,12 +48,12 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
         ></div>
         {/* Image (thumbnail) */}
         <Image
-            key={thisMediaIndex}
-            src={thisMedia.imageUrl}
+            key={thisItemIndex}
+            src={thumbnailSrc}
             fill
             sizes='(max-width:768px) 100vw, 240px'
             className='w-full h-full object-cover z-0'
-            alt={thisMedia.alt}
+            alt={thisItem.media.caption ?? ''}
         />
         {/* Lower part with info */}
         <div className="
@@ -64,9 +68,8 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
                 <i
                     className={clsx(
                         'fa absolute bottom-6 left-6',
-                        thisMedia.type === 'image' && 'fa-camera',
-                        thisMedia.type === 'video' && 'fa-video-camera',
-                        thisMedia.type === 'project' && 'fa-briefcase'
+                        thisItem.media.type === 'image' && 'fa-camera',
+                        thisItem.media.type === 'video' && 'fa-video-camera',
                     )}
                     aria-hidden="true"
                 ></i>
@@ -81,16 +84,16 @@ const GridItem = ({ thisMediaIndex, setSelectedMediaIndex, thisMedia }: Props) =
                     flex flex-col items-start"
                 >
                     <span className="mb-2 text-md text-brandwhite text-left font-semibold">
-                        {itemTypeMapper(thisMedia.type)}
+                        {itemTypeMapper(thisItem.media.type)}
                     </span>
                     <p className="text-sm text-gray-200 text-left">
-                        <span className='font-semibold'>Cliente: </span>{thisMedia.client}
+                        <span className='font-semibold'>Cliente: </span>{thisItem.client}
                     </p>
                 </div>
             </div>
         </div>
     </motion.button>
-  )
+    )
 }
 
-export default GridItem
+export default ImageBtn

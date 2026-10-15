@@ -1,7 +1,6 @@
 'use server'
+import { getPortfolioItems } from "./strapi/strapi-queries"
 
-import { getMedia } from "./contentful-queries";
-
-export async function loadMedia(limit: number, offset: number) {
-    return getMedia(limit, offset)
+export async function loadPortfolioItems(limit: number, offset: number) {
+    return getPortfolioItems(limit, offset)
 }

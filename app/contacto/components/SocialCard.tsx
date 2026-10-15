@@ -2,14 +2,16 @@
 import clsx from "clsx";
 import { motion } from "motion/react";
 import { fadeUp, lift, press, springSnappy, viewportOnce } from "@/lib/motion";
+import CustomIcon, { type IconId } from "@/components/CustomIcon"
 
 interface Props {
-    iconClass: string;
+    iconClass?: string;
+    iconId?: IconId
     text: string;
     href: string;
 }
 
-const SocialCard = ({ iconClass, text, href }: Props) => {
+const SocialCard = ({ iconClass, iconId, text, href }: Props) => {
   return (
     <motion.a
         href={href}
@@ -28,7 +30,11 @@ const SocialCard = ({ iconClass, text, href }: Props) => {
         transition={springSnappy}
         viewport={viewportOnce}
     >
-        <i className={clsx("fa", iconClass)}></i>
+        {iconId ? (
+            <CustomIcon iconId={iconId} />
+        ) : (
+            <i className={clsx("fa", iconClass)}></i>
+        )}
         <span>{text}</span>
     </motion.a>
   )

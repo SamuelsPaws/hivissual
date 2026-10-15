@@ -1,14 +1,7 @@
 export type Media = {
-    client: string,
-    type: string,
-    imageUrl: string,
-    alt: string,
-    videoUrl: string | null,
-    instaUrl: string | null,
-    year: string | null,
-    featured: boolean,
-    priority: number,
-    projectSlug: string | null
+    type: 'image' | 'video',
+    src: string,
+    alt: string
 }
 
 export type PaginatedResponse<T> = {
@@ -100,3 +93,34 @@ export type NavLinkType = {
     external: boolean,
     dropdown: NavLinkDropdown
 }
+
+export type PortfolioItemMedia = {
+    type: 'image',
+    src: string,
+    caption: string | null,
+} | {
+    type: 'video',
+    src: string,
+    caption: string | null,
+    thumbnail: {
+        src: string,
+        caption: string | null
+    },
+    linkToPost: string | null,
+    postPlatform: string
+}
+
+export type PortfolioItem = {
+    id: number,
+    displayTitle: string | null,
+    date: string,
+    client: string,
+    description: string | null,
+    featured: boolean,
+    industry: string,
+    priority: string,
+    slug: string,
+    media: PortfolioItemMedia
+}
+
+export type GridVersion = 'featuredItems'

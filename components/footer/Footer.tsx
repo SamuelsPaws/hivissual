@@ -56,7 +56,7 @@ const Footer = () => {
 			</div>
 			{/* Right part with columns */}
 			<div className="
-				flex-1 self-center
+				flex-1 lg:self-center
 				flex flex-col justify-between gap-8
 				lg:flex-row lg:items-start lg:justify-evenly lg:gap-4"
 			>

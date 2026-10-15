@@ -11,7 +11,7 @@ export const springSmooth: Transition = {
 export const springSnappy: Transition = {
     type: "spring",
     stiffness: 400,
-    damping: 16,
+    damping: 18,
 };
 
 export const springMomentum: Transition = {

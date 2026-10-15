@@ -16,7 +16,7 @@ const StoryGrid = () => {
             className="reveal-left"
         />
         <StoryPhoto
-            src="/assets/about-1.webp"
+            src="/assets/about-2.webp"
             className="z-20 reveal-left order-2 md:order-0"
         />
         <StoryCard
@@ -28,7 +28,7 @@ const StoryGrid = () => {
             className="reveal-right order-3 md:order-0"
         />
         <StoryPhoto
-            src="/assets/about-1.webp"
+            src="/assets/about-5.webp"
             className="reveal-left order-4 md:order-0"
         />
     </div>

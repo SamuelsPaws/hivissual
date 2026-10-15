@@ -1,4 +1,4 @@
-import { getArticles } from "@/lib/strapi/strapi-queries"
+import { getArticles, getPortfolioItems } from "@/lib/strapi/strapi-queries"
 import Banner from "@/components/Banner"
 import SectionContentSt from "@/components/SectionContentSt"
 import ArticleLink from "./components/ArticleLink"
@@ -66,8 +66,8 @@ export function generateMetadata(): Metadata {
 
 export default async function Blog() {
     const articles = await getArticles()
-    const ctaGallery = await getFeaturedImages()
-
+    const featuredImages = (await getPortfolioItems(10, 0)).items.filter(el => el.media.type === 'image')
+    
     return (
     <main>
         <Banner
@@ -105,9 +105,9 @@ export default async function Blog() {
             </div>
         </SectionContentSt>
         <SectionCTA
-            bgColor="bg-brandblack-200"
-            gallery={ctaGallery.map(el => el.imageUrl)}
-        />
+			gallery={featuredImages.map(el => el.media.src)}
+			bgColor="bg-brandgray-200"
+		/>
         {/* Footer wrapper */}
 		<div className="w-full h-footer-height-mob lg:h-footer-height bg-brandblack-200"></div>
     </main>
