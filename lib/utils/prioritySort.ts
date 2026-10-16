@@ -1,4 +1,4 @@
-import { Media } from "../types";
+import { PortfolioItem } from "../types";
 
 export function prioritySort(a: string, b: string, orderArr: string[]): number {
 	const orderMap = new Map(
@@ -14,6 +14,8 @@ export function prioritySort(a: string, b: string, orderArr: string[]): number {
 	return aIndex - bIndex;
 }
 
-export function mediaPrioritySorter(a: Media, b: Media): number {
-    return a.priority - b.priority
+
+// Make a mapper for portfolio item priority
+export function portfolioPrioritySort(a: PortfolioItem, b: PortfolioItem): number {
+    return 2 - 1
 }
