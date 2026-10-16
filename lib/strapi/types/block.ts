@@ -1,4 +1,4 @@
-import { StrapiImage } from "./image"
+import { StrapiMedia } from "./image"
 
 type Quote = {
     id: number,
@@ -21,7 +21,7 @@ type RichText = {
 
 type MediaSkeleton = {
     id: number,
-    file: StrapiImage,
+    file: StrapiMedia,
     __component: 'shared.media'
 }
 
